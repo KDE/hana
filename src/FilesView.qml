@@ -23,6 +23,7 @@ Rectangle {
 
     ScrollView {
         anchors.fill: parent
+
         ListView {
             id: view
 
@@ -30,6 +31,7 @@ Rectangle {
             delegate: ItemDelegate {
                 id: delegate
 
+                required property url fileUrl
                 required property string filename
 
                 width: ListView.view.width
@@ -52,12 +54,15 @@ Rectangle {
             Connections {
                 target: Bridge
                 function onFilesSelected(urls) {
-                    const filenames = Bridge.urlsToFilenames(urls)
-                    console.log(filenames)
-                    filenames.forEach((file) => filesModel.append({filename: file}))
+                    urls.forEach((u) => filesModel.append({filename: Bridge.urlToFilename(u), fileUrl: u}))
                 }
                 function onClearFiles() {
                     filesModel.clear()
+                }
+                function onRun() {
+                    for (let i = 0; i < filesModel.count; i++) {
+                        Bridge.processFile(filesModel.get(i).fileUrl)
+                    }
                 }
             }
         }

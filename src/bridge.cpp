@@ -7,12 +7,12 @@ Bridge::Bridge(QObject *parent)
 
 }
 
-QStringList Bridge::urlsToFilenames(QList<QUrl> urls)
+QString Bridge::urlToFilename(QUrl url)
 {
-    QStringList filenames;
-    for (const auto &url : urls) {
-        filenames.append(url.fileName());
-    }
+    return url.fileName();
+}
 
-    return filenames;
+void Bridge::processFile(QUrl url)
+{
+    qDebug() << url;
 }

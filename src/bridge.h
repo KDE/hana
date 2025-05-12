@@ -13,11 +13,13 @@ public:
     explicit Bridge(QObject *parent = nullptr);
 
 public Q_SLOTS:
-    QStringList urlsToFilenames(QList<QUrl> urls);
+    QString urlToFilename(QUrl url);
+    void processFile(QUrl url);
 
 Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);
     void clearFiles();
+    void run();
 };
 
 #endif // BRIDGE_H
