@@ -1,45 +1,65 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
 import com.georgefb.rina
+import com.georgefb.rina.components
 
-ListView {
+Rectangle {
     id: root
 
     property ListModel filesModel: ListModel {
         id: filesModel
     }
+    Layout.fillWidth: true
+    Layout.fillHeight: true
 
-    model: filesModel
+    color: Kirigami.Theme.alternateBackgroundColor
+    radius: Kirigami.Units.cornerRadius
+    border.width: 1
+    border.color: Qt.darker(color, 1.5)
 
-    delegate: ItemDelegate {
-        id: delegate
+    ScrollView {
+        anchors.fill: parent
+        ListView {
+            id: view
 
-        required property string filename
+            model: filesModel
+            delegate: ItemDelegate {
+                id: delegate
 
-        width: ListView.view.width
-        hoverEnabled: true
-        contentItem: Label {
-            text: delegate.filename
-            elide: Text.ElideRight
+                required property string filename
 
-            ToolTip.text: text
-            ToolTip.visible: truncated && delegate.hovered
-            ToolTip.delay: Kirigami.Units.shortDuration
-        }
-    }
+                width: ListView.view.width
+                hoverEnabled: true
+                contentItem: Label {
+                    text: delegate.filename
+                    elide: Text.ElideRight
 
-    Connections {
-        target: Bridge
-        function onFilesSelected(urls) {
-            const filenames = Bridge.urlsToFilenames(urls)
-            console.log(filenames)
-            filenames.forEach((file) => filesModel.append({filename: file}))
-        }
-        function onClearFiles() {
-            filesModel.clear()
+                    ToolTip.text: text
+                    ToolTip.visible: truncated && delegate.hovered
+                    ToolTip.delay: Kirigami.Units.shortDuration
+                }
+            }
+
+            AddFilesField {
+                anchors.centerIn: parent
+                visible: view.count === 0
+            }
+
+            Connections {
+                target: Bridge
+                function onFilesSelected(urls) {
+                    const filenames = Bridge.urlsToFilenames(urls)
+                    console.log(filenames)
+                    filenames.forEach((file) => filesModel.append({filename: file}))
+                }
+                function onClearFiles() {
+                    filesModel.clear()
+                }
+            }
         }
     }
 }
