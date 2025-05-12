@@ -30,10 +30,20 @@ set_target_properties(apprina PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+target_include_directories(apprina
+    PRIVATE
+        ${FFMPEG_INCLUDE_DIRS}
+)
 target_link_libraries(apprina
     PRIVATE
         Qt6::Quick
         Qt6::Widgets
+
+        ${AVUTIL_LIBRARIES}
+        ${AVFILTER_LIBRARIES}
+        ${AVFORMAT_LIBRARIES}
+        ${AVCODEC_LIBRARIES}
+        ${SWSCALE_LIBRARIES}
 )
 
 include(GNUInstallDirs)
