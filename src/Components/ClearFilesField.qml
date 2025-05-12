@@ -1,5 +1,12 @@
-import QtQuick 2.15
+import QtQuick
+import QtQuick.Controls
 
-Item {
+import com.georgefb.rina
 
+ToolButton {
+    id: root
+
+    text: qsTr("Clear files")
+
+    onClicked: Bridge.clearFiles()
 }

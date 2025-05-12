@@ -35,14 +35,6 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.margins: 20
-
-            model: 100
-            delegate: ItemDelegate {
-                required property string modelData
-
-                width: ListView.view.width
-                text: modelData
-            }
         }
     }
 }

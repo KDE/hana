@@ -12,6 +12,8 @@ ToolBar {
             Layout.alignment: Qt.AlignLeft
         }
 
+        ClearFilesField {}
+
         RunField {
             Layout.alignment: Qt.AlignLeft
         }

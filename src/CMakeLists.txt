@@ -5,13 +5,15 @@ qt_add_executable(apprina
 )
 
 qt_add_qml_module(apprina
-    URI rina
+    URI com.georgefb.rina
     VERSION 1.0
     QML_FILES
         Main.qml
         QML_FILES Footer.qml
         QML_FILES Components/ColumnsField.qml
         QML_FILES FilesView.qml
+    SOURCES
+        bridge.h bridge.cpp
 )
 
 add_subdirectory(Components)
@@ -28,7 +30,9 @@ set_target_properties(apprina PROPERTIES
 )
 
 target_link_libraries(apprina
-    PRIVATE Qt6::Quick
+    PRIVATE
+        Qt6::Quick
+        Qt6::Widgets
 )
 
 include(GNUInstallDirs)
