@@ -20,5 +20,10 @@ ColumnLayout {
         to: 9000
         value: RinaSettings.thumbnailsSpacing
         stepSize: 5
+
+        onValueModified: {
+            RinaSettings.thumbnailsSpacing = value
+            RinaSettings.save()
+        }
     }
 }

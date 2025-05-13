@@ -20,5 +20,10 @@ ColumnLayout {
         to: 9000
         value: RinaSettings.thumbnailsWidth
         stepSize: 10
+
+        onValueModified: {
+            RinaSettings.thumbnailsWidth = value
+            RinaSettings.save()
+        }
     }
 }

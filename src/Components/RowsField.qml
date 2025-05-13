@@ -19,5 +19,10 @@ ColumnLayout {
         from: 0
         to: 9000
         value: RinaSettings.thumbnailsRows
+
+        onValueModified: {
+            RinaSettings.thumbnailsRows = value
+            RinaSettings.save()
+        }
     }
 }
