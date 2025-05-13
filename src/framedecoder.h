@@ -22,7 +22,7 @@ class QImage;
 class FrameDecoder
 {
 public:
-    explicit FrameDecoder(const QString &filename, AVFormatContext *pavContext = nullptr);
+    explicit FrameDecoder(const QString &filename);
     ~FrameDecoder();
 
     QString getCodec();
@@ -36,7 +36,7 @@ public:
 
     void initialize(const QString &filename);
     void destroy();
-    bool getInitialized();
+    bool isInitialized();
 
 private:
     bool initializeVideo();
@@ -52,27 +52,23 @@ private:
     bool processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, int width, int height);
 
 private:
-    int m_VideoStream;
+    int m_VideoStream {-1};
     AVFormatContext *m_pFormatContext{nullptr};
     AVCodecContext *m_pVideoCodecContext{nullptr};
-#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(59, 0, 100)
-    AVCodec *m_pVideoCodec{nullptr};
-#else
     const AVCodec *m_pVideoCodec{nullptr};
-#endif
     AVFrame *m_pFrame{nullptr};
     quint8 *m_pFrameBuffer{nullptr};
     AVPacket *m_pPacket{nullptr};
-    bool m_FormatContextWasGiven;
-    bool m_AllowSeek;
-    bool m_initialized;
+    bool m_FormatContextWasGiven {false};
+    bool m_AllowSeek {true};
+    bool m_initialized {false};
     AVFilterContext *m_bufferSinkContext{nullptr};
     AVFilterContext *m_bufferSourceContext{nullptr};
     AVFilterGraph *m_filterGraph{nullptr};
     AVFrame *m_filterFrame{nullptr};
-    int m_lastWidth;
-    int m_lastHeight;
-    enum AVPixelFormat m_lastPixfmt;
+    uint m_lastWidth {0};
+    uint m_lastHeight {0};
+    enum AVPixelFormat m_lastPixfmt {AV_PIX_FMT_NONE};
 };
 
 #endif

@@ -10,27 +10,14 @@
 #include <QImage>
 
 extern "C" {
-#include <libavutil/imgutils.h>
 #include <libswscale/swscale.h>
+#include <libavutil/display.h>
+#include <libavutil/imgutils.h>
 }
 
 using namespace std;
 
-FrameDecoder::FrameDecoder(const QString &filename, AVFormatContext *pavContext)
-    : m_VideoStream(-1)
-    , m_pFormatContext(pavContext)
-    , m_pVideoCodecContext(nullptr)
-    , m_pVideoCodec(nullptr)
-    , m_pFrame(nullptr)
-    , m_pFrameBuffer(nullptr)
-    , m_pPacket(nullptr)
-    , m_FormatContextWasGiven(pavContext != nullptr)
-    , m_AllowSeek(true)
-    , m_initialized(false)
-    , m_bufferSinkContext(nullptr)
-    , m_bufferSourceContext(nullptr)
-    , m_filterGraph(nullptr)
-    , m_filterFrame(nullptr)
+FrameDecoder::FrameDecoder(const QString &filename)
 {
     initialize(filename);
 }
@@ -42,18 +29,11 @@ FrameDecoder::~FrameDecoder()
 
 void FrameDecoder::initialize(const QString &filename)
 {
-    m_lastWidth = -1;
-    m_lastHeight = -1;
-    m_lastPixfmt = AV_PIX_FMT_NONE;
+    QFileInfo fi(filename);
 
-#if (LIBAVFORMAT_VERSION_MAJOR < 58)
-    av_register_all();
-#endif
-
-    QFileInfo fileInfo(filename);
-
-    if ((!m_FormatContextWasGiven) && avformat_open_input(&m_pFormatContext, fileInfo.absoluteFilePath().toLocal8Bit().data(), nullptr, nullptr) != 0) {
-        qDebug() << "Could not open input file: " << fileInfo.absoluteFilePath();
+    if ((!m_FormatContextWasGiven)
+            && avformat_open_input(&m_pFormatContext, fi.absoluteFilePath().toLocal8Bit().data(), nullptr, nullptr) != 0) {
+        qDebug() << "Could not open input file: " << fi.absoluteFilePath();
         return;
     }
 
@@ -73,7 +53,7 @@ void FrameDecoder::initialize(const QString &filename)
     }
 }
 
-bool FrameDecoder::getInitialized()
+bool FrameDecoder::isInitialized()
 {
     return m_initialized;
 }
@@ -82,9 +62,6 @@ void FrameDecoder::destroy()
 {
     deleteFilterGraph();
     if (m_pVideoCodecContext) {
-#if LIBAVCODEC_VERSION_MAJOR < 61
-        avcodec_close(m_pVideoCodecContext);
-#endif
         avcodec_free_context(&m_pVideoCodecContext);
         m_pVideoCodecContext = nullptr;
     }
@@ -181,13 +158,19 @@ void FrameDecoder::seek(int timeInSeconds)
         return;
     }
 
-    qint64 timestamp = AV_TIME_BASE * static_cast<qint64>(timeInSeconds);
+    // qint64 timestamp = AV_TIME_BASE * static_cast<qint64>(timeInSeconds);
+    int64_t timestamp = timeInSeconds * AV_TIME_BASE;
 
     if (timestamp < 0) {
         timestamp = 0;
     }
 
-    int ret = av_seek_frame(m_pFormatContext, -1, timestamp, 0);
+
+    int i = m_VideoStream;
+    int ret = av_seek_frame(m_pFormatContext,
+            i, timestamp * m_pFormatContext->streams[i]->time_base.den / AV_TIME_BASE / m_pFormatContext->streams[i]->time_base.num,
+                  AVSEEK_FLAG_BACKWARD);
+    // int ret = av_seek_frame(m_pFormatContext, -1, timestamp, 0);
     if (ret >= 0) {
         avcodec_flush_buffers(m_pVideoCodecContext);
     } else {
@@ -196,12 +179,10 @@ void FrameDecoder::seek(int timeInSeconds)
     }
 
     int keyFrameAttempts = 0;
-    bool gotFrame = 0;
+    bool gotFrame {false};
 
-    do {
+    while ((!gotFrame || m_pFrame->flags & AV_FRAME_FLAG_KEY) && keyFrameAttempts < 200) {
         int count = 0;
-        gotFrame = 0;
-
         while (!gotFrame && count < 20) {
             getVideoPacket();
             gotFrame = decodeVideoPacket();
@@ -209,11 +190,7 @@ void FrameDecoder::seek(int timeInSeconds)
         }
 
         ++keyFrameAttempts;
-#if (LIBAVFORMAT_VERSION_MAJOR < 61)
-    } while ((!gotFrame || m_pFrame->flags & AV_PKT_FLAG_KEY) && keyFrameAttempts < 200);
-#else
-    } while ((!gotFrame || m_pFrame->flags & AV_FRAME_FLAG_KEY) && keyFrameAttempts < 200);
-#endif
+    }
 
     if (gotFrame == 0) {
         qDebug() << "Seeking in video failed";
@@ -364,18 +341,13 @@ bool FrameDecoder::processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVP
 
 void FrameDecoder::getScaledVideoFrame(int scaledSize, bool maintainAspectRatio, QImage &videoFrame)
 {
-#if (LIBAVFORMAT_VERSION_MAJOR < 61)
-    if (m_pFrame->flags & AV_CODEC_FLAG_INTERLACED_ME) {
-#else
     if (m_pFrame->flags & AV_FRAME_FLAG_INTERLACED) {
-#endif
         processFilterGraph((AVFrame *)m_pFrame, (AVFrame *)m_pFrame, m_pVideoCodecContext->pix_fmt, m_pVideoCodecContext->width, m_pVideoCodecContext->height);
     }
 
     int scaledWidth, scaledHeight;
     convertAndScaleFrame(AV_PIX_FMT_RGB24, scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
     // .copy() since QImage otherwise assumes the memory will continue to be available.
-    // We could instead pass a custom deleter, but meh.
     videoFrame = QImage(m_pFrame->data[0], scaledWidth, scaledHeight, m_pFrame->linesize[0], QImage::Format_RGB888).copy();
 }
 
