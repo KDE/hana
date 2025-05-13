@@ -8,6 +8,8 @@
 #include <qelapsedtimer.h>
 
 #include "framedecoder.h"
+#include "settings.h"
+
 extern "C" {
 #include <libavutil/imgutils.h>
 #include <libswscale/swscale.h>
@@ -36,15 +38,14 @@ void Bridge::processFile(QUrl url)
         return;
     }
 
-    auto thumbWidth {400};
-    auto spacing {20};
-    auto rows {4};
-    auto columns {4};
+    auto rows {RinaSettings::self()->thumbnailsRows()};
+    auto columns {RinaSettings::self()->thumbnailsColumns()};
+    auto thumbWidth {RinaSettings::self()->thumbnailsWidth()};
+    auto spacing {RinaSettings::self()->thumbnailsSpacing()};
     auto fileDuration {frameDecoder.getDuration()};
 
     auto aspectRatio {static_cast<float>(frameDecoder.getWidth())/frameDecoder.getHeight()};
     auto thumbHeight {thumbWidth/aspectRatio};
-    qDebug() << thumbHeight;
 
     auto w {(columns * thumbWidth) + (spacing * columns + spacing)};
     auto h {(rows * thumbHeight) + (spacing * rows + spacing)};
