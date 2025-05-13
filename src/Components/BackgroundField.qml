@@ -5,10 +5,10 @@ import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
+import com.georgefb.rina
+
 RowLayout {
     id: root
-
-    property alias color: control.color
 
     Label {
         text: qsTr("Background color")
@@ -17,21 +17,14 @@ RowLayout {
     Rectangle {
         id: control
 
-        // using onColorChanged causes a binding loop
-        signal colorChosen(string color)
-
         Layout.preferredWidth: Math.ceil(Kirigami.Units.gridUnit * 1.7)
         Layout.preferredHeight: Math.ceil(Kirigami.Units.gridUnit * 1.7)
 
-        color: "#333"
+        color: RinaSettings.backgroundColor
         border.width: 2
         border.color: ma.containsMouse
                       ? Kirigami.Theme.highlightColor
                       : color
-
-        onColorChosen: {
-            root.color = colorPicker.selectedColor
-        }
 
         MouseArea {
             id: ma
@@ -53,8 +46,11 @@ RowLayout {
             id: colorPicker
 
             title: qsTr("@title:window", "Select Color")
-            onAccepted: control.colorChosen(colorPicker.selectedColor)
-            selectedColor: root.color
+            onAccepted: {
+                RinaSettings.backgroundColor = colorPicker.selectedColor
+                RinaSettings.save()
+            }
+            selectedColor: RinaSettings.backgroundColor
         }
     }
 }

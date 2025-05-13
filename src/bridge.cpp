@@ -78,6 +78,7 @@ void Bridge::processFile(QUrl url)
 
     uint x{0};
     QImage thumbsImage ({w, static_cast<int>(h)}, QImage::Format_RGB32);
+    thumbsImage.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
             auto left {(j * thumbWidth) + ((j + 1) * spacing)};
