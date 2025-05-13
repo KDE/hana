@@ -78,12 +78,13 @@ void Bridge::processFile(QUrl url)
 
     uint x{0};
     QImage thumbsImage ({w, static_cast<int>(h)}, QImage::Format_RGB32);
+    QImage thumbImg;
     thumbsImage.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
             auto left {(j * thumbWidth) + ((j + 1) * spacing)};
             auto top {(i * thumbHeight) + ((i + 1) * spacing)};
-            QImage thumbImg {files.at(x)};
+            thumbImg.load(files.at(x));
 
             QPainter p(&thumbsImage);
             p.drawImage(QRect{left, static_cast<int>(top), thumbImg.width(), thumbImg.height()}, thumbImg);
@@ -97,6 +98,18 @@ void Bridge::processFile(QUrl url)
     thumbsImage.save(thumbsImagePath);
     Q_EMIT thumbGenerated(thumbsImagePath);
     qDebug() << timer.elapsed() << "ms elapsed;" << timer.nsecsElapsed() << "ns elapsed:";
+}
+
+QString Bridge::urlToLocalFile(QUrl url)
+{
+
+    return url.isLocalFile() ? url.toLocalFile() : QString{};
+}
+
+QString Bridge::parentPath(QString path)
+{
+    QFileInfo fi(path);
+    return fi.exists() ? fi.absolutePath() : QString{};
 }
 
 QString Bridge::thumbSaveLocation()

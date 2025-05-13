@@ -27,6 +27,7 @@ Rectangle {
         ListView {
             id: view
 
+            clip: true
             model: filesModel
             delegate: ItemDelegate {
                 id: delegate
@@ -36,13 +37,28 @@ Rectangle {
 
                 width: ListView.view.width
                 hoverEnabled: true
-                contentItem: Label {
-                    text: delegate.filename
-                    elide: Text.ElideRight
+                contentItem: RowLayout {
+                    Label {
+                        Layout.fillWidth: true
 
-                    ToolTip.text: text
-                    ToolTip.visible: truncated && delegate.hovered
-                    ToolTip.delay: Kirigami.Units.shortDuration
+                        text: delegate.filename
+                        elide: Text.ElideRight
+
+                        ToolTip.text: text
+                        ToolTip.visible: truncated && delegate.hovered
+                        ToolTip.delay: Kirigami.Units.shortDuration
+                    }
+
+                    ToolButton {
+                        text: qsTr("Open folder")
+                        onClicked: openFolder()
+
+                        function openFolder() {
+                            const filePath = Bridge.urlToLocalFile(delegate.fileUrl)
+                            const fileParentPath = Bridge.parentPath(filePath)
+                            Qt.openUrlExternally(`file://${fileParentPath}`)
+                        }
+                    }
                 }
             }
 

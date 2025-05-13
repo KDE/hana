@@ -15,6 +15,8 @@ public:
 public Q_SLOTS:
     QString urlToFilename(QUrl url);
     void processFile(QUrl url);
+    QString urlToLocalFile(QUrl url);
+    QString parentPath(QString path);
 
 Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);
