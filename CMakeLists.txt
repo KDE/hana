@@ -6,7 +6,38 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+include(FeatureSummary)
+
 find_package(Qt6 REQUIRED COMPONENTS Quick Widgets)
-find_package(FFmpeg REQUIRED)
+
+find_package(Qt6Core ${QT_MIN_VERSION})
+set_package_properties(Qt6Core PROPERTIES TYPE REQUIRED)
+
+find_package(Qt6Gui ${QT_MIN_VERSION})
+set_package_properties(Qt6Gui PROPERTIES TYPE REQUIRED)
+
+find_package(Qt6Qml ${QT_MIN_VERSION})
+set_package_properties(Qt6Qml PROPERTIES TYPE REQUIRED)
+
+find_package(Qt6Quick ${QT_MIN_VERSION})
+set_package_properties(Qt6Quick PROPERTIES TYPE REQUIRED)
+
+find_package(Qt6QuickControls2 ${QT_MIN_VERSION})
+set_package_properties(Qt6QuickControls2 PROPERTIES TYPE REQUIRED)
+
+find_package(KF6Config ${KF6_MIN_VERSION})
+set_package_properties(KF6Config PROPERTIES
+    TYPE REQUIRED URL "https://api.kde.org/frameworks/kconfig/html/index.html")
+
+find_package(KF6Kirigami ${KF6_MIN_VERSION})
+set_package_properties(KF6Kirigami PROPERTIES TYPE REQUIRED
+    URL "https://api.kde.org/frameworks/kirigami/html/index.html")
+
+find_package(FFmpeg)
+set_package_properties(FFmpeg PROPERTIES TYPE REQUIRED
+    URL "https://ffmpeg.org"
+    DESCRIPTION "needed for playlist and mpris thumbnails")
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 add_subdirectory(src)

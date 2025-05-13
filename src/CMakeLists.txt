@@ -36,8 +36,16 @@ target_include_directories(apprina
 )
 target_link_libraries(apprina
     PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Qml
         Qt6::Quick
+        Qt6::QuickControls2
         Qt6::Widgets
+
+        KF6::ConfigCore
+        KF6::ConfigGui
+        KF6::Kirigami
 
         ${AVUTIL_LIBRARIES}
         ${AVFILTER_LIBRARIES}
