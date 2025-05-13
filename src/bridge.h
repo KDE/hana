@@ -20,6 +20,10 @@ Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);
     void clearFiles();
     void run();
+    void thumbGenerated(const QString &thumbPath);
+
+private:
+    QString thumbSaveLocation();
 };
 
 #endif // BRIDGE_H
