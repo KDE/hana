@@ -4,6 +4,18 @@ qt_add_executable(apprina
     main.cpp
 )
 
+kconfig_target_kcfg_file(apprina
+    FILE settings.kcfg
+    CLASS_NAME RinaSettings
+    MUTATORS
+    DEFAULT_VALUE_GETTERS
+    GENERATE_PROPERTIES
+    GENERATE_MOC
+    PARENT_IN_CONSTRUCTOR
+    SINGLETON
+    QML_REGISTRATION
+)
+
 qt_add_qml_module(apprina
     URI com.georgefb.rina
     VERSION 1.0

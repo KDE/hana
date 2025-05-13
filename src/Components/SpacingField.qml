@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import com.georgefb.rina
+
 ColumnLayout {
     id: root
 
@@ -16,7 +18,7 @@ ColumnLayout {
 
         from: 0
         to: 9000
-        value: 20
-        stepSize: 10
+        value: RinaSettings.thumbnailsSpacing
+        stepSize: 5
     }
 }
