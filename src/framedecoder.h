@@ -52,15 +52,15 @@ private:
     bool processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, int width, int height);
 
 private:
-    int m_VideoStream {-1};
-    AVFormatContext *m_pFormatContext{nullptr};
-    AVCodecContext *m_pVideoCodecContext{nullptr};
-    const AVCodec *m_pVideoCodec{nullptr};
-    AVFrame *m_pFrame{nullptr};
-    quint8 *m_pFrameBuffer{nullptr};
-    AVPacket *m_pPacket{nullptr};
-    bool m_FormatContextWasGiven {false};
-    bool m_AllowSeek {true};
+    int m_videoStream {-1};
+    AVFormatContext *m_formatContext{nullptr};
+    AVCodecContext *m_videoCodecContext{nullptr};
+    const AVCodec *m_videoCodec{nullptr};
+    AVFrame *m_frame{nullptr};
+    quint8 *m_frameBuffer{nullptr};
+    AVPacket *m_packet{nullptr};
+    bool m_formatContextWasGiven {false};
+    bool m_allowSeek {true};
     bool m_initialized {false};
     AVFilterContext *m_bufferSinkContext{nullptr};
     AVFilterContext *m_bufferSourceContext{nullptr};
