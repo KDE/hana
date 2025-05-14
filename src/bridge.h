@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QQmlEngine>
+#include <QRunnable>
+#include <QThreadPool>
 
 class Bridge : public QObject
 {
@@ -26,6 +28,22 @@ Q_SIGNALS:
 
 private:
     QString thumbSaveLocation();
+    QThreadPool m_pool;
 };
 
+class ThumbnailerRunnable : public QObject, public QRunnable
+{
+    Q_OBJECT
+
+public:
+    ThumbnailerRunnable(QUrl url, const QString &saveFolder);
+    void run() override;
+
+Q_SIGNALS:
+    void done(const QString &thumbPath);
+
+private:
+    QUrl m_url;
+    QString m_saveFolder;
+};
 #endif // BRIDGE_H

@@ -1,19 +1,15 @@
 #include "bridge.h"
 
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QImage>
 #include <QPainter>
 #include <QStandardPaths>
-#include <qelapsedtimer.h>
+#include <QTemporaryDir>
 
 #include "framedecoder.h"
 #include "settings.h"
-
-extern "C" {
-#include <libavutil/imgutils.h>
-#include <libswscale/swscale.h>
-}
 
 using namespace Qt::StringLiterals;
 
@@ -30,11 +26,49 @@ QString Bridge::urlToFilename(QUrl url)
 
 void Bridge::processFile(QUrl url)
 {
+    auto runnable = new ThumbnailerRunnable(url, thumbSaveLocation());
+    connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated);
+    m_pool.start(runnable);
+}
+
+QString Bridge::urlToLocalFile(QUrl url)
+{
+
+    return url.isLocalFile() ? url.toLocalFile() : QString{};
+}
+
+QString Bridge::parentPath(QString path)
+{
+    QFileInfo fi(path);
+    return fi.exists() ? fi.absolutePath() : QString{};
+}
+
+QString Bridge::thumbSaveLocation()
+{
+    auto picturesFolder{QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)};
+    auto saveFolder{u"%1/rina"_s.arg(picturesFolder)};
+    QDir dir;
+    dir.mkpath(saveFolder);
+    return saveFolder;
+}
+
+ThumbnailerRunnable::ThumbnailerRunnable(QUrl url, const QString &saveFolder)
+    : m_url(url)
+    , m_saveFolder{saveFolder}
+{
+}
+
+void ThumbnailerRunnable::run()
+{
     QElapsedTimer timer;
     timer.start();
 
-    FrameDecoder frameDecoder(url.toLocalFile());
+    FrameDecoder frameDecoder(m_url.toLocalFile());
     if (!frameDecoder.isInitialized()) {
+        return;
+    }
+    // before seeking, a frame has to be decoded
+    if (!frameDecoder.decodeVideoFrame()) {
         return;
     }
 
@@ -55,6 +89,12 @@ void Bridge::processFile(QUrl url)
     QStringList files;
     QImage image;
     uint seekPosition{0};
+
+    QTemporaryDir tmpDir;
+    if (!tmpDir.isValid()) {
+        return;
+    }
+
     for (int i = 0; i < totalThumbs; ++i) {
         seekPosition = static_cast<uint>(startTime * i);
         if (i == 0) {
@@ -65,13 +105,9 @@ void Bridge::processFile(QUrl url)
         }
 
         frameDecoder.seek(seekPosition);
-        if (!frameDecoder.decodeVideoFrame()) {
-            qDebug() << "Failed to decode frame:" << url.toLocalFile() << " thumbnail:" << i;
-            return;
-        }
         frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
 
-        auto thumbPath {u"%1/img-%2.png"_s.arg(thumbSaveLocation()).arg(i)};
+        auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);
         image.save(thumbPath);
     }
@@ -94,29 +130,8 @@ void Bridge::processFile(QUrl url)
             x++;
         }
     }
-    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(thumbSaveLocation()).arg(url.fileName())};
+    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
     thumbsImage.save(thumbsImagePath);
-    Q_EMIT thumbGenerated(thumbsImagePath);
-    qDebug() << timer.elapsed() << "ms elapsed;" << timer.nsecsElapsed() << "ns elapsed:";
-}
-
-QString Bridge::urlToLocalFile(QUrl url)
-{
-
-    return url.isLocalFile() ? url.toLocalFile() : QString{};
-}
-
-QString Bridge::parentPath(QString path)
-{
-    QFileInfo fi(path);
-    return fi.exists() ? fi.absolutePath() : QString{};
-}
-
-QString Bridge::thumbSaveLocation()
-{
-    auto picturesFolder{QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)};
-    auto saveFolder{u"%1/rina"_s.arg(picturesFolder)};
-    QDir dir;
-    dir.mkpath(saveFolder);
-    return saveFolder;
+    Q_EMIT done(thumbsImagePath);
+    qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
 }
