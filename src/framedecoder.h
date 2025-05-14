@@ -26,13 +26,13 @@ public:
     ~FrameDecoder();
 
     QString getCodec();
-    void seek(int timeInSeconds);
+    void seek(uint timeInSeconds);
     bool decodeVideoFrame();
-    void getScaledVideoFrame(int scaledSize, bool maintainAspectRatio, QImage &videoFrame);
+    void getScaledVideoFrame(uint scaledSize, bool maintainAspectRatio, QImage &videoFrame);
 
-    int getWidth();
-    int getHeight();
-    int getDuration();
+    uint getWidth();
+    uint getHeight();
+    uint getDuration();
 
     void initialize(const QString &filename);
     void destroy();
@@ -40,16 +40,14 @@ public:
 
 private:
     bool initializeVideo();
-
     bool decodeVideoPacket();
     bool getVideoPacket();
-    void convertAndScaleFrame(AVPixelFormat format, int scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight);
-    void createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, int width, int height, AVPixelFormat format);
-    void calculateDimensions(int squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight);
-
+    void convertAndScaleFrame(AVPixelFormat format, uint scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight);
+    void createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, uint width, uint height, AVPixelFormat format);
+    void calculateDimensions(uint squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight);
     void deleteFilterGraph();
-    bool initFilterGraph(enum AVPixelFormat pixfmt, int width, int height);
-    bool processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, int width, int height);
+    bool initFilterGraph(enum AVPixelFormat pixfmt, uint width, uint height);
+    bool processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, uint width, uint height);
 
 private:
     int m_videoStream {-1};

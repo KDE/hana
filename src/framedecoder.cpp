@@ -46,8 +46,8 @@ void FrameDecoder::initialize(const QString &filename)
         // It already printed a message
         return;
     }
-    m_frame = av_frame_alloc();
 
+    m_frame = av_frame_alloc();
     if (m_frame) {
         m_initialized = true;
     }
@@ -125,25 +125,25 @@ bool FrameDecoder::initializeVideo()
     return true;
 }
 
-int FrameDecoder::getWidth()
+uint FrameDecoder::getWidth()
 {
     if (m_videoCodecContext) {
         return m_videoCodecContext->width;
     }
 
-    return -1;
+    return 0;
 }
 
-int FrameDecoder::getHeight()
+uint FrameDecoder::getHeight()
 {
     if (m_videoCodecContext) {
         return m_videoCodecContext->height;
     }
 
-    return -1;
+    return 0;
 }
 
-int FrameDecoder::getDuration()
+uint FrameDecoder::getDuration()
 {
     if (m_formatContext) {
         return static_cast<int>(m_formatContext->duration / AV_TIME_BASE);
@@ -152,13 +152,12 @@ int FrameDecoder::getDuration()
     return 0;
 }
 
-void FrameDecoder::seek(int timeInSeconds)
+void FrameDecoder::seek(uint timeInSeconds)
 {
     if (!m_allowSeek) {
         return;
     }
 
-    // qint64 timestamp = AV_TIME_BASE * static_cast<qint64>(timeInSeconds);
     int64_t timestamp = timeInSeconds * AV_TIME_BASE;
 
     if (timestamp < 0) {
@@ -178,11 +177,11 @@ void FrameDecoder::seek(int timeInSeconds)
         return;
     }
 
-    int keyFrameAttempts = 0;
+    uint keyFrameAttempts = 0;
     bool gotFrame {false};
 
     while ((!gotFrame || m_frame->flags & AV_FRAME_FLAG_KEY) && keyFrameAttempts < 200) {
-        int count = 0;
+        uint count = 0;
         while (!gotFrame && count < 20) {
             getVideoPacket();
             gotFrame = decodeVideoPacket();
@@ -192,8 +191,8 @@ void FrameDecoder::seek(int timeInSeconds)
         ++keyFrameAttempts;
     }
 
-    if (gotFrame) {
-        qDebug() << "Seeking in video failed";
+    if (!gotFrame) {
+        qDebug() << "Seeking in video failed2";
     }
 }
 
@@ -234,7 +233,7 @@ bool FrameDecoder::getVideoPacket()
     bool framesAvailable = true;
     bool frameDecoded = false;
 
-    int attempts = 0;
+    uint attempts = 0;
 
     if (m_packet) {
         av_packet_unref(m_packet);
@@ -265,7 +264,7 @@ void FrameDecoder::deleteFilterGraph()
     }
 }
 
-bool FrameDecoder::initFilterGraph(enum AVPixelFormat pixfmt, int width, int height)
+bool FrameDecoder::initFilterGraph(enum AVPixelFormat pixfmt, uint width, uint height)
 {
     AVFilterInOut *inputs = nullptr, *outputs = nullptr;
 
@@ -309,7 +308,7 @@ bool FrameDecoder::initFilterGraph(enum AVPixelFormat pixfmt, int width, int hei
     return true;
 }
 
-bool FrameDecoder::processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, int width, int height)
+bool FrameDecoder::processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, uint width, uint height)
 {
     if (!m_filterGraph || width != m_lastWidth || height != m_lastHeight || pixfmt != m_lastPixfmt) {
         if (!initFilterGraph(pixfmt, width, height)) {
@@ -339,7 +338,7 @@ bool FrameDecoder::processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVP
     return true;
 }
 
-void FrameDecoder::getScaledVideoFrame(int scaledSize, bool maintainAspectRatio, QImage &videoFrame)
+void FrameDecoder::getScaledVideoFrame(uint scaledSize, bool maintainAspectRatio, QImage &videoFrame)
 {
     if (m_frame->flags & AV_FRAME_FLAG_INTERLACED) {
         processFilterGraph((AVFrame *)m_frame, (AVFrame *)m_frame, m_videoCodecContext->pix_fmt, m_videoCodecContext->width, m_videoCodecContext->height);
@@ -351,7 +350,7 @@ void FrameDecoder::getScaledVideoFrame(int scaledSize, bool maintainAspectRatio,
     videoFrame = QImage(m_frame->data[0], scaledWidth, scaledHeight, m_frame->linesize[0], QImage::Format_RGB888).copy();
 }
 
-void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, int scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight)
+void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, uint scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight)
 {
     calculateDimensions(scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
     SwsContext *scaleContext = sws_getContext(m_videoCodecContext->width,
@@ -385,7 +384,7 @@ void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, int scaledSize, bo
     m_frameBuffer = convertedFrameBuffer;
 }
 
-void FrameDecoder::calculateDimensions(int squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight)
+void FrameDecoder::calculateDimensions(uint squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight)
 {
     if (!maintainAspectRatio) {
         destWidth = squareSize;
@@ -402,19 +401,19 @@ void FrameDecoder::calculateDimensions(int squareSize, bool maintainAspectRatio,
 
         if (srcWidth > srcHeight) {
             destWidth = squareSize;
-            destHeight = int(float(squareSize) / srcWidth * srcHeight);
+            destHeight = int(static_cast<float>(squareSize) / srcWidth * srcHeight);
         } else {
-            destWidth = int(float(squareSize) / srcHeight * srcWidth);
+            destWidth = int(static_cast<float>(squareSize) / srcHeight * srcWidth);
             destHeight = squareSize;
         }
     }
 }
 
-void FrameDecoder::createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, int width, int height, AVPixelFormat format)
+void FrameDecoder::createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, uint width, uint height, AVPixelFormat format)
 {
     *avFrame = av_frame_alloc();
 
-    int numBytes = av_image_get_buffer_size(format, width + 1, height + 1, 16);
+    uint numBytes = av_image_get_buffer_size(format, width + 1, height + 1, 16);
     *frameBuffer = reinterpret_cast<quint8 *>(av_malloc(numBytes));
     av_image_fill_arrays((*avFrame)->data, (*avFrame)->linesize, *frameBuffer, format, width, height, 1);
 }

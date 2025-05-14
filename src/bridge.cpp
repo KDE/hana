@@ -76,7 +76,7 @@ void ThumbnailerRunnable::run()
     uint columns {static_cast<uint>(RinaSettings::self()->thumbnailsColumns())};
     uint thumbWidth {static_cast<uint>(RinaSettings::self()->thumbnailsWidth())};
     uint spacing {static_cast<uint>(RinaSettings::self()->thumbnailsSpacing())};
-    uint fileDuration {static_cast<uint>(frameDecoder.getDuration())};
+    uint fileDuration {frameDecoder.getDuration()};
 
     float aspectRatio {static_cast<float>(frameDecoder.getWidth())/frameDecoder.getHeight()};
     uint thumbHeight {static_cast<uint>(thumbWidth/aspectRatio)};
