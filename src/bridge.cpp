@@ -95,13 +95,15 @@ void ThumbnailerRunnable::run()
         return;
     }
 
+    uint prevSeekPosition {0};
     for (int i = 0; i < totalThumbs; ++i) {
         seekPosition = static_cast<uint>(startTime * i);
         if (i == 0) {
-            seekPosition = static_cast<uint>(startTime/4);
+            seekPosition = static_cast<uint>(startTime / 2);
         }
         if (seekPosition > fileDuration) {
-            seekPosition = fileDuration - 100;
+            // get thumbnail between prevSeekPosition and fileDuration
+            seekPosition = prevSeekPosition + ((fileDuration - prevSeekPosition) / 2);
         }
 
         frameDecoder.seek(seekPosition);
@@ -110,6 +112,8 @@ void ThumbnailerRunnable::run()
         auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);
         image.save(thumbPath);
+
+        prevSeekPosition = seekPosition;
     }
 
     uint x{0};
