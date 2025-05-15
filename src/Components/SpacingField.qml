@@ -10,7 +10,10 @@ ColumnLayout {
     property alias spacing: control.value
 
     Label {
+        Layout.maximumWidth: 250
+
         text: qsTr("Spacing")
+        elide: Text.ElideRight
     }
 
     SpinBox {

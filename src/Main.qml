@@ -22,25 +22,24 @@ ApplicationWindow {
             Layout.alignment: Qt.AlignTop
             Layout.margins: 20
 
-            ColumnLayout {
+            GridLayout {
                 id: scrollLayout
 
-                spacing: 15
+                columns: 2
 
                 Label {
                     text: qsTr("Thumbnail settings")
                     font.pointSize: 14
+                    Layout.columnSpan: 2
                 }
 
-                RowLayout {
-                    ColumnsField {}
-                    RowsField {}
+                ColumnsField {}
+                RowsField {}
+                SpacingField {}
+                ThumbWidthField {}
+                BackgroundField {
+                    Layout.columnSpan: 2
                 }
-                RowLayout {
-                    SpacingField {}
-                    ThumbWidthField {}
-                }
-                BackgroundField {}
             }
 
         }

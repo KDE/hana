@@ -10,7 +10,10 @@ ColumnLayout {
     property alias rows: control.value
 
     Label {
+        Layout.maximumWidth: 250
+
         text: qsTr("Rows")
+        elide: Text.ElideRight
     }
 
     SpinBox {

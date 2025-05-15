@@ -10,7 +10,10 @@ ColumnLayout {
     property alias thumbWidth: control.value
 
     Label {
+        Layout.maximumWidth: 250
+
         text: qsTr("Thumbnail width")
+        elide: Text.ElideRight
     }
 
     SpinBox {
