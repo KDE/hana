@@ -48,6 +48,9 @@ ApplicationWindow {
                 ShowVideoInfoField {
                     Layout.columnSpan: 2
                 }
+                VideoInfoAlwaysShowHoursField {
+                    Layout.columnSpan: 2
+                }
                 VideoInfoBackgroundColorField {
                     Layout.columnSpan: 2
                 }

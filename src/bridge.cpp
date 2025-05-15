@@ -36,7 +36,7 @@ QString formatDuration(const double time)
     QString minutesString = u"%1"_s.arg(minutes, 2, 10, QLatin1Char('0'));
     QString secondsString = u"%1"_s.arg(seconds, 2, 10, QLatin1Char('0'));
     QString timeString = u"%1:%2:%3"_s.arg(hoursString, minutesString, secondsString);
-    if (hours == 0) {
+    if (hours == 0 && !RinaSettings::videoInfoAlwaysShowHours()) {
         timeString = u"%1:%2"_s.arg(minutesString, secondsString);
     }
 
