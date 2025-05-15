@@ -14,27 +14,46 @@ ApplicationWindow {
 
     footer: Footer {}
 
-    ColumnLayout {
+    RowLayout {
         anchors.fill: parent
 
-        RowLayout {
-            Layout.alignment: Qt.AlignCenter
+        ScrollView {
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignTop
             Layout.margins: 20
 
-            ColumnsField {}
-            RowsField {}
-            SpacingField {}
-            ThumbWidthField {}
+            ColumnLayout {
+                id: scrollLayout
+
+                spacing: 15
+
+                Label {
+                    text: qsTr("Thumbnail settings")
+                    font.pointSize: 14
+                }
+
+                RowLayout {
+                    ColumnsField {}
+                    RowsField {}
+                }
+                RowLayout {
+                    SpacingField {}
+                    ThumbWidthField {}
+                }
+                BackgroundField {}
+            }
+
         }
 
-        BackgroundField {
-            Layout.alignment: Qt.AlignCenter
-        }
-
-        FilesView {
+        ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.margins: 20
+
+            FilesView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
         }
     }
 }
