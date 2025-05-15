@@ -32,12 +32,20 @@ ApplicationWindow {
                     font.pointSize: 14
                     Layout.columnSpan: 2
                 }
-
                 ColumnsField {}
                 RowsField {}
                 SpacingField {}
                 ThumbWidthField {}
                 BackgroundField {
+                    Layout.columnSpan: 2
+                }
+
+                Label {
+                    text: qsTr("Video info settings")
+                    font.pointSize: 14
+                    Layout.columnSpan: 2
+                }
+                VideoInfoBackground {
                     Layout.columnSpan: 2
                 }
             }

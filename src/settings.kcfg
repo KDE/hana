@@ -11,7 +11,8 @@
         <entry name="ThumbnailsRows"    type="Int"><default>5</default></entry>
         <entry name="ThumbnailsColumns" type="Int"><default>4</default></entry>
         <entry name="ThumbnailsSpacing" type="Int"><default>20</default></entry>
-        <entry name="BackgroundColor"   type="String"><default>#333</default></entry>
+        <entry name="BackgroundColor"   type="String"><default>#374047</default></entry>
+        <entry name="VideoInfoBackgroundColor" type="String"><default>#faf0e9</default></entry>
     </group>
 
     <group name="Paths">

@@ -211,7 +211,7 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     td.setDocumentMargin(docPadding);
 
     QImage textImage(QSize{static_cast<int>(width), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
-    textImage.fill(QColor(Qt::gray));
+    textImage.fill(RinaSettings::videoInfoBackgroundColor());
     QPainter textPainter(&textImage);
     td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
 
