@@ -3,7 +3,6 @@
 #include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
-#include <QImage>
 #include <QPainter>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -64,6 +63,7 @@ QString Bridge::thumbSaveLocation()
 ThumbnailerRunnable::ThumbnailerRunnable(QUrl url, const QString &saveFolder)
     : m_url(url)
     , m_saveFolder{saveFolder}
+    , m_frameDecoder(m_url.toLocalFile())
 {
 }
 
@@ -72,12 +72,11 @@ void ThumbnailerRunnable::run()
     QElapsedTimer timer;
     timer.start();
 
-    FrameDecoder frameDecoder(m_url.toLocalFile());
-    if (!frameDecoder.isInitialized()) {
+    if (!m_frameDecoder.isInitialized()) {
         return;
     }
     // before seeking, a frame has to be decoded
-    if (!frameDecoder.decodeVideoFrame()) {
+    if (!m_frameDecoder.decodeVideoFrame()) {
         return;
     }
 
@@ -85,9 +84,9 @@ void ThumbnailerRunnable::run()
     uint columns {static_cast<uint>(RinaSettings::self()->thumbnailsColumns())};
     uint thumbWidth {static_cast<uint>(RinaSettings::self()->thumbnailsWidth())};
     uint spacing {static_cast<uint>(RinaSettings::self()->thumbnailsSpacing())};
-    uint fileDuration {frameDecoder.getDuration()};
+    uint fileDuration {m_frameDecoder.getDuration()};
 
-    float aspectRatio {static_cast<float>(frameDecoder.getWidth())/frameDecoder.getHeight()};
+    float aspectRatio {static_cast<float>(m_frameDecoder.getWidth())/m_frameDecoder.getHeight()};
     uint thumbHeight {static_cast<uint>(thumbWidth/aspectRatio)};
 
     uint w {(columns * thumbWidth) + (spacing * columns + spacing)};
@@ -115,8 +114,8 @@ void ThumbnailerRunnable::run()
             seekPosition = prevSeekPosition + ((fileDuration - prevSeekPosition) / 2);
         }
 
-        frameDecoder.seek(seekPosition);
-        frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
+        m_frameDecoder.seek(seekPosition);
+        m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
 
         auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);
@@ -146,28 +145,7 @@ void ThumbnailerRunnable::run()
         }
     }
 
-    QFileInfo fi(m_url.toLocalFile());
-    QFont font;
-    font.setPointSize(20);
-
-    QString html;
-    html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
-    html.append(u"<div><strong>Size</strong>  %1%1</div>"_s.arg(fi.size()));
-    html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(frameDecoder.getWidth()).arg(frameDecoder.getHeight()));
-    html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(frameDecoder.getCodec()));
-    html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(frameDecoder.getDuration()));
-
-    uint docPadding{20};
-    QTextDocument td;
-    td.setDefaultFont(font);
-    td.setHtml(html);
-    td.setTextWidth(w - docPadding * 2);
-    td.setDocumentMargin(docPadding);
-
-    QImage textImage(QSize{static_cast<int>(thumbsImage.width()), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
-    textImage.fill(QColor(Qt::gray));
-    QPainter textPainter(&textImage);
-    td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
+    QImage textImage {videoFileInfoImage(w)};
 
     QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
     thumbsImageWithText.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
@@ -180,4 +158,32 @@ void ThumbnailerRunnable::run()
     Q_EMIT done(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
     Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
+}
+
+QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
+{
+    QFileInfo fi(m_url.toLocalFile());
+    QFont font;
+    font.setPointSize(20);
+
+    QString html;
+    html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
+    html.append(u"<div><strong>Size</strong>  %1%1</div>"_s.arg(fi.size()));
+    html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
+    html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(m_frameDecoder.getCodec()));
+    html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(m_frameDecoder.getDuration()));
+
+    uint docPadding{20};
+    QTextDocument td;
+    td.setDefaultFont(font);
+    td.setHtml(html);
+    td.setTextWidth(width - docPadding * 2);
+    td.setDocumentMargin(docPadding);
+
+    QImage textImage(QSize{static_cast<int>(width), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
+    textImage.fill(QColor(Qt::gray));
+    QPainter textPainter(&textImage);
+    td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
+
+    return textImage;
 }

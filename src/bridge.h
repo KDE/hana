@@ -1,6 +1,8 @@
 #ifndef BRIDGE_H
 #define BRIDGE_H
 
+#include "framedecoder.h"
+#include <QImage>
 #include <QObject>
 #include <QQmlEngine>
 #include <QRunnable>
@@ -46,7 +48,9 @@ Q_SIGNALS:
     void thumbnailProgress(const QString &filePath, uint progress);
 
 private:
+    QImage videoFileInfoImage(uint width);
     QUrl m_url;
     QString m_saveFolder;
+    FrameDecoder m_frameDecoder;
 };
 #endif // BRIDGE_H
