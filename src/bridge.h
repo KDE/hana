@@ -25,6 +25,7 @@ Q_SIGNALS:
     void clearFiles();
     void run();
     void thumbGenerated(const QString &thumbPath);
+    void thumbnailProgress(const QString &path, uint progress);
 
 private:
     QString thumbSaveLocation();
@@ -41,6 +42,7 @@ public:
 
 Q_SIGNALS:
     void done(const QString &thumbPath);
+    void thumbnailProgress(const QString &path, uint progress);
 
 private:
     QUrl m_url;

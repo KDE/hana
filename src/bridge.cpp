@@ -28,6 +28,7 @@ void Bridge::processFile(QUrl url)
 {
     auto runnable = new ThumbnailerRunnable(url, thumbSaveLocation());
     connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated);
+    connect(runnable, &ThumbnailerRunnable::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
     m_pool.start(runnable);
 }
 
@@ -114,6 +115,7 @@ void ThumbnailerRunnable::run()
         image.save(thumbPath);
 
         prevSeekPosition = seekPosition;
+        Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, i * 100 / (totalThumbs + 1));
     }
 
     uint x {0};
@@ -138,5 +140,6 @@ void ThumbnailerRunnable::run()
     auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
     thumbsImage.save(thumbsImagePath);
     Q_EMIT done(thumbsImagePath);
+    Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
 }

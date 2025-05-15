@@ -37,26 +37,51 @@ Rectangle {
 
                 width: ListView.view.width
                 hoverEnabled: true
-                contentItem: RowLayout {
-                    Label {
-                        Layout.fillWidth: true
+                contentItem: ColumnLayout {
+                    spacing: 0
 
-                        text: delegate.filename
-                        elide: Text.ElideRight
+                    RowLayout {
+                        Label {
+                            Layout.fillWidth: true
 
-                        ToolTip.text: text
-                        ToolTip.visible: truncated && delegate.hovered
-                        ToolTip.delay: Kirigami.Units.shortDuration
+                            text: delegate.filename
+                            elide: Text.ElideRight
+
+                            ToolTip.text: text
+                            ToolTip.visible: truncated && delegate.hovered
+                            ToolTip.delay: Kirigami.Units.shortDuration
+                        }
+
+                        ToolButton {
+                            text: qsTr("Open folder")
+                            onClicked: openFolder()
+
+                            function openFolder() {
+                                const filePath = Bridge.urlToLocalFile(delegate.fileUrl)
+                                const fileParentPath = Bridge.parentPath(filePath)
+                                Qt.openUrlExternally(`file://${fileParentPath}`)
+                            }
+                        }
                     }
 
-                    ToolButton {
-                        text: qsTr("Open folder")
-                        onClicked: openFolder()
+                    ProgressBar {
+                        id: thumbnailProgress
 
-                        function openFolder() {
-                            const filePath = Bridge.urlToLocalFile(delegate.fileUrl)
-                            const fileParentPath = Bridge.parentPath(filePath)
-                            Qt.openUrlExternally(`file://${fileParentPath}`)
+                        Layout.fillWidth: true
+
+                        from: 0
+                        to: 100
+                        opacity: value > 0 ? 1 : 0
+
+                        onValueChanged: console.log(value)
+
+                        Connections {
+                            target: Bridge
+                            function onThumbnailProgress(url, progress) {
+                                if (url === Bridge.urlToLocalFile(delegate.fileUrl)) {
+                                    thumbnailProgress.value = progress
+                                }
+                            }
                         }
                     }
                 }
