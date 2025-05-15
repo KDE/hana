@@ -22,6 +22,14 @@
             </code>
             <default code="true">videosUrl</default>
         </entry>
+        <entry name="ThumbnailsSaveUrl" type="Url">
+            <code>
+              QString thumbsSavePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+              thumbsSavePath.append("/rina");
+              QUrl thumbsSaveUrl = QUrl::fromLocalFile(thumbsSavePath);
+            </code>
+            <default code="true">thumbsSaveUrl</default>
+        </entry>
     </group>
 
 </kcfg>
