@@ -19,14 +19,14 @@ RowLayout {
     Rectangle {
         id: control
 
-        Layout.preferredWidth: Math.ceil(Kirigami.Units.gridUnit * 1.7)
-        Layout.preferredHeight: Math.ceil(Kirigami.Units.gridUnit * 1.7)
+        Layout.preferredWidth: Math.ceil(Kirigami.Units.gridUnit * 1.4)
+        Layout.preferredHeight: Math.ceil(Kirigami.Units.gridUnit * 1.4)
 
         color: RinaSettings.videoInfoTextColor
-        border.width: 2
+        border.width: 1
         border.color: ma.containsMouse
                       ? Kirigami.Theme.highlightColor
-                      : color
+                      : Kirigami.Theme.textColor
 
         MouseArea {
             id: ma
