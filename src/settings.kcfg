@@ -4,6 +4,8 @@
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="rina/rina.conf" />
+    <include>QStandardPaths</include>
+    <include>QUrl</include>
     <group name="Image">
         <entry name="ThumbnailsWidth"   type="Int"><default>400</default></entry>
         <entry name="ThumbnailsRows"    type="Int"><default>5</default></entry>
@@ -11,4 +13,15 @@
         <entry name="ThumbnailsSpacing" type="Int"><default>20</default></entry>
         <entry name="BackgroundColor"   type="String"><default>#333</default></entry>
     </group>
+
+    <group name="Paths">
+        <entry name="SelectVideosUrl" type="Url">
+            <code>
+              QString videosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
+              QUrl videosUrl = QUrl::fromLocalFile(videosPath);
+            </code>
+            <default code="true">videosUrl</default>
+        </entry>
+    </group>
+
 </kcfg>

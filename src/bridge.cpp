@@ -38,6 +38,13 @@ QString Bridge::urlToLocalFile(QUrl url)
     return url.isLocalFile() ? url.toLocalFile() : QString{};
 }
 
+QUrl Bridge::parentUrl(QUrl url)
+{
+    const auto localFile = urlToLocalFile(url);
+    const auto parent = parentPath(localFile);
+    return QUrl::fromLocalFile(parent);
+}
+
 QString Bridge::parentPath(QString path)
 {
     QFileInfo fi(path);

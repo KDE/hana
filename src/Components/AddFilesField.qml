@@ -16,11 +16,13 @@ ToolButton {
         id: filesDialog
 
         fileMode: FileDialog.OpenFiles
-        currentFolder: StandardPaths.writableLocation(StandardPaths.MoviesLocation)
+        currentFolder: RinaSettings.selectVideosUrl
         title: qsTr("@title:window", "Select files")
 
         onAccepted: {
             Bridge.filesSelected(selectedFiles)
+            RinaSettings.selectVideosUrl = Bridge.parentUrl(selectedFiles[0])
+            RinaSettings.save()
         }
     }
 }
