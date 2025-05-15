@@ -197,11 +197,13 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     font.setPointSize(20);
 
     QString html;
+    html.append(u"<div style='color: %1'>"_s.arg(RinaSettings::videoInfoTextColor()));
     html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
     html.append(u"<div><strong>Size</strong>  %1</div>"_s.arg(formatBytes(fi.size())));
     html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
     html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(m_frameDecoder.getCodec()));
     html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(formatDuration(m_frameDecoder.getDuration())));
+    html.append(u"</div>"_s);
 
     uint docPadding{20};
     QTextDocument td;

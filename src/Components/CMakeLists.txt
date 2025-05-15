@@ -13,5 +13,6 @@ qt_add_qml_module(components
         RunField.qml
         SpacingField.qml
         ThumbWidthField.qml
-        VideoInfoBackground.qml
+        VideoInfoBackgroundColorField.qml
+        VideoInfoTextColorField.qml
 )
