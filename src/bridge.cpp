@@ -146,7 +146,7 @@ void ThumbnailerRunnable::run()
     }
     auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
     thumbsImage.save(thumbsImagePath);
-    Q_EMIT done(thumbsImagePath);
+    Q_EMIT done(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
     Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
 }

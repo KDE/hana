@@ -25,8 +25,8 @@ Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);
     void clearFiles();
     void run();
-    void thumbGenerated(const QString &thumbPath);
-    void thumbnailProgress(const QString &path, uint progress);
+    void thumbGenerated(const QString &filePath, const QString &thumbPath);
+    void thumbnailProgress(const QString &filePath, uint progress);
 
 private:
     QString thumbSaveLocation();
@@ -42,8 +42,8 @@ public:
     void run() override;
 
 Q_SIGNALS:
-    void done(const QString &thumbPath);
-    void thumbnailProgress(const QString &path, uint progress);
+    void done(const QString &filePath, const QString &thumbPath);
+    void thumbnailProgress(const QString &filePath, uint progress);
 
 private:
     QUrl m_url;

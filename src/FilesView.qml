@@ -76,13 +76,15 @@ Rectangle {
 
                             Connections {
                                 target: Bridge
-                                function onThumbnailProgress(url, progress) {
-                                    if (url === Bridge.urlToLocalFile(delegate.fileUrl)) {
+                                function onThumbnailProgress(filePath, progress) {
+                                    if (filePath === Bridge.urlToLocalFile(delegate.fileUrl)) {
                                         thumbnailProgress.value = progress
                                     }
                                 }
-                                function onThumbGenerated(thumbPath) {
-                                    delegate.thumbPath = thumbPath
+                                function onThumbGenerated(filePath, thumbPath) {
+                                    if (filePath === Bridge.urlToLocalFile(delegate.fileUrl)) {
+                                        delegate.thumbPath = thumbPath
+                                    }
                                 }
                             }
                         }
