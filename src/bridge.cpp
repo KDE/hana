@@ -25,6 +25,23 @@ QString formatBytes(qint64 bytes) {
 
     return QString("%1 %2").arg(QString::number(len, 'f', 1), sizes[order]);
 }
+QString formatDuration(const double time)
+{
+    int totalNumberOfSeconds = static_cast<int>(time);
+    int seconds = totalNumberOfSeconds % 60;
+    int minutes = (totalNumberOfSeconds / 60) % 60;
+    int hours = (totalNumberOfSeconds / 60 / 60);
+
+    QString hoursString = u"%1"_s.arg(hours, 2, 10, QLatin1Char('0'));
+    QString minutesString = u"%1"_s.arg(minutes, 2, 10, QLatin1Char('0'));
+    QString secondsString = u"%1"_s.arg(seconds, 2, 10, QLatin1Char('0'));
+    QString timeString = u"%1:%2:%3"_s.arg(hoursString, minutesString, secondsString);
+    if (hours == 0) {
+        timeString = u"%1:%2"_s.arg(minutesString, secondsString);
+    }
+
+    return timeString;
+}
 
 Bridge::Bridge(QObject *parent)
     : QObject{parent}
@@ -184,7 +201,7 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     html.append(u"<div><strong>Size</strong>  %1</div>"_s.arg(formatBytes(fi.size())));
     html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
     html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(m_frameDecoder.getCodec()));
-    html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(m_frameDecoder.getDuration()));
+    html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(formatDuration(m_frameDecoder.getDuration())));
 
     uint docPadding{20};
     QTextDocument td;
