@@ -5,10 +5,10 @@ import QtQuick.Layouts
 import com.georgefb.rina.components
 
 ApplicationWindow {
-    width: 640
-    minimumWidth: 400
-    height: 480
-    minimumHeight: 400
+    width: 800
+    minimumWidth: 600
+    height: 450
+    minimumHeight: 300
     visible: true
     title: qsTr("Hello World")
 
