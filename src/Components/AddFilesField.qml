@@ -18,6 +18,9 @@ ToolButton {
         fileMode: FileDialog.OpenFiles
         currentFolder: RinaSettings.selectVideosUrl
         title: qsTr("@title:window", "Select files")
+        nameFilters: ["Video files (*.mkv *.webm *.mp4 *.mov *.ogg *.avi *.avi "+
+                      "*.wmv *.flv *.vob *.m2ts *.mts *.ts *.rm *.rmvb *.mpg *.3gp)",
+                      "All files (*)"]
 
         onAccepted: {
             Bridge.filesSelected(selectedFiles)
