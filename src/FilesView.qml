@@ -34,6 +34,7 @@ Rectangle {
 
                 required property url fileUrl
                 required property string filename
+                property string thumbPath: ""
 
                 width: ListView.view.width
                 hoverEnabled: true
@@ -64,23 +65,35 @@ Rectangle {
                         }
                     }
 
-                    ProgressBar {
-                        id: thumbnailProgress
+                    RowLayout {
+                        ProgressBar {
+                            id: thumbnailProgress
 
-                        Layout.fillWidth: true
+                            Layout.fillWidth: true
 
-                        from: 0
-                        to: 100
-                        opacity: value > 0 ? 1 : 0
+                            from: 0
+                            to: 100
 
-                        onValueChanged: console.log(value)
-
-                        Connections {
-                            target: Bridge
-                            function onThumbnailProgress(url, progress) {
-                                if (url === Bridge.urlToLocalFile(delegate.fileUrl)) {
-                                    thumbnailProgress.value = progress
+                            Connections {
+                                target: Bridge
+                                function onThumbnailProgress(url, progress) {
+                                    if (url === Bridge.urlToLocalFile(delegate.fileUrl)) {
+                                        thumbnailProgress.value = progress
+                                    }
                                 }
+                                function onThumbGenerated(thumbPath) {
+                                    delegate.thumbPath = thumbPath
+                                }
+                            }
+                        }
+
+                        ToolButton {
+                            text: qsTr("Open thumbnail")
+                            enabled: delegate.thumbPath !== ""
+                            onClicked: openThumbnail()
+
+                            function openThumbnail() {
+                                Qt.openUrlExternally(`file://${delegate.thumbPath}`)
                             }
                         }
                     }
