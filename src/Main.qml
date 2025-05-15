@@ -45,6 +45,9 @@ ApplicationWindow {
                     font.pointSize: 14
                     Layout.columnSpan: 2
                 }
+                ShowVideoInfoField {
+                    Layout.columnSpan: 2
+                }
                 VideoInfoBackgroundColorField {
                     Layout.columnSpan: 2
                 }

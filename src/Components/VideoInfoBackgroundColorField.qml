@@ -10,6 +10,8 @@ import com.georgefb.rina
 RowLayout {
     id: root
 
+    enabled: RinaSettings.showVideoInfo
+
     Label {
         text: qsTr("Video info backgound color")
     }

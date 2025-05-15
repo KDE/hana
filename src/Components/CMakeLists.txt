@@ -15,4 +15,5 @@ qt_add_qml_module(components
         ThumbWidthField.qml
         VideoInfoBackgroundColorField.qml
         VideoInfoTextColorField.qml
+        ShowVideoInfoField.qml
 )

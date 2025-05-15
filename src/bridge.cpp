@@ -175,16 +175,19 @@ void ThumbnailerRunnable::run()
         }
     }
 
-    QImage textImage {videoFileInfoImage(w)};
-
-    QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
-    thumbsImageWithText.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
-    QPainter thumbsImageWithTextPainter(&thumbsImageWithText);
-    thumbsImageWithTextPainter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
-    thumbsImageWithTextPainter.drawImage(QRect{0, textImage.height(), thumbsImage.width(), thumbsImage.height()}, thumbsImage);
-
     auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
-    thumbsImageWithText.save(thumbsImagePath);
+    if (RinaSettings::showVideoInfo()) {
+        QImage textImage {videoFileInfoImage(w)};
+        QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
+        thumbsImageWithText.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
+        QPainter thumbsImageWithTextPainter(&thumbsImageWithText);
+        thumbsImageWithTextPainter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
+        thumbsImageWithTextPainter.drawImage(QRect{0, textImage.height(), thumbsImage.width(), thumbsImage.height()}, thumbsImage);
+        thumbsImageWithText.save(thumbsImagePath);
+    } else {
+        thumbsImage.save(thumbsImagePath);
+    }
+
     Q_EMIT done(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
     Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
