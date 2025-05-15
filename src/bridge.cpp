@@ -13,6 +13,19 @@
 
 using namespace Qt::StringLiterals;
 
+QString formatBytes(qint64 bytes) {
+    QStringList sizes = { "B", "KB", "MB", "GB", "TB", "PB" };
+    double len = static_cast<double>(bytes);
+    uint order = 0;
+
+    while (len >= 1024.0 && order < sizes.count()) {
+        order++;
+        len = len / 1024.0;
+    }
+
+    return QString("%1 %2").arg(QString::number(len, 'f', 1), sizes[order]);
+}
+
 Bridge::Bridge(QObject *parent)
     : QObject{parent}
 {
@@ -168,7 +181,7 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
 
     QString html;
     html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
-    html.append(u"<div><strong>Size</strong>  %1%1</div>"_s.arg(fi.size()));
+    html.append(u"<div><strong>Size</strong>  %1</div>"_s.arg(formatBytes(fi.size())));
     html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
     html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(m_frameDecoder.getCodec()));
     html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(m_frameDecoder.getDuration()));
