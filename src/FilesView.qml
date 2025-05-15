@@ -103,7 +103,7 @@ Rectangle {
             }
 
             AddFilesField {
-                anchors.centerIn: parent
+                anchors.fill: parent
                 visible: view.count === 0
             }
 
