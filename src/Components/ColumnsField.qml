@@ -16,7 +16,7 @@ ColumnLayout {
     SpinBox {
         id: control
 
-        from: 0
+        from: 1
         to: 9000
         value: RinaSettings.thumbnailsColumns
 

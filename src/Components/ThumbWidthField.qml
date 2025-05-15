@@ -16,7 +16,7 @@ ColumnLayout {
     SpinBox {
         id: control
 
-        from: 0
+        from: 100
         to: 9000
         value: RinaSettings.thumbnailsWidth
         stepSize: 10
