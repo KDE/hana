@@ -32,7 +32,6 @@ Q_SIGNALS:
 
 private:
     QString thumbSaveLocation();
-    QThreadPool m_pool;
 };
 
 class ThumbnailerRunnable : public QObject, public QRunnable

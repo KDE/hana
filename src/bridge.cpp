@@ -59,7 +59,7 @@ void Bridge::processFile(uint index, QUrl url)
     auto runnable = new ThumbnailerRunnable(index, url, thumbSaveLocation());
     connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated, Qt::QueuedConnection);
     connect(runnable, &ThumbnailerRunnable::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
-    m_pool.start(runnable);
+    QThreadPool::globalInstance()->start(runnable);
 }
 
 QString Bridge::urlToLocalFile(QUrl url)
