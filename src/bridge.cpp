@@ -154,7 +154,7 @@ void ThumbnailerRunnable::run()
         image.save(thumbPath);
 
         prevSeekPosition = seekPosition;
-        Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, i * 100 / (totalThumbs + 1));
+        Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, i * 100 / (totalThumbs + 1));
     }
 
     uint x {0};
@@ -191,7 +191,7 @@ void ThumbnailerRunnable::run()
     }
 
     Q_EMIT done(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
-    Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
+    Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
 }
 

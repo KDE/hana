@@ -28,7 +28,7 @@ Q_SIGNALS:
     void clearFiles();
     void run();
     void thumbGenerated(uint index, const QString &filePath, const QString &thumbPath);
-    void thumbnailProgress(const QString &filePath, uint progress);
+    void thumbnailProgress(uint index, const QString &filePath, uint progress);
 
 private:
     QString thumbSaveLocation();
@@ -45,7 +45,7 @@ public:
 
 Q_SIGNALS:
     void done(uint index, const QString &filePath, const QString &thumbPath);
-    void thumbnailProgress(const QString &filePath, uint progress);
+    void thumbnailProgress(uint index, const QString &filePath, uint progress);
 
 private:
     QImage videoFileInfoImage(uint width);

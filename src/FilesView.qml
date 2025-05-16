@@ -40,6 +40,7 @@ Rectangle {
                 required property url fileUrl
                 required property string filename
                 required property string thumbPath
+                required property int progress
 
                 width: ListView.view.width
                 hoverEnabled: true
@@ -78,15 +79,7 @@ Rectangle {
 
                             from: 0
                             to: 100
-
-                            Connections {
-                                target: Bridge
-                                function onThumbnailProgress(filePath, progress) {
-                                    if (filePath === Bridge.urlToLocalFile(delegate.fileUrl)) {
-                                        thumbnailProgress.value = progress
-                                    }
-                                }
-                            }
+                            value: delegate.progress
                         }
 
                         ToolButton {
@@ -121,7 +114,8 @@ Rectangle {
                         const modelItem = {
                             filename: Bridge.urlToFilename(u),
                             fileUrl: u,
-                            thumbPath: ""
+                            thumbPath: "",
+                            progress: 0,
                         }
 
                         filesModel.append(modelItem)
@@ -139,6 +133,12 @@ Rectangle {
                     let modelItem = filesModel.get(index)
                     if (filePath === Bridge.urlToLocalFile(modelItem.fileUrl)) {
                         modelItem.thumbPath = thumbPath
+                    }
+                }
+                function onThumbnailProgress(index, filePath, progress) {
+                    let modelItem = filesModel.get(index)
+                    if (filePath === Bridge.urlToLocalFile(modelItem.fileUrl)) {
+                        modelItem.progress = progress
                     }
                 }
             }
