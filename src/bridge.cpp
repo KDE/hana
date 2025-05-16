@@ -57,7 +57,7 @@ QString Bridge::urlToFilename(QUrl url)
 void Bridge::processFile(QUrl url)
 {
     auto runnable = new ThumbnailerRunnable(url, thumbSaveLocation());
-    connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated);
+    connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated, Qt::QueuedConnection);
     connect(runnable, &ThumbnailerRunnable::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
     m_pool.start(runnable);
 }
@@ -116,8 +116,9 @@ void ThumbnailerRunnable::run()
     uint spacing {static_cast<uint>(RinaSettings::self()->thumbnailsSpacing())};
     uint fileDuration {m_frameDecoder.getDuration()};
 
-    float aspectRatio {static_cast<float>(m_frameDecoder.getWidth())/m_frameDecoder.getHeight()};
-    uint thumbHeight {static_cast<uint>(thumbWidth/aspectRatio)};
+    auto size = m_frameDecoder.calculateDimensions(thumbWidth, true);
+    thumbWidth = size.width();
+    int thumbHeight {size.height()};
 
     uint w {(columns * thumbWidth) + (spacing * columns + spacing)};
     uint h {(rows * thumbHeight) + (spacing * rows + spacing)};
