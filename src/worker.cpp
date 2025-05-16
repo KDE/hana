@@ -40,6 +40,37 @@ QString formatDuration(const double time)
     return timeString;
 }
 
+double calculateBrightness(const QImage &image)
+{
+    if (image.isNull()) {
+        qDebug() << "Failed to load image.";
+        return -1;
+    }
+
+    // Convert to format that allows pixel access (grayscale optional)
+    QImage converted = image.convertToFormat(QImage::Format_RGB32);
+
+    qint64 totalBrightness {0};
+    int width = converted.width();
+    int height = converted.height();
+
+    for (int y = 0; y < height; ++y) {
+        const QRgb* line = reinterpret_cast<const QRgb*>(converted.scanLine(y));
+        for (int x = 0; x < width; ++x) {
+            QRgb pixel = line[x];
+
+            int r = qRed(pixel);
+            int g = qGreen(pixel);
+            int b = qBlue(pixel);
+
+            // Use luminance formula
+            int brightness = static_cast<int>(0.299 * r + 0.587 * g + 0.114 * b);
+            totalBrightness += brightness;
+        }
+    }
+    return static_cast<double>(totalBrightness) / (width * height);
+}
+
 Worker::Worker(Bridge *bridge)
     : m_bridge(bridge)
 {
@@ -113,6 +144,25 @@ void ThumbnailerRunnable::run()
 
         m_frameDecoder.seek(seekPosition);
         m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
+
+        if (RinaSettings::avoidDarkFrames()) {
+            double brightness = calculateBrightness(image);
+            uint newSeekPosition {seekPosition};
+            uint brightestPosition {seekPosition+1};
+            double maxBrightness {brightness};
+            while (brightness < 30 && newSeekPosition < seekPosition + (startTime/2)) {
+                m_frameDecoder.seek(newSeekPosition);
+                m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
+                brightness = calculateBrightness(image);
+                brightestPosition = maxBrightness >= brightness ? brightestPosition : newSeekPosition;
+                maxBrightness = std::max(brightness, maxBrightness);
+                ++newSeekPosition;
+            }
+            if (brightness < 30) {
+                m_frameDecoder.seek(brightestPosition);
+                m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
+            }
+        }
 
         auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);

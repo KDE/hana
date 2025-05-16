@@ -39,6 +39,9 @@ ApplicationWindow {
                 BackgroundField {
                     Layout.columnSpan: 2
                 }
+                AvoidDarkFramesField {
+                    Layout.columnSpan: 2
+                }
 
                 Label {
                     text: qsTr("Video info settings")

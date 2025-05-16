@@ -17,4 +17,5 @@ qt_add_qml_module(components
         VideoInfoTextColorField.qml
         ShowVideoInfoField.qml
         VideoInfoAlwaysShowHoursField.qml
+        AvoidDarkFramesField.qml
 )
