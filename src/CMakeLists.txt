@@ -27,6 +27,7 @@ qt_add_qml_module(apprina
     SOURCES
         bridge.h bridge.cpp
         framedecoder.h framedecoder.cpp
+        worker.h worker.cpp
 )
 
 add_subdirectory(Components)

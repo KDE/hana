@@ -7,59 +7,29 @@
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTextDocument>
+#include <QThread>
 
-#include "framedecoder.h"
-#include "settings.h"
+#include "worker.h"
 
 using namespace Qt::StringLiterals;
-
-QString formatBytes(qint64 bytes) {
-    QStringList sizes = { "B", "KB", "MB", "GB", "TB", "PB" };
-    double len = static_cast<double>(bytes);
-    uint order = 0;
-
-    while (len >= 1024.0 && order < sizes.count()) {
-        order++;
-        len = len / 1024.0;
-    }
-
-    return QString("%1 %2").arg(QString::number(len, 'f', 1), sizes[order]);
-}
-QString formatDuration(const double time)
-{
-    int totalNumberOfSeconds = static_cast<int>(time);
-    int seconds = totalNumberOfSeconds % 60;
-    int minutes = (totalNumberOfSeconds / 60) % 60;
-    int hours = (totalNumberOfSeconds / 60 / 60);
-
-    QString hoursString = u"%1"_s.arg(hours, 2, 10, QLatin1Char('0'));
-    QString minutesString = u"%1"_s.arg(minutes, 2, 10, QLatin1Char('0'));
-    QString secondsString = u"%1"_s.arg(seconds, 2, 10, QLatin1Char('0'));
-    QString timeString = u"%1:%2:%3"_s.arg(hoursString, minutesString, secondsString);
-    if (hours == 0 && !RinaSettings::videoInfoAlwaysShowHours()) {
-        timeString = u"%1:%2"_s.arg(minutesString, secondsString);
-    }
-
-    return timeString;
-}
 
 Bridge::Bridge(QObject *parent)
     : QObject{parent}
 {
-
+    QThread* thread = new QThread();
+    m_worker = new Worker(this);
+    m_worker->moveToThread(thread);
+    connect(m_worker, &Worker::finished, thread, &QThread::quit);
+    connect(m_worker, &Worker::finished, m_worker, &Worker::deleteLater);
+    connect(m_worker, &Worker::thumbGenerated, this, &Bridge::thumbGenerated, Qt::QueuedConnection);
+    connect(m_worker, &Worker::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
+    connect(this, &Bridge::processFile, m_worker, &Worker::process, Qt::QueuedConnection);
+    thread->start();
 }
 
 QString Bridge::urlToFilename(QUrl url)
 {
     return url.fileName();
-}
-
-void Bridge::processFile(uint index, QUrl url)
-{
-    auto runnable = new ThumbnailerRunnable(index, url, thumbSaveLocation());
-    connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated, Qt::QueuedConnection);
-    connect(runnable, &ThumbnailerRunnable::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
-    QThreadPool::globalInstance()->start(runnable);
 }
 
 QString Bridge::urlToLocalFile(QUrl url)
@@ -88,139 +58,4 @@ QString Bridge::thumbSaveLocation()
     QDir dir;
     dir.mkpath(saveFolder);
     return saveFolder;
-}
-
-ThumbnailerRunnable::ThumbnailerRunnable(uint index, QUrl url, const QString &saveFolder)
-    : m_index(index)
-    , m_url(url)
-    , m_saveFolder{saveFolder}
-    , m_frameDecoder(m_url.toLocalFile())
-{
-}
-
-void ThumbnailerRunnable::run()
-{
-    QElapsedTimer timer;
-    timer.start();
-
-    if (!m_frameDecoder.isInitialized()) {
-        return;
-    }
-    // before seeking, a frame has to be decoded
-    if (!m_frameDecoder.decodeVideoFrame()) {
-        return;
-    }
-
-    uint rows {static_cast<uint>(RinaSettings::self()->thumbnailsRows())};
-    uint columns {static_cast<uint>(RinaSettings::self()->thumbnailsColumns())};
-    uint thumbWidth {static_cast<uint>(RinaSettings::self()->thumbnailsWidth())};
-    uint spacing {static_cast<uint>(RinaSettings::self()->thumbnailsSpacing())};
-    uint fileDuration {m_frameDecoder.getDuration()};
-
-    auto size = m_frameDecoder.calculateDimensions(thumbWidth, true);
-    thumbWidth = size.width();
-    int thumbHeight {size.height()};
-
-    uint w {(columns * thumbWidth) + (spacing * columns + spacing)};
-    uint h {(rows * thumbHeight) + (spacing * rows + spacing)};
-    uint totalThumbs {rows * columns};
-    float startTime {static_cast<float>(fileDuration)/totalThumbs};
-
-    QStringList files;
-    QImage image;
-    uint seekPosition {0};
-
-    QTemporaryDir tmpDir;
-    if (!tmpDir.isValid()) {
-        return;
-    }
-
-    uint prevSeekPosition {0};
-    for (uint i {0}; i < totalThumbs; ++i) {
-        seekPosition = static_cast<uint>(startTime * i);
-        if (i == 0) {
-            seekPosition = static_cast<uint>(startTime / 2);
-        }
-        if (seekPosition > fileDuration) {
-            // get thumbnail between prevSeekPosition and fileDuration
-            seekPosition = prevSeekPosition + ((fileDuration - prevSeekPosition) / 2);
-        }
-
-        m_frameDecoder.seek(seekPosition);
-        m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
-
-        auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
-        files.append(thumbPath);
-        image.save(thumbPath);
-
-        prevSeekPosition = seekPosition;
-        Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, i * 100 / (totalThumbs + 1));
-    }
-
-    uint x {0};
-    QImage thumbsImage ({static_cast<int>(w), static_cast<int>(h)}, QImage::Format_RGB32);
-    QPainter p(&thumbsImage);
-    QImage thumbImg;
-    thumbsImage.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
-    for (uint i {0}; i < rows; ++i) {
-        for (uint j {0}; j < columns; ++j) {
-            uint left {(j * thumbWidth) + ((j + 1) * spacing)};
-            uint top {(i * thumbHeight) + ((i + 1) * spacing)};
-            thumbImg.load(files.at(x));
-
-            p.drawImage(QRect{static_cast<int>(left), static_cast<int>(top), thumbImg.width(), thumbImg.height()},
-                        thumbImg);
-
-            QFile::moveToTrash(files.at(x));
-
-            x++;
-        }
-    }
-
-    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
-    if (RinaSettings::showVideoInfo()) {
-        QImage textImage {videoFileInfoImage(w)};
-        QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
-        thumbsImageWithText.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
-        QPainter thumbsImageWithTextPainter(&thumbsImageWithText);
-        thumbsImageWithTextPainter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
-        thumbsImageWithTextPainter.drawImage(QRect{0, textImage.height(), thumbsImage.width(), thumbsImage.height()}, thumbsImage);
-        thumbsImageWithText.save(thumbsImagePath);
-    } else {
-        thumbsImage.save(thumbsImagePath);
-    }
-
-    Q_EMIT done(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
-    Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
-    qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
-}
-
-QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
-{
-    QFileInfo fi(m_url.toLocalFile());
-    QFont font;
-    font.setPointSize(20);
-
-    QString html;
-    html.append(u"<div style='color: %1'>"_s.arg(RinaSettings::videoInfoTextColor()));
-    html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
-    html.append(u"<div><strong>Size</strong>  %1</div>"_s.arg(formatBytes(fi.size())));
-    html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
-    html.append(u"<div><strong>Codec</strong> %1</div>"_s.arg(m_frameDecoder.getCodec()));
-    html.append(u"<div><strong>Length</strong> %1</div>"_s.arg(formatDuration(m_frameDecoder.getDuration())));
-    html.append(u"</div>"_s);
-
-    uint docPadding{20};
-    QTextDocument td;
-    td.setDefaultFont(font);
-    td.setHtml(html);
-    td.setTextWidth(width - docPadding * 2);
-    td.setDocumentMargin(docPadding);
-
-    QImage textImage(QSize{static_cast<int>(width), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
-    textImage.fill(RinaSettings::videoInfoBackgroundColor());
-    QPainter textPainter(&textImage);
-    td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
-
-    return textImage;
 }
