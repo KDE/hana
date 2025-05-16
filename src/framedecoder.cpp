@@ -338,21 +338,20 @@ bool FrameDecoder::processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVP
     return true;
 }
 
-void FrameDecoder::getScaledVideoFrame(uint scaledSize, bool maintainAspectRatio, QImage &videoFrame)
+void FrameDecoder::getScaledVideoFrame(uint preferredSize, bool maintainAspectRatio, QImage &videoFrame)
 {
     if (m_frame->flags & AV_FRAME_FLAG_INTERLACED) {
         processFilterGraph((AVFrame *)m_frame, (AVFrame *)m_frame, m_videoCodecContext->pix_fmt, m_videoCodecContext->width, m_videoCodecContext->height);
     }
 
-    int scaledWidth, scaledHeight;
-    convertAndScaleFrame(AV_PIX_FMT_RGB24, scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
+    auto scaledSize = calculateDimensions(preferredSize, maintainAspectRatio);
+    convertAndScaleFrame(AV_PIX_FMT_RGB24, scaledSize.width(), scaledSize.height());
     // .copy() since QImage otherwise assumes the memory will continue to be available.
-    videoFrame = QImage(m_frame->data[0], scaledWidth, scaledHeight, m_frame->linesize[0], QImage::Format_RGB888).copy();
+    videoFrame = QImage(m_frame->data[0], scaledSize.width(), scaledSize.height(), m_frame->linesize[0], QImage::Format_RGB888).copy();
 }
 
-void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, uint scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight)
+void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, int scaledWidth, int scaledHeight)
 {
-    calculateDimensions(scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
     SwsContext *scaleContext = sws_getContext(m_videoCodecContext->width,
                                               m_videoCodecContext->height,
                                               m_videoCodecContext->pix_fmt,
@@ -384,11 +383,13 @@ void FrameDecoder::convertAndScaleFrame(AVPixelFormat format, uint scaledSize, b
     m_frameBuffer = convertedFrameBuffer;
 }
 
-void FrameDecoder::calculateDimensions(uint squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight)
+QSize FrameDecoder::calculateDimensions(uint preferredSize, bool maintainAspectRatio)
 {
+    int destWidth{0};
+    int destHeight{0};
     if (!maintainAspectRatio) {
-        destWidth = squareSize;
-        destHeight = squareSize;
+        destWidth = preferredSize;
+        destHeight = preferredSize;
     } else {
         int srcWidth = m_videoCodecContext->width;
         int srcHeight = m_videoCodecContext->height;
@@ -400,13 +401,14 @@ void FrameDecoder::calculateDimensions(uint squareSize, bool maintainAspectRatio
         }
 
         if (srcWidth > srcHeight) {
-            destWidth = squareSize;
-            destHeight = int(static_cast<float>(squareSize) / srcWidth * srcHeight);
+            destWidth = preferredSize;
+            destHeight = int(static_cast<float>(preferredSize) / srcWidth * srcHeight);
         } else {
-            destWidth = int(static_cast<float>(squareSize) / srcHeight * srcWidth);
-            destHeight = squareSize;
+            destWidth = int(static_cast<float>(preferredSize) / srcHeight * srcWidth);
+            destHeight = preferredSize;
         }
     }
+    return QSize{destWidth, destHeight};
 }
 
 void FrameDecoder::createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, uint width, uint height, AVPixelFormat format)

@@ -7,6 +7,7 @@
 #ifndef MOVIEDECODER_H
 #define MOVIEDECODER_H
 
+#include <QSize>
 #include <QString>
 
 extern "C" {
@@ -37,14 +38,14 @@ public:
     void initialize(const QString &filename);
     void destroy();
     bool isInitialized();
+    QSize calculateDimensions(uint squareSize, bool maintainAspectRatio);
 
 private:
     bool initializeVideo();
     bool decodeVideoPacket();
     bool getVideoPacket();
-    void convertAndScaleFrame(AVPixelFormat format, uint scaledSize, bool maintainAspectRatio, int &scaledWidth, int &scaledHeight);
+    void convertAndScaleFrame(AVPixelFormat format, int scaledWidth, int scaledHeight);
     void createAVFrame(AVFrame **avFrame, quint8 **frameBuffer, uint width, uint height, AVPixelFormat format);
-    void calculateDimensions(uint squareSize, bool maintainAspectRatio, int &destWidth, int &destHeight);
     void deleteFilterGraph();
     bool initFilterGraph(enum AVPixelFormat pixfmt, uint width, uint height);
     bool processFilterGraph(AVFrame *dst, const AVFrame *src, enum AVPixelFormat pixfmt, uint width, uint height);
