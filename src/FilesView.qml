@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -10,9 +12,8 @@ import com.georgefb.rina.components
 Rectangle {
     id: root
 
-    property ListModel filesModel: ListModel {
-        id: filesModel
-    }
+    property alias filesModel: filesModel
+
     Layout.fillWidth: true
     Layout.fillHeight: true
 
@@ -20,6 +21,10 @@ Rectangle {
     radius: Kirigami.Units.cornerRadius
     border.width: 1
     border.color: Qt.darker(color, 1.5)
+
+    ListModel {
+        id: filesModel
+    }
 
     ScrollView {
         anchors.fill: parent
@@ -34,7 +39,7 @@ Rectangle {
 
                 required property url fileUrl
                 required property string filename
-                property string thumbPath: ""
+                required property string thumbPath
 
                 width: ListView.view.width
                 hoverEnabled: true
@@ -81,11 +86,6 @@ Rectangle {
                                         thumbnailProgress.value = progress
                                     }
                                 }
-                                function onThumbGenerated(filePath, thumbPath) {
-                                    if (filePath === Bridge.urlToLocalFile(delegate.fileUrl)) {
-                                        delegate.thumbPath = thumbPath
-                                    }
-                                }
                             }
                         }
 
@@ -118,7 +118,13 @@ Rectangle {
                                 return
                             }
                         }
-                        filesModel.append({filename: Bridge.urlToFilename(u), fileUrl: u})
+                        const modelItem = {
+                            filename: Bridge.urlToFilename(u),
+                            fileUrl: u,
+                            thumbPath: ""
+                        }
+
+                        filesModel.append(modelItem)
                     })
                 }
                 function onClearFiles() {
@@ -126,7 +132,13 @@ Rectangle {
                 }
                 function onRun() {
                     for (let i = 0; i < filesModel.count; i++) {
-                        Bridge.processFile(filesModel.get(i).fileUrl)
+                        Bridge.processFile(i, filesModel.get(i).fileUrl)
+                    }
+                }
+                function onThumbGenerated(index, filePath, thumbPath) {
+                    let modelItem = filesModel.get(index)
+                    if (filePath === Bridge.urlToLocalFile(modelItem.fileUrl)) {
+                        modelItem.thumbPath = thumbPath
                     }
                 }
             }

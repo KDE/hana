@@ -54,9 +54,9 @@ QString Bridge::urlToFilename(QUrl url)
     return url.fileName();
 }
 
-void Bridge::processFile(QUrl url)
+void Bridge::processFile(uint index, QUrl url)
 {
-    auto runnable = new ThumbnailerRunnable(url, thumbSaveLocation());
+    auto runnable = new ThumbnailerRunnable(index, url, thumbSaveLocation());
     connect(runnable, &ThumbnailerRunnable::done, this, &Bridge::thumbGenerated, Qt::QueuedConnection);
     connect(runnable, &ThumbnailerRunnable::thumbnailProgress, this, &Bridge::thumbnailProgress, Qt::QueuedConnection);
     m_pool.start(runnable);
@@ -90,8 +90,9 @@ QString Bridge::thumbSaveLocation()
     return saveFolder;
 }
 
-ThumbnailerRunnable::ThumbnailerRunnable(QUrl url, const QString &saveFolder)
-    : m_url(url)
+ThumbnailerRunnable::ThumbnailerRunnable(uint index, QUrl url, const QString &saveFolder)
+    : m_index(index)
+    , m_url(url)
     , m_saveFolder{saveFolder}
     , m_frameDecoder(m_url.toLocalFile())
 {
@@ -189,7 +190,7 @@ void ThumbnailerRunnable::run()
         thumbsImage.save(thumbsImagePath);
     }
 
-    Q_EMIT done(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
+    Q_EMIT done(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
     Q_EMIT thumbnailProgress(m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
     qDebug() << "Finished" << thumbsImagePath << "in" << timer.elapsed() << "miliseconds";
 }
