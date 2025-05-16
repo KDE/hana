@@ -110,7 +110,16 @@ Rectangle {
             Connections {
                 target: Bridge
                 function onFilesSelected(urls) {
-                    urls.forEach((u) => filesModel.append({filename: Bridge.urlToFilename(u), fileUrl: u}))
+                    urls.forEach(function(u) {
+                        for (let i = 0; i < filesModel.count; i++) {
+                            const fileUrl = filesModel.get(i).fileUrl
+                            if (fileUrl === u) {
+                                // file already in the list
+                                return
+                            }
+                        }
+                        filesModel.append({filename: Bridge.urlToFilename(u), fileUrl: u})
+                    })
                 }
                 function onClearFiles() {
                     filesModel.clear()
