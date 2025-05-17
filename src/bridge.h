@@ -18,6 +18,7 @@ public:
 public Q_SLOTS:
     QString urlToFilename(QUrl url);
     QString urlToLocalFile(QUrl url);
+    QUrl localFileToUrl(const QString &localFile);
     QUrl parentUrl(QUrl url);
     QString parentPath(QString path);
     QString thumbSaveLocation();
