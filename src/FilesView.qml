@@ -60,13 +60,33 @@ Rectangle {
                         }
 
                         ToolButton {
-                            text: qsTr("Open folder")
-                            onClicked: openFolder()
+                            icon.name: "overflow-menu"
+                            onClicked: openMenu()
 
-                            function openFolder() {
-                                const filePath = Bridge.urlToLocalFile(delegate.fileUrl)
-                                const fileParentPath = Bridge.parentPath(filePath)
-                                Qt.openUrlExternally(`file://${fileParentPath}`)
+                            function openMenu() {
+                                if (menu.opened) {
+                                    menu.close()
+                                } else {
+                                    menu.popup(0, height)
+                                }
+                            }
+
+                            Menu {
+                                id: menu
+
+                                y: parent.height
+                                closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+                                MenuItem {
+                                    text: qsTr("Open video folder")
+                                    onClicked: openVideoFolder()
+
+                                    function openVideoFolder() {
+                                        const videoPath = Bridge.urlToLocalFile(delegate.fileUrl)
+                                        const videoParentPath = Bridge.parentPath(videoPath)
+                                        Qt.openUrlExternally(`file://${videoParentPath}`)
+                                    }
+                                }
                             }
                         }
                     }
