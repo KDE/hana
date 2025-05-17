@@ -55,12 +55,3 @@ QString Bridge::parentPath(QString path)
     QFileInfo fi(path);
     return fi.exists() ? fi.absolutePath() : QString{};
 }
-
-QString Bridge::thumbSaveLocation()
-{
-    auto picturesFolder {QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)};
-    auto saveFolder {u"%1/rina"_s.arg(picturesFolder)};
-    QDir dir;
-    dir.mkpath(saveFolder);
-    return saveFolder;
-}
