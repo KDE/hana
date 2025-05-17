@@ -37,6 +37,7 @@ Rectangle {
             delegate: ItemDelegate {
                 id: delegate
 
+                required property int index
                 required property url fileUrl
                 required property string filename
                 required property string thumbPath
@@ -86,6 +87,11 @@ Rectangle {
                                         const videoParentPath = Bridge.parentPath(videoPath)
                                         Qt.openUrlExternally(`file://${videoParentPath}`)
                                     }
+                                }
+
+                                MenuItem {
+                                    text: qsTr("Remove")
+                                    onClicked: filesModel.remove(delegate.index)
                                 }
                             }
                         }
