@@ -7,7 +7,7 @@ import com.georgefb.rina.components
 ApplicationWindow {
     width: 800
     minimumWidth: 600
-    height: 450
+    height: 600
     minimumHeight: 300
     visible: true
     title: qsTr("Hello World")
@@ -27,10 +27,15 @@ ApplicationWindow {
 
                 columns: 2
 
+                ImageSaveLocationField {
+                    Layout.columnSpan: 2
+                }
+
                 Label {
                     text: qsTr("Thumbnail settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
+                    Layout.topMargin: 20
                 }
                 ColumnsField {}
                 RowsField {}
@@ -47,6 +52,7 @@ ApplicationWindow {
                     text: qsTr("Video info settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
+                    Layout.topMargin: 20
                 }
                 ShowVideoInfoField {
                     Layout.columnSpan: 2

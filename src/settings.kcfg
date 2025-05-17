@@ -6,7 +6,7 @@
     <kcfgfile name="rina/rina.conf" />
     <include>QStandardPaths</include>
     <include>QUrl</include>
-    <group name="Image">
+    <group name="General">
         <entry name="ThumbnailsWidth"   type="Int"><default>400</default></entry>
         <entry name="ThumbnailsRows"    type="Int"><default>5</default></entry>
         <entry name="ThumbnailsColumns" type="Int"><default>4</default></entry>
@@ -20,20 +20,22 @@
     </group>
 
     <group name="Paths">
-        <entry name="SelectVideosUrl" type="Url">
-            <code>
-              QString videosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
-              QUrl videosUrl = QUrl::fromLocalFile(videosPath);
-            </code>
-            <default code="true">videosUrl</default>
-        </entry>
-        <entry name="ThumbnailsSaveUrl" type="Url">
+        <entry name="SaveLocation" type="String"><default>NextToVideo</default></entry>
+        <entry name="SaveLocationFolderName" type="String"><default>thumbs</default></entry>
+        <entry name="SaveLocationFolderUrl" type="Url">
             <code>
               QString thumbsSavePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
               thumbsSavePath.append("/rina");
               QUrl thumbsSaveUrl = QUrl::fromLocalFile(thumbsSavePath);
             </code>
             <default code="true">thumbsSaveUrl</default>
+        </entry>
+        <entry name="SelectVideosUrl" type="Url">
+            <code>
+                QString videosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
+                QUrl videosUrl = QUrl::fromLocalFile(videosPath);
+            </code>
+            <default code="true">videosUrl</default>
         </entry>
     </group>
 

@@ -18,4 +18,5 @@ qt_add_qml_module(components
         ShowVideoInfoField.qml
         VideoInfoAlwaysShowHoursField.qml
         AvoidDarkFramesField.qml
+        ImageSaveLocationField.qml
 )
