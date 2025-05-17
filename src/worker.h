@@ -33,7 +33,7 @@ class ThumbnailerRunnable : public QObject, public QRunnable
     Q_OBJECT
 
 public:
-    ThumbnailerRunnable(uint index, QUrl url, const QString &saveFolder);
+    ThumbnailerRunnable(uint index, QUrl url);
     void run() override;
 
 Q_SIGNALS:
@@ -41,10 +41,10 @@ Q_SIGNALS:
     void thumbnailProgress(uint index, const QString &filePath, uint progress);
 
 private:
+    QString thumbnailsImageSaveLocation();
     QImage videoFileInfoImage(uint width);
     uint m_index;
     QUrl m_url;
-    QString m_saveFolder;
     FrameDecoder m_frameDecoder;
 };
 

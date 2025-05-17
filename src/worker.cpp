@@ -79,17 +79,16 @@ Worker::Worker(Bridge *bridge)
 
 void Worker::process(uint index, QUrl url)
 {
-    auto runnable = new ThumbnailerRunnable(index, url, m_bridge->thumbSaveLocation());
+    auto runnable = new ThumbnailerRunnable(index, url);
     connect(runnable, &ThumbnailerRunnable::done, m_bridge, &Bridge::thumbGenerated, Qt::QueuedConnection);
     connect(runnable, &ThumbnailerRunnable::thumbnailProgress, m_bridge, &Bridge::thumbnailProgress, Qt::QueuedConnection);
     QThreadPool::globalInstance()->start(runnable);
 }
 
 
-ThumbnailerRunnable::ThumbnailerRunnable(uint index, QUrl url, const QString &saveFolder)
+ThumbnailerRunnable::ThumbnailerRunnable(uint index, QUrl url)
     : m_index(index)
     , m_url(url)
-    , m_saveFolder{saveFolder}
     , m_frameDecoder(m_url.toLocalFile())
 {
 }
@@ -192,7 +191,11 @@ void ThumbnailerRunnable::run()
         }
     }
 
-    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(m_saveFolder).arg(m_url.fileName())};
+    const auto savePath = thumbnailsImageSaveLocation();
+    QDir dir;
+    dir.mkpath(savePath);
+
+    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath).arg(m_url.fileName())};
     if (RinaSettings::showVideoInfo()) {
         QImage textImage {videoFileInfoImage(w)};
         QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
@@ -238,4 +241,27 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
 
     return textImage;
+}
+
+QString ThumbnailerRunnable::thumbnailsImageSaveLocation()
+{
+    if (RinaSettings::saveLocation() == u"SameAsVideo"_s) {
+        QFileInfo fi{m_url.toLocalFile()};
+        auto parentFolder = fi.absolutePath();
+        return parentFolder;
+
+    } else if (RinaSettings::saveLocation() == u"NextToVideo"_s) {
+        QFileInfo fi{m_url.toLocalFile()};
+        auto parentFolder = fi.absolutePath();
+        parentFolder.append(u"/%1"_s.arg(RinaSettings::saveLocationFolderName()));
+        return parentFolder;
+
+    } else if (RinaSettings::saveLocation() == u"Custom"_s) {
+        return QUrl(RinaSettings::saveLocationFolderUrl()).toLocalFile();
+
+    } else {
+        return {};
+    }
+
+    return {};
 }
