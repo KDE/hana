@@ -8,6 +8,7 @@ CheckBox {
 
     text: qsTr("Always show hours")
     checked: RinaSettings.videoInfoAlwaysShowHours
+    enabled: RinaSettings.showVideoInfo
 
     onClicked: {
         RinaSettings.videoInfoAlwaysShowHours = root.checked

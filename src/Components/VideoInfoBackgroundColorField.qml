@@ -13,7 +13,7 @@ RowLayout {
     enabled: RinaSettings.showVideoInfo
 
     Label {
-        text: qsTr("Video info backgound color")
+        text: qsTr("Backgound color")
     }
 
     Rectangle {
