@@ -17,6 +17,17 @@ ApplicationWindow {
     RowLayout {
         anchors.fill: parent
 
+        ColumnLayout {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.margins: 20
+
+            FilesView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
+        }
+
         ScrollView {
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignTop
@@ -68,17 +79,6 @@ ApplicationWindow {
                 }
             }
 
-        }
-
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.margins: 20
-
-            FilesView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-            }
         }
     }
 }
