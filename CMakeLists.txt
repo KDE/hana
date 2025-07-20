@@ -48,6 +48,10 @@ find_package(KF6Config ${KF6_MIN_VERSION})
 set_package_properties(KF6Config PROPERTIES
     TYPE REQUIRED URL "https://api.kde.org/frameworks/kconfig/html/index.html")
 
+find_package(KF6I18n ${KF6_MIN_VERSION})
+set_package_properties(KF6I18n PROPERTIES TYPE REQUIRED
+    URL "https://api.kde.org/frameworks/ki18n/html/index.html")
+
 find_package(KF6KIO ${KF6_MIN_VERSION})
 set_package_properties(KF6KIO PROPERTIES TYPE REQUIRED
     URL "https://api.kde.org/frameworks/kio/html/index.html")
