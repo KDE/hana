@@ -25,7 +25,7 @@
         <entry name="SaveLocationFolderUrl" type="Url">
             <code>
               QString thumbsSavePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-              thumbsSavePath.append("/hana");
+              thumbsSavePath.append(QStringLiteral("/hana"));
               QUrl thumbsSaveUrl = QUrl::fromLocalFile(thumbsSavePath);
             </code>
             <default code="true">thumbsSaveUrl</default>

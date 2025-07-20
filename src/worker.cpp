@@ -10,7 +10,7 @@
 using namespace Qt::StringLiterals;
 
 QString formatBytes(qint64 bytes) {
-    QStringList sizes = { "B", "KB", "MB", "GB", "TB", "PB" };
+    QStringList sizes = { u"B"_s, u"KB"_s, u"MB"_s, u"GB"_s, u"TB"_s, u"PB"_s };
     double len = static_cast<double>(bytes);
     uint order = 0;
 
@@ -19,7 +19,7 @@ QString formatBytes(qint64 bytes) {
         len = len / 1024.0;
     }
 
-    return QString("%1 %2").arg(QString::number(len, 'f', 1), sizes[order]);
+    return QString(u"%1 %2"_s).arg(QString::number(len, 'f', 1), sizes[order]);
 }
 
 QString formatDuration(const double time)
