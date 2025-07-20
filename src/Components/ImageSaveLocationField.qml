@@ -92,8 +92,8 @@ ColumnLayout {
         title: i18nc("@title:window", "Select folder")
 
         onAccepted: {
-            Bridge.filesSelected(folder)
-            HanaSettings.saveLocationFolderUrl = Bridge.parentUrl(folder)
+            Bridge.filesSelected(selectedFolder)
+            HanaSettings.saveLocationFolderUrl = Bridge.parentUrl(selectedFolder)
             HanaSettings.save()
         }
     }
