@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 ColumnLayout {
     id: root
@@ -21,12 +21,12 @@ ColumnLayout {
 
         from: 0
         to: 9000
-        value: RinaSettings.thumbnailsSpacing
+        value: HanaSettings.thumbnailsSpacing
         stepSize: 5
 
         onValueModified: {
-            RinaSettings.thumbnailsSpacing = value
-            RinaSettings.save()
+            HanaSettings.thumbnailsSpacing = value
+            HanaSettings.save()
         }
     }
 }

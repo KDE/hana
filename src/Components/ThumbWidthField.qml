@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 ColumnLayout {
     id: root
@@ -21,12 +21,12 @@ ColumnLayout {
 
         from: 100
         to: 9000
-        value: RinaSettings.thumbnailsWidth
+        value: HanaSettings.thumbnailsWidth
         stepSize: 10
 
         onValueModified: {
-            RinaSettings.thumbnailsWidth = value
-            RinaSettings.save()
+            HanaSettings.thumbnailsWidth = value
+            HanaSettings.save()
         }
     }
 }

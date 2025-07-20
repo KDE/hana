@@ -1,16 +1,16 @@
 import QtQuick
 import QtQuick.Controls
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 CheckBox {
     id: root
 
     text: qsTr("Show video info")
-    checked: RinaSettings.showVideoInfo
+    checked: HanaSettings.showVideoInfo
 
     onClicked: {
-        RinaSettings.showVideoInfo = root.checked
-        RinaSettings.save()
+        HanaSettings.showVideoInfo = root.checked
+        HanaSettings.save()
     }
 }

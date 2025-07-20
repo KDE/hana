@@ -33,7 +33,7 @@ QString formatDuration(const double time)
     QString minutesString = u"%1"_s.arg(minutes, 2, 10, QLatin1Char('0'));
     QString secondsString = u"%1"_s.arg(seconds, 2, 10, QLatin1Char('0'));
     QString timeString = u"%1:%2:%3"_s.arg(hoursString, minutesString, secondsString);
-    if (hours == 0 && !RinaSettings::videoInfoAlwaysShowHours()) {
+    if (hours == 0 && !HanaSettings::videoInfoAlwaysShowHours()) {
         timeString = u"%1:%2"_s.arg(minutesString, secondsString);
     }
 
@@ -106,10 +106,10 @@ void ThumbnailerRunnable::run()
         return;
     }
 
-    uint rows {static_cast<uint>(RinaSettings::self()->thumbnailsRows())};
-    uint columns {static_cast<uint>(RinaSettings::self()->thumbnailsColumns())};
-    uint thumbWidth {static_cast<uint>(RinaSettings::self()->thumbnailsWidth())};
-    uint spacing {static_cast<uint>(RinaSettings::self()->thumbnailsSpacing())};
+    uint rows {static_cast<uint>(HanaSettings::self()->thumbnailsRows())};
+    uint columns {static_cast<uint>(HanaSettings::self()->thumbnailsColumns())};
+    uint thumbWidth {static_cast<uint>(HanaSettings::self()->thumbnailsWidth())};
+    uint spacing {static_cast<uint>(HanaSettings::self()->thumbnailsSpacing())};
     uint fileDuration {m_frameDecoder.getDuration()};
 
     auto size = m_frameDecoder.calculateDimensions(thumbWidth, true);
@@ -144,7 +144,7 @@ void ThumbnailerRunnable::run()
         m_frameDecoder.seek(seekPosition);
         m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
 
-        if (RinaSettings::avoidDarkFrames()) {
+        if (HanaSettings::avoidDarkFrames()) {
             double brightness = calculateBrightness(image);
             uint newSeekPosition {seekPosition};
             uint brightestPosition {seekPosition+1};
@@ -175,7 +175,7 @@ void ThumbnailerRunnable::run()
     QImage thumbsImage ({static_cast<int>(w), static_cast<int>(h)}, QImage::Format_RGB32);
     QPainter p(&thumbsImage);
     QImage thumbImg;
-    thumbsImage.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
+    thumbsImage.fill(QColor::fromString(HanaSettings::self()->backgroundColor()));
     for (uint i {0}; i < rows; ++i) {
         for (uint j {0}; j < columns; ++j) {
             uint left {(j * thumbWidth) + ((j + 1) * spacing)};
@@ -196,10 +196,10 @@ void ThumbnailerRunnable::run()
     dir.mkpath(savePath);
 
     auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath).arg(m_url.fileName())};
-    if (RinaSettings::showVideoInfo()) {
+    if (HanaSettings::showVideoInfo()) {
         QImage textImage {videoFileInfoImage(w)};
         QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
-        thumbsImageWithText.fill(QColor::fromString(RinaSettings::self()->backgroundColor()));
+        thumbsImageWithText.fill(QColor::fromString(HanaSettings::self()->backgroundColor()));
         QPainter thumbsImageWithTextPainter(&thumbsImageWithText);
         thumbsImageWithTextPainter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
         thumbsImageWithTextPainter.drawImage(QRect{0, textImage.height(), thumbsImage.width(), thumbsImage.height()}, thumbsImage);
@@ -220,7 +220,7 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     font.setPointSize(20);
 
     QString html;
-    html.append(u"<div style='color: %1'>"_s.arg(RinaSettings::videoInfoTextColor()));
+    html.append(u"<div style='color: %1'>"_s.arg(HanaSettings::videoInfoTextColor()));
     html.append(u"<div><strong>%1</strong></div>"_s.arg(m_url.fileName()));
     html.append(u"<div><strong>Size</strong>  %1</div>"_s.arg(formatBytes(fi.size())));
     html.append(u"<div><strong>Resolution</strong> %1x%2</div>"_s.arg(m_frameDecoder.getWidth()).arg(m_frameDecoder.getHeight()));
@@ -236,7 +236,7 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     td.setDocumentMargin(docPadding);
 
     QImage textImage(QSize{static_cast<int>(width), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
-    textImage.fill(RinaSettings::videoInfoBackgroundColor());
+    textImage.fill(HanaSettings::videoInfoBackgroundColor());
     QPainter textPainter(&textImage);
     td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
 
@@ -245,19 +245,19 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
 
 QString ThumbnailerRunnable::thumbnailsImageSaveLocation()
 {
-    if (RinaSettings::saveLocation() == u"SameAsVideo"_s) {
+    if (HanaSettings::saveLocation() == u"SameAsVideo"_s) {
         QFileInfo fi{m_url.toLocalFile()};
         auto parentFolder = fi.absolutePath();
         return parentFolder;
 
-    } else if (RinaSettings::saveLocation() == u"NextToVideo"_s) {
+    } else if (HanaSettings::saveLocation() == u"NextToVideo"_s) {
         QFileInfo fi{m_url.toLocalFile()};
         auto parentFolder = fi.absolutePath();
-        parentFolder.append(u"/%1"_s.arg(RinaSettings::saveLocationFolderName()));
+        parentFolder.append(u"/%1"_s.arg(HanaSettings::saveLocationFolderName()));
         return parentFolder;
 
-    } else if (RinaSettings::saveLocation() == u"Custom"_s) {
-        return QUrl(RinaSettings::saveLocationFolderUrl()).toLocalFile();
+    } else if (HanaSettings::saveLocation() == u"Custom"_s) {
+        return QUrl(HanaSettings::saveLocationFolderUrl()).toLocalFile();
 
     } else {
         return {};

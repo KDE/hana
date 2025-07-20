@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.georgefb.rina.components
+import com.georgefb.hana.components
 
 ToolBar {
     RowLayout {

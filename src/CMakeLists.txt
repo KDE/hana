@@ -1,12 +1,12 @@
 qt_standard_project_setup(REQUIRES 6.8)
 
-qt_add_executable(apprina
+qt_add_executable(apphana
     main.cpp
 )
 
-kconfig_target_kcfg_file(apprina
+kconfig_target_kcfg_file(apphana
     FILE settings.kcfg
-    CLASS_NAME RinaSettings
+    CLASS_NAME HanaSettings
     MUTATORS
     DEFAULT_VALUE_GETTERS
     GENERATE_PROPERTIES
@@ -16,8 +16,8 @@ kconfig_target_kcfg_file(apprina
     QML_REGISTRATION
 )
 
-qt_add_qml_module(apprina
-    URI com.georgefb.rina
+qt_add_qml_module(apphana
+    URI com.georgefb.hana
     VERSION 1.0
     QML_FILES
         Main.qml
@@ -35,19 +35,19 @@ add_subdirectory(Components)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(apprina PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.apprina
+set_target_properties(apphana PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.apphana
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_include_directories(apprina
+target_include_directories(apphana
     PRIVATE
         ${FFMPEG_INCLUDE_DIRS}
 )
-target_link_libraries(apprina
+target_link_libraries(apphana
     PRIVATE
         Qt6::Core
         Qt6::Gui
@@ -68,7 +68,7 @@ target_link_libraries(apprina
 )
 
 include(GNUInstallDirs)
-install(TARGETS apprina
+install(TARGETS apphana
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

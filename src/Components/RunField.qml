@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 ToolButton {
     id: root

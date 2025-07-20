@@ -5,7 +5,7 @@ import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 ColumnLayout {
     id: root
@@ -34,13 +34,13 @@ ColumnLayout {
             }
 
             Component.onCompleted: {
-                const index = indexOfValue(RinaSettings.saveLocation)
+                const index = indexOfValue(HanaSettings.saveLocation)
                 currentIndex = index >= 0 ? index : 0
             }
 
             onActivated: {
-                RinaSettings.saveLocation = currentValue
-                RinaSettings.save()
+                HanaSettings.saveLocation = currentValue
+                HanaSettings.save()
             }
         }
     }
@@ -50,12 +50,12 @@ ColumnLayout {
 
         Layout.fillWidth: true
 
-        text: RinaSettings.saveLocationFolderName
+        text: HanaSettings.saveLocationFolderName
         visible: control.currentIndex === control.indexOfValue("NextToVideo")
 
         onTextEdited: {
-            RinaSettings.saveLocationFolderName = text
-            RinaSettings.save()
+            HanaSettings.saveLocationFolderName = text
+            HanaSettings.save()
         }
 
         ToolTip {
@@ -68,7 +68,7 @@ ColumnLayout {
 
         Layout.fillWidth: true
 
-        text: Bridge.urlToLocalFile(RinaSettings.saveLocationFolderUrl)
+        text: Bridge.urlToLocalFile(HanaSettings.saveLocationFolderUrl)
         visible: control.currentIndex === control.indexOfValue("Custom")
         readOnly: true
         rightActions: [
@@ -78,8 +78,8 @@ ColumnLayout {
             }
         ]
         onTextEdited: {
-            RinaSettings.saveLocationFolderUrl = Bridge.localFileToUrl(text)
-            RinaSettings.save()
+            HanaSettings.saveLocationFolderUrl = Bridge.localFileToUrl(text)
+            HanaSettings.save()
         }
         ToolTip {
             text: qsTr("path to the folder")
@@ -89,13 +89,13 @@ ColumnLayout {
     FolderDialog {
         id: folderDialog
 
-        currentFolder: RinaSettings.saveLocationFolderUrl
+        currentFolder: HanaSettings.saveLocationFolderUrl
         title: qsTr("@title:window", "Select folder")
 
         onAccepted: {
             Bridge.filesSelected(folder)
-            RinaSettings.saveLocationFolderUrl = Bridge.parentUrl(folder)
-            RinaSettings.save()
+            HanaSettings.saveLocationFolderUrl = Bridge.parentUrl(folder)
+            HanaSettings.save()
         }
     }
 }

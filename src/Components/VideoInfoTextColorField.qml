@@ -5,12 +5,12 @@ import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 RowLayout {
     id: root
 
-    enabled: RinaSettings.showVideoInfo
+    enabled: HanaSettings.showVideoInfo
 
     Label {
         text: qsTr("Text color")
@@ -22,7 +22,7 @@ RowLayout {
         Layout.preferredWidth: Math.ceil(Kirigami.Units.gridUnit * 1.4)
         Layout.preferredHeight: Math.ceil(Kirigami.Units.gridUnit * 1.4)
 
-        color: RinaSettings.videoInfoTextColor
+        color: HanaSettings.videoInfoTextColor
         border.width: 1
         border.color: ma.containsMouse
                       ? Kirigami.Theme.highlightColor
@@ -49,10 +49,10 @@ RowLayout {
 
             title: qsTr("Select Color")
             onAccepted: {
-                RinaSettings.videoInfoTextColor = colorPicker.selectedColor
-                RinaSettings.save()
+                HanaSettings.videoInfoTextColor = colorPicker.selectedColor
+                HanaSettings.save()
             }
-            selectedColor: RinaSettings.videoInfoTextColor
+            selectedColor: HanaSettings.videoInfoTextColor
         }
     }
 }

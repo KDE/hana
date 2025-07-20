@@ -5,7 +5,7 @@ import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 RowLayout {
     id: root
@@ -20,7 +20,7 @@ RowLayout {
         Layout.preferredWidth: Math.ceil(Kirigami.Units.gridUnit * 1.4)
         Layout.preferredHeight: Math.ceil(Kirigami.Units.gridUnit * 1.4)
 
-        color: RinaSettings.backgroundColor
+        color: HanaSettings.backgroundColor
         border.width: 1
         border.color: ma.containsMouse
                       ? Kirigami.Theme.highlightColor
@@ -47,10 +47,10 @@ RowLayout {
 
             title: qsTr("@title:window", "Select Color")
             onAccepted: {
-                RinaSettings.backgroundColor = colorPicker.selectedColor
-                RinaSettings.save()
+                HanaSettings.backgroundColor = colorPicker.selectedColor
+                HanaSettings.save()
             }
-            selectedColor: RinaSettings.backgroundColor
+            selectedColor: HanaSettings.backgroundColor
         }
     }
 }

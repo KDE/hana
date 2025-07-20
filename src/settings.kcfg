@@ -3,7 +3,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-    <kcfgfile name="rina/rina.conf" />
+    <kcfgfile name="hana/hana.conf" />
     <include>QStandardPaths</include>
     <include>QUrl</include>
     <group name="General">
@@ -25,7 +25,7 @@
         <entry name="SaveLocationFolderUrl" type="Url">
             <code>
               QString thumbsSavePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-              thumbsSavePath.append("/rina");
+              thumbsSavePath.append("/hana");
               QUrl thumbsSaveUrl = QUrl::fromLocalFile(thumbsSavePath);
             </code>
             <default code="true">thumbsSaveUrl</default>

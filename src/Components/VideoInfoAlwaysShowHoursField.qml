@@ -1,18 +1,18 @@
 import QtQuick
 import QtQuick.Controls
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 CheckBox {
     id: root
 
     text: qsTr("Always show hours")
-    checked: RinaSettings.videoInfoAlwaysShowHours
-    enabled: RinaSettings.showVideoInfo
+    checked: HanaSettings.videoInfoAlwaysShowHours
+    enabled: HanaSettings.showVideoInfo
 
     onClicked: {
-        RinaSettings.videoInfoAlwaysShowHours = root.checked
-        RinaSettings.save()
+        HanaSettings.videoInfoAlwaysShowHours = root.checked
+        HanaSettings.save()
     }
 
     ToolTip {

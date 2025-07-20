@@ -6,8 +6,8 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.rina
-import com.georgefb.rina.components
+import com.georgefb.hana
+import com.georgefb.hana.components
 
 Rectangle {
     id: root

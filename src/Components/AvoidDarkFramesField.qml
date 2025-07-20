@@ -1,17 +1,17 @@
 import QtQuick
 import QtQuick.Controls
 
-import com.georgefb.rina
+import com.georgefb.hana
 
 CheckBox {
     id: root
 
     text: qsTr("Avoid dark frames")
-    checked: RinaSettings.avoidDarkFrames
+    checked: HanaSettings.avoidDarkFrames
 
     onClicked: {
-        RinaSettings.avoidDarkFrames = root.checked
-        RinaSettings.save()
+        HanaSettings.avoidDarkFrames = root.checked
+        HanaSettings.save()
     }
 
     ToolTip {

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.georgefb.rina.components
+import com.georgefb.hana.components
 
 ApplicationWindow {
     width: 800
@@ -10,7 +10,7 @@ ApplicationWindow {
     height: 600
     minimumHeight: 300
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Hana")
 
     footer: Footer {}
 
