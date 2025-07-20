@@ -6,7 +6,7 @@ import com.georgefb.hana
 CheckBox {
     id: root
 
-    text: qsTr("Show video info")
+    text: i18nc("@option:check", "Show video info")
     checked: HanaSettings.showVideoInfo
 
     onClicked: {

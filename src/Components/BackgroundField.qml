@@ -11,7 +11,7 @@ RowLayout {
     id: root
 
     Label {
-        text: qsTr("Background color")
+        text: i18nc("@label", "Background color")
     }
 
     Rectangle {
@@ -38,14 +38,14 @@ RowLayout {
         }
 
         ToolTip {
-            text: qsTr("@info:tooltip", "Select a color")
+            text: i18nc("@info:tooltip", "Select a color")
             visible: ma.containsMouse
         }
 
         ColorDialog {
             id: colorPicker
 
-            title: qsTr("@title:window", "Select Color")
+            title: i18nc("@title:window", "Select Color")
             onAccepted: {
                 HanaSettings.backgroundColor = colorPicker.selectedColor
                 HanaSettings.save()

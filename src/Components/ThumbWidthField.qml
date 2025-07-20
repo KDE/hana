@@ -12,7 +12,7 @@ ColumnLayout {
     Label {
         Layout.maximumWidth: 250
 
-        text: qsTr("Thumbnail width")
+        text: i18nc("@label", "Thumbnail width")
         elide: Text.ElideRight
     }
 

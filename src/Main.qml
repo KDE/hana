@@ -10,7 +10,7 @@ ApplicationWindow {
     height: 600
     minimumHeight: 300
     visible: true
-    title: qsTr("Hana")
+    title: "Hana"
 
     footer: Footer {}
 
@@ -43,7 +43,7 @@ ApplicationWindow {
                 }
 
                 Label {
-                    text: qsTr("Thumbnail settings")
+                    text: i18nc("@label", "Thumbnail settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
                     Layout.topMargin: 20
@@ -60,7 +60,7 @@ ApplicationWindow {
                 }
 
                 Label {
-                    text: qsTr("Video info settings")
+                    text: i18nc("@label", "Video info settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
                     Layout.topMargin: 20

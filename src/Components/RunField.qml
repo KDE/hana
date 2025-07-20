@@ -6,7 +6,7 @@ import com.georgefb.hana
 ToolButton {
     id: root
 
-    text: qsTr("Run")
+    text: i18nc("@action:button", "Run")
 
     onClicked: Bridge.run()
 }

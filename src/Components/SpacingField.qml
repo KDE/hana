@@ -12,7 +12,7 @@ ColumnLayout {
     Label {
         Layout.maximumWidth: 250
 
-        text: qsTr("Spacing")
+        text: i18nc("@label", "Spacing")
         elide: Text.ElideRight
     }
 

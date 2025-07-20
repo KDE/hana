@@ -79,7 +79,7 @@ Rectangle {
                                 closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
                                 MenuItem {
-                                    text: qsTr("Open video folder")
+                                    text: i18nc("@action:inmenu", "Open video folder")
                                     onClicked: openVideoFolder()
 
                                     function openVideoFolder() {
@@ -90,7 +90,7 @@ Rectangle {
                                 }
 
                                 MenuItem {
-                                    text: qsTr("Remove")
+                                    text: i18nc("@action:inmenu", "Remove")
                                     onClicked: filesModel.remove(delegate.index)
                                 }
                             }
@@ -109,7 +109,7 @@ Rectangle {
                         }
 
                         ToolButton {
-                            text: qsTr("Open thumbnail")
+                            text: i18nc("@action:inmenu", "Open thumbnail")
                             enabled: delegate.thumbPath !== ""
                             onClicked: openThumbnail()
 

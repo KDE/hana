@@ -8,7 +8,7 @@ import com.georgefb.hana
 ToolButton {
     id: root
 
-    text: qsTr("Add files")
+    text: i18nc("@action:button", "Add files")
 
     onClicked: filesDialog.open()
 
@@ -17,7 +17,7 @@ ToolButton {
 
         fileMode: FileDialog.OpenFiles
         currentFolder: HanaSettings.selectVideosUrl
-        title: qsTr("@title:window", "Select files")
+        title: i18nc("@title:window", "Select files")
         nameFilters: ["Video files (*.mkv *.webm *.mp4 *.mov *.ogg *.avi *.avi "+
                       "*.wmv *.flv *.vob *.m2ts *.mts *.ts *.rm *.rmvb *.mpg *.3gp)",
                       "All files (*)"]

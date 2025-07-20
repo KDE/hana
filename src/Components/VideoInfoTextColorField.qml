@@ -13,7 +13,7 @@ RowLayout {
     enabled: HanaSettings.showVideoInfo
 
     Label {
-        text: qsTr("Text color")
+        text: i18nc("@label", "Text color")
     }
 
     Rectangle {
@@ -40,14 +40,14 @@ RowLayout {
         }
 
         ToolTip {
-            text: qsTr("Select a color")
+            text: i18nc("@info:tooltip", "Select a color")
             visible: ma.containsMouse
         }
 
         ColorDialog {
             id: colorPicker
 
-            title: qsTr("Select Color")
+            title: i18nc("@title:window", "Select Color")
             onAccepted: {
                 HanaSettings.videoInfoTextColor = colorPicker.selectedColor
                 HanaSettings.save()

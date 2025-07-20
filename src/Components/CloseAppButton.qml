@@ -3,7 +3,8 @@ import QtQuick.Controls
 
 ToolButton {
     id: root
-    text: qsTr("Close")
+
+    text: i18nc("@action:button", "Close")
 
     onClicked: Qt.quit()
 }

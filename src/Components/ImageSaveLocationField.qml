@@ -16,30 +16,29 @@ ColumnLayout {
         Label {
             Layout.maximumWidth: 250
 
-            text: qsTr("Save location")
+            text: i18nc("@label", "Save location")
             elide: Text.ElideRight
         }
 
         ComboBox {
             id: control
 
-            textRole: "text"
-            valueRole: "value"
+            property string value: modelValues[currentIndex]
+            property list<string> modelValues: ["SameAsVideo", "NextToVideo", "Custom"]
 
-            model: ListModel {
-                id: model
-                ListElement { text: qsTr("Same folder as video"); value: "SameAsVideo" }
-                ListElement { text: qsTr("Folder next to video"); value: "NextToVideo" }
-                ListElement { text: qsTr("Custom folder"); value: "Custom" }
-            }
+            model: [
+                i18nc("@label:listbox left mouse button", "Same folder as video"),
+                i18nc("@label:listbox middle mouse button", "Folder next to video"),
+                i18nc("@label:listbox right mouse button", "Custom folder"),
+            ]
 
             Component.onCompleted: {
-                const index = indexOfValue(HanaSettings.saveLocation)
+                const index = modelValues.indexOf(HanaSettings.saveLocation)
                 currentIndex = index >= 0 ? index : 0
             }
 
             onActivated: {
-                HanaSettings.saveLocation = currentValue
+                HanaSettings.saveLocation = value
                 HanaSettings.save()
             }
         }
@@ -51,7 +50,7 @@ ColumnLayout {
         Layout.fillWidth: true
 
         text: HanaSettings.saveLocationFolderName
-        visible: control.currentIndex === control.indexOfValue("NextToVideo")
+        visible: control.modelValues[control.currentIndex] === "NextToVideo"
 
         onTextEdited: {
             HanaSettings.saveLocationFolderName = text
@@ -59,7 +58,7 @@ ColumnLayout {
         }
 
         ToolTip {
-            text: qsTr("name of the folder")
+            text: i18nc("@info:tooltip", "name of the folder")
         }
     }
 
@@ -69,7 +68,7 @@ ColumnLayout {
         Layout.fillWidth: true
 
         text: Bridge.urlToLocalFile(HanaSettings.saveLocationFolderUrl)
-        visible: control.currentIndex === control.indexOfValue("Custom")
+        visible: control.modelValues[control.currentIndex] === "Custom"
         readOnly: true
         rightActions: [
             Kirigami.Action {
@@ -82,7 +81,7 @@ ColumnLayout {
             HanaSettings.save()
         }
         ToolTip {
-            text: qsTr("path to the folder")
+            text: i18nc("@info:tooltip", "path to the folder")
         }
     }
 
@@ -90,7 +89,7 @@ ColumnLayout {
         id: folderDialog
 
         currentFolder: HanaSettings.saveLocationFolderUrl
-        title: qsTr("@title:window", "Select folder")
+        title: i18nc("@title:window", "Select folder")
 
         onAccepted: {
             Bridge.filesSelected(folder)
