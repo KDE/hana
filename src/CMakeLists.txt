@@ -58,6 +58,7 @@ target_link_libraries(apphana
 
         KF6::ConfigCore
         KF6::ConfigGui
+        KF6::KIOWidgets
         KF6::Kirigami
 
         ${AVUTIL_LIBRARIES}

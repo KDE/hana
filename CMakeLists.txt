@@ -1,21 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(rina VERSION 0.1 LANGUAGES CXX)
+project(hana VERSION 0.1 LANGUAGES CXX)
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src)
 set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY} CACHE PATH "QML import paths")
 
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(QT_MIN_VERSION 6.6.0)
+set(KF6_MIN_VERSION 6.6.0)
 
 include(FeatureSummary)
 
-find_package(ECM ${KF6_MIN_VERSION})
-set_package_properties(ECM PROPERTIES TYPE REQUIRED
-    URL "https://api.kde.org/ecm/"
-    DESCRIPTION "extra cmake modules")
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-
+# -------------------------------
+#
+# -- Qt6 dependencies
+#
+# -------------------------------
 find_package(Qt6 REQUIRED COMPONENTS Quick Widgets)
 
 find_package(Qt6Core ${QT_MIN_VERSION})
@@ -33,9 +32,24 @@ set_package_properties(Qt6Quick PROPERTIES TYPE REQUIRED)
 find_package(Qt6QuickControls2 ${QT_MIN_VERSION})
 set_package_properties(Qt6QuickControls2 PROPERTIES TYPE REQUIRED)
 
+# -------------------------------
+#
+# -- KF6 dependencies
+#
+# -------------------------------
+find_package(ECM ${KF6_MIN_VERSION})
+set_package_properties(ECM PROPERTIES TYPE REQUIRED
+    URL "https://api.kde.org/ecm/"
+    DESCRIPTION "extra cmake modules")
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 find_package(KF6Config ${KF6_MIN_VERSION})
 set_package_properties(KF6Config PROPERTIES
     TYPE REQUIRED URL "https://api.kde.org/frameworks/kconfig/html/index.html")
+
+find_package(KF6KIO ${KF6_MIN_VERSION})
+set_package_properties(KF6KIO PROPERTIES TYPE REQUIRED
+    URL "https://api.kde.org/frameworks/kio/html/index.html")
 
 find_package(KF6Kirigami ${KF6_MIN_VERSION})
 set_package_properties(KF6Kirigami PROPERTIES TYPE REQUIRED
@@ -44,7 +58,7 @@ set_package_properties(KF6Kirigami PROPERTIES TYPE REQUIRED
 find_package(FFmpeg)
 set_package_properties(FFmpeg PROPERTIES TYPE REQUIRED
     URL "https://ffmpeg.org"
-    DESCRIPTION "needed for playlist and mpris thumbnails")
+    DESCRIPTION "needed for thumbnail generation")
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
