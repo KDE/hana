@@ -9,6 +9,8 @@
 #include <QTextDocument>
 #include <QThread>
 
+#include <KIO/OpenFileManagerWindowJob>
+
 #include "worker.h"
 
 using namespace Qt::StringLiterals;
@@ -54,4 +56,9 @@ QString Bridge::parentPath(QString path)
 {
     QFileInfo fi(path);
     return fi.exists() ? fi.absolutePath() : QString{};
+}
+
+void Bridge::highlightInFileManager(const QUrl &fileUrl)
+{
+    KIO::highlightInFileManager({fileUrl});
 }

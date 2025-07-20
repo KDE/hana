@@ -21,6 +21,7 @@ public Q_SLOTS:
     QUrl localFileToUrl(const QString &localFile);
     QUrl parentUrl(QUrl url);
     QString parentPath(QString path);
+    void highlightInFileManager(const QUrl &fileUrl);
 
 Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);

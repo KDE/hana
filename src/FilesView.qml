@@ -114,7 +114,7 @@ Rectangle {
                             onClicked: openThumbnail()
 
                             function openThumbnail() {
-                                Qt.openUrlExternally(`file://${delegate.thumbPath}`)
+                                Bridge.highlightInFileManager(`file://${delegate.thumbPath}`)
                             }
                         }
                     }
