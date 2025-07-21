@@ -9,6 +9,7 @@
 
 #include <QImage>
 #include <QObject>
+#include <QUrl>
 #include <qqmlintegration.h>
 
 class Worker;
