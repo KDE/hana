@@ -1,6 +1,6 @@
 # Hana
 
-An app to create a thumbnails image from a video file.
+An app to create thumbnails images from video files.
 
 #### Donate: [GitHub Sponsors](https://github.com/sponsors/g-fb) | [Liberapay](https://liberapay.com/gfb/) | [PayPal](https://paypal.me/georgefloreabanus)
 
