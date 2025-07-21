@@ -29,6 +29,7 @@ public Q_SLOTS:
     QUrl parentUrl(QUrl url);
     QString parentPath(QString path);
     void highlightInFileManager(const QUrl &fileUrl);
+    void openUrl(const QUrl &fileUrl);
 
 Q_SIGNALS:
     void filesSelected(QList<QUrl> urls);

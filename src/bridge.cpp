@@ -16,6 +16,7 @@
 #include <QThread>
 
 #include <KIO/OpenFileManagerWindowJob>
+#include <KIO/OpenUrlJob>
 
 #include "worker.h"
 
@@ -67,4 +68,10 @@ QString Bridge::parentPath(QString path)
 void Bridge::highlightInFileManager(const QUrl &fileUrl)
 {
     KIO::highlightInFileManager({fileUrl});
+}
+
+void Bridge::openUrl(const QUrl &fileUrl)
+{
+    auto *job = new KIO::OpenUrlJob({fileUrl});
+    job->start();
 }

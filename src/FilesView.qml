@@ -120,7 +120,7 @@ Rectangle {
                             onClicked: openThumbnail()
 
                             function openThumbnail() {
-                                Bridge.highlightInFileManager(`file://${delegate.thumbPath}`)
+                                Bridge.openUrl(`file://${delegate.thumbPath}`)
                             }
                         }
                     }
