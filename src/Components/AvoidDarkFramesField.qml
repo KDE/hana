@@ -17,6 +17,6 @@ CheckBox {
     ToolTip {
         text: i18nc("@info:tooltip", "Checked: tries to avoid very dark frames by changing the time the thumbnail is taken<br>"+
                    "<b>Can be very slow</b><br><br>"+
-                   "Unchecked: thumbnail is taken taken regardless of it's content")
+                   "Unchecked: thumbnail is taken regardless of it's content")
     }
 }
