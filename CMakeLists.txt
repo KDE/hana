@@ -1,3 +1,9 @@
+#
+# SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
 cmake_minimum_required(VERSION 3.16)
 
 cmake_policy(SET CMP0048 NEW)

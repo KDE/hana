@@ -1,3 +1,9 @@
+#
+# SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
 qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(apphana
@@ -6,7 +12,7 @@ qt_add_executable(apphana
 
 qt_policy(SET QTP0001 NEW)
 qt_add_qml_module(apphana
-    URI com.georgefb.hana
+    URI org.kde.hana
     VERSION 1.0
     QML_FILES
         Main.qml

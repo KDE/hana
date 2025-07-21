@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 pragma ComponentBehavior: Bound
 
 import QtQuick
@@ -6,8 +12,8 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.hana
-import com.georgefb.hana.components
+import org.kde.hana
+import org.kde.hana.components
 
 Rectangle {
     id: root

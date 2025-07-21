@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -18,7 +24,7 @@ int main(int argc, char *argv[])
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
                      &app, []() { QCoreApplication::exit(-1); },
     Qt::QueuedConnection);
-    engine.loadFromModule("com.georgefb.hana", "Main");
+    engine.loadFromModule("org.kde.hana", "Main");
 
     return app.exec();
 }

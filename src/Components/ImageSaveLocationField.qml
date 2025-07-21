@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -5,7 +11,7 @@ import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
-import com.georgefb.hana
+import org.kde.hana
 
 ColumnLayout {
     id: root

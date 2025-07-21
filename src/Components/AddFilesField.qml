@@ -1,9 +1,15 @@
+/*
+ * SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import QtCore
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 
-import com.georgefb.hana
+import org.kde.hana
 
 ToolButton {
     id: root
