@@ -77,4 +77,6 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
+ki18n_install(po)
+
 add_subdirectory(src)
