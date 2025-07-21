@@ -6,6 +6,10 @@ An app to create thumbnails images from video files.
 
 ![screenshot](data/images/hana.png)
 
+### Sample thumbnails image
+
+![screenshot](data/images/BigBuckBunny.mkv.thumbs.png)
+
 # Dependencies
 
 Dependencies will be printed by `cmake` when building.
