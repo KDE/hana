@@ -201,7 +201,7 @@ void ThumbnailerRunnable::run()
     QDir dir;
     dir.mkpath(savePath);
 
-    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath).arg(m_url.fileName())};
+    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath, m_url.fileName())};
     if (HanaSettings::showVideoInfo()) {
         QImage textImage {videoFileInfoImage(w)};
         QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
