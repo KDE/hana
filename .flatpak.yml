@@ -1,0 +1,34 @@
+---
+app-id: org.kde.hana
+runtime: org.kde.Platform
+runtime-version: 6.9
+sdk: org.kde.Sdk
+command: apphana
+# rename-icon: hana
+# copy-icon: true
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    version: '24.08'
+    directory: lib/ffmpeg
+    add-ld-path: .
+cleanup-commands:
+  - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  - --filesystem=host:ro
+  - --filesystem=home
+  - --talk-name=org.freedesktop.FileManager1
+modules:
+  - name: hana
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    sources:
+      - type: dir
+        path: .
