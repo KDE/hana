@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Hana
 
 An app to create thumbnails images from video files.
