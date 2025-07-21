@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+
+ SPDX-License-Identifier: CC0-1.0
+-->
+
+<component type="desktop-application">
+    <name>Hana</name>
+    <id>org.kde.hana</id>
+    <launchable type="desktop-id">org.kde.hana.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <!--  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=hana</url>-->
+    <url type="donation">https://github.com/sponsors/g-fb</url>
+    <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
+    <summary>Video thumbnail generator</summary>
+    <developer_name>George Florea Bănuș</developer_name>
+    <description>
+        <p>App to create thumbnails images from video files.</p>
+        <p>Features</p>
+        <ul>
+            <li>parallel processing</li>
+            <li>set number of rows and columns</li>
+            <li>toggle file info</li>
+            <li>set thumbnail width and spacing</li>
+            <li>set background and text colors</li>
+        </ul>
+    </description>
+    <releases>
+        <release version="0.1.0" date="2099-01-01"></release>
+    </releases>
+    <screenshots>
+        <screenshot type="default">
+        </screenshot>
+        <screenshot>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.0"/>
+</component>
