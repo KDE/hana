@@ -65,6 +65,9 @@ target_link_libraries(apphana
         ${AVFORMAT_LIBRARIES}
         ${AVCODEC_LIBRARIES}
         ${SWSCALE_LIBRARIES}
+
+        # link qml modules
+        componentsplugin
 )
 
 install(TARGETS apphana ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

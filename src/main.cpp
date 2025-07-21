@@ -14,8 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-    Q_IMPORT_QML_PLUGIN(com_georgefb_hana_componentsPlugin);
-
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
