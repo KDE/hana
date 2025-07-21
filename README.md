@@ -9,3 +9,10 @@ An app to create a thumbnails image from a video file.
 # Dependencies
 
 Dependencies will be printed by `cmake` when building.
+
+# Build
+
+```bash
+cmake -B build -G Ninja
+cmake --build build
+```
