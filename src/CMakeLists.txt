@@ -6,12 +6,12 @@
 
 qt_standard_project_setup(REQUIRES 6.8)
 
-qt_add_executable(apphana
+qt_add_executable(hana
     main.cpp
 )
 
 qt_policy(SET QTP0001 NEW)
-qt_add_qml_module(apphana
+qt_add_qml_module(hana
     URI org.kde.hana
     VERSION 1.0
     QML_FILES
@@ -25,7 +25,7 @@ qt_add_qml_module(apphana
         worker.h worker.cpp
 )
 
-kconfig_target_kcfg_file(apphana
+kconfig_target_kcfg_file(hana
     FILE settings.kcfg
     CLASS_NAME HanaSettings
 
@@ -40,11 +40,11 @@ kconfig_target_kcfg_file(apphana
 
 add_subdirectory(Components)
 
-target_include_directories(apphana
+target_include_directories(hana
     PRIVATE
         ${FFMPEG_INCLUDE_DIRS}
 )
-target_link_libraries(apphana
+target_link_libraries(hana
     PRIVATE
         Qt6::Core
         Qt6::Gui
@@ -70,4 +70,4 @@ target_link_libraries(apphana
         componentsplugin
 )
 
-install(TARGETS apphana ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS hana ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

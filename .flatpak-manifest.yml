@@ -4,7 +4,7 @@ app-id: org.kde.hana
 runtime: org.kde.Platform
 runtime-version: 6.9
 sdk: org.kde.Sdk
-command: apphana
+command: hana
 # rename-icon: hana
 # copy-icon: true
 add-extensions:
