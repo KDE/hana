@@ -23,6 +23,7 @@ public:
     explicit Bridge(QObject *parent = nullptr);
 
 public Q_SLOTS:
+    QList<QUrl> urlsFromCmdLineArgs();
     QString urlToFilename(QUrl url);
     QString urlToLocalFile(QUrl url);
     QUrl localFileToUrl(const QString &localFile);

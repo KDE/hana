@@ -38,6 +38,8 @@ Rectangle {
         ListView {
             id: view
 
+            Component.onCompleted: Bridge.filesSelected(Bridge.urlsFromCmdLineArgs())
+
             clip: true
             model: filesModel
             delegate: ItemDelegate {

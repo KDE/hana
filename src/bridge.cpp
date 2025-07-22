@@ -6,9 +6,12 @@
 
 #include "bridge.h"
 
+#include <QApplication>
+#include <QCommandLineParser>
 #include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QFileInfo>
 #include <QPainter>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -74,4 +77,30 @@ void Bridge::openUrl(const QUrl &fileUrl)
 {
     auto *job = new KIO::OpenUrlJob({fileUrl});
     job->start();
+}
+
+QList<QUrl> Bridge::urlsFromCmdLineArgs()
+{
+    QCommandLineParser clParser;
+    clParser.addHelpOption();
+    clParser.addVersionOption();
+    clParser.process(*qApp);
+
+    QFileInfo fi;
+    QList<QUrl> urls;
+    const auto posArgs{clParser.positionalArguments()};
+
+    for (const auto &posArg : posArgs) {
+        fi.setFile(posArg);
+        if (fi.exists()) {
+            urls.append(QUrl::fromLocalFile(fi.absoluteFilePath()));
+        } else {
+            fi.setFile(QDir::current(), posArg);
+            if (fi.exists()) {
+                urls.append(QUrl::fromLocalFile(fi.absoluteFilePath()));
+            }
+        }
+    }
+
+    return urls;
 }
