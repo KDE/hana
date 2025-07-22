@@ -14,8 +14,6 @@ add-extensions:
     add-ld-path: .
 cleanup-commands:
   - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable
 finish-args:
   - --share=ipc
   - --socket=wayland
