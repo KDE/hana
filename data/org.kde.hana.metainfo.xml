@@ -14,6 +14,8 @@
     <!--  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=hana</url>-->
     <url type="donation">https://github.com/sponsors/g-fb</url>
     <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
+    <url type="homepage">https://invent.kde.org/georgefb/hana</url>
+
     <summary>Video thumbnail generator</summary>
     <developer id="org.kde">
         <name translate="no">George Florea Bănuș</name>
