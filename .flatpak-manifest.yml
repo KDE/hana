@@ -5,8 +5,8 @@ runtime: org.kde.Platform
 runtime-version: 6.9
 sdk: org.kde.Sdk
 command: hana
-# rename-icon: hana
-# copy-icon: true
+rename-icon: hana
+copy-icon: true
 add-extensions:
   org.freedesktop.Platform.ffmpeg-full:
     version: '24.08'

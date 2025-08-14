@@ -1,0 +1,42 @@
+<svg width="128.00002" height="127.99999" version="1.1" viewBox="0 0 33.866671 33.866665" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(-32.279167,-138.64166)">
+        <circle cx="49.212509" cy="155.575" r="15.743801" display="none" enable-background="new" fill="none" opacity=".2" stroke="currentColor" stroke-width=".261937" style="paint-order:normal"/>
+        <rect x="35.585205" y="141.94769" width="27.254602" height="27.254602" rx="2.096508" ry="2.096508" display="none" enable-background="new" fill="none" opacity=".2" stroke="currentColor" stroke-width=".261937" style="paint-order:normal"/>
+        <rect x="38.103477" y="144.66309" width="22.218054" height="21.823809" rx="9.3435601e-18" ry="1.1428916e-17" fill="#374047" stroke-miterlimit="0" stroke-width="0" style="paint-order:markers stroke fill"/>
+        <g fill="#4e5a64" stroke-miterlimit="0" stroke-width="0">
+            <rect x="39.46125" y="145.80759" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="47.361004" y="145.7934" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="51.310879" y="145.79895" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="55.260761" y="145.79082" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="39.46125" y="153.75624" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="55.260761" y="153.75624" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="39.46125" y="157.70613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="47.361004" y="157.70613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="55.260761" y="157.70613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+        </g>
+        <path d="m43.411127 155.60008v-1.8438h3.665792v3.6876h-3.665792z" fill="#fdfd34" fill-opacity=".94902" stroke-miterlimit="0" stroke-width="0" style="paint-order:markers stroke fill"/>
+        <path d="m43.411128 147.661v-1.84381h3.687612v3.68762h-3.687612z" fill="#fdfd34" fill-opacity=".94902" stroke-miterlimit="0" stroke-width="0" style="paint-order:markers stroke fill"/>
+        <g fill="#4e5a64" stroke-miterlimit="0" stroke-width="0">
+            <rect x="39.46125" y="149.80638" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="47.361004" y="149.80638" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="51.310879" y="149.80638" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="55.260761" y="149.80638" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+        </g>
+        <g fill="#fdfd34" fill-opacity=".94902">
+            <g stroke-miterlimit="0" stroke-width="0">
+                <path d="m43.411129 151.65021v-1.8438h3.687612v3.68761h-3.687612z" style="paint-order:markers stroke fill"/>
+                <path d="m47.361003 155.64611v-1.84381h3.687612v3.68761h-3.687612z" style="paint-order:markers stroke fill"/>
+                <path d="m51.310877 155.61338v-1.83289h3.687612v3.66578h-3.687612z" style="paint-order:markers stroke fill"/>
+                <path d="m43.411127 159.54996v-1.8438h3.687612v3.68763h-3.687612z" style="paint-order:markers stroke fill"/>
+            </g>
+            <path d="m51.310877 159.54997v-1.84381h3.665791v3.68763h-3.665791z" style="paint-order:markers stroke fill"/>
+        </g>
+        <g fill="#4e5a64" stroke-miterlimit="0" stroke-width="0">
+            <rect x="39.50489" y="161.65613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="47.361004" y="161.65613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+            <rect x="55.260761" y="161.65613" width="3.7030091" height="3.7030091" rx="7.108791e-18" ry="6.9217179e-18" style="paint-order:markers stroke fill"/>
+        </g>
+        <path d="m43.411128 163.49997v-1.8438h3.687612v3.68761h-3.687612z" fill="#fdfd34" fill-opacity=".94902" stroke-miterlimit="0" stroke-width="0" style="paint-order:markers stroke fill"/>
+        <path d="m51.310877 163.49998v-1.84381h3.665792v3.68761h-3.665792z" fill="#fdfd34" fill-opacity=".94902" style="paint-order:markers stroke fill"/>
+    </g>
+</svg>

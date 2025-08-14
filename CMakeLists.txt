@@ -74,6 +74,7 @@ set_package_properties(FFmpeg PROPERTIES TYPE REQUIRED
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 include(KDEInstallDirs)
+include(ECMInstallIcons)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 

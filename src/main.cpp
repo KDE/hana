@@ -5,6 +5,7 @@
  */
 
 #include <QApplication>
+#include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQmlExtensionPlugin>
@@ -12,9 +13,12 @@
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
+using namespace Qt::StringLiterals;
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    QApplication::setWindowIcon(QIcon::fromTheme(u"hana"_s));
 
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain("hana");
