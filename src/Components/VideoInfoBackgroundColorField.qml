@@ -19,7 +19,7 @@ RowLayout {
     enabled: HanaSettings.showVideoInfo
 
     Label {
-        text: i18nc("@label", "Backgound color")
+        text: i18nc("@label", "Background color")
     }
 
     Rectangle {
