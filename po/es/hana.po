@@ -1,0 +1,197 @@
+# Spanish translations for hana.po package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the hana package.
+# Automatically generated, 2025.
+#
+# SPDX-FileCopyrightText: 2025 Eloy Cuadra <ecuadra@eloihr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: hana\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-08-17 00:41+0000\n"
+"PO-Revision-Date: 2025-08-17 01:21+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.04.3\n"
+
+#: src/Components/AddFilesField.qml:16
+msgctxt "@action:button"
+msgid "Add files"
+msgstr "Añadir archivos"
+
+#: src/Components/AddFilesField.qml:25
+msgctxt "@title:window"
+msgid "Select files"
+msgstr "Seleccionar archivos"
+
+#: src/Components/AvoidDarkFramesField.qml:15
+msgctxt "@option:check"
+msgid "Avoid dark frames"
+msgstr "Evitar fotogramas oscuros"
+
+#: src/Components/AvoidDarkFramesField.qml:24
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Checked: tries to avoid very dark frames by changing the time the "
+#| "thumbnail is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail "
+#| "is taken regardless of it's content"
+msgctxt "@info:tooltip"
+msgid ""
+"Checked: tries to avoid very dark frames by changing the time the thumbnail "
+"is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
+"regardless of its content"
+msgstr ""
+"Marcada: intenta evitar los fotogramas muy oscuros cambiando el tiempo de la "
+"captura.<br><b>Puede ser muy lento</b><br><br>Sin marcar: los fotogramas se "
+"capturan sin tener en cuenta su contenido."
+
+#: src/Components/BackgroundField.qml:20
+#: src/Components/VideoInfoBackgroundColorField.qml:22
+msgctxt "@label"
+msgid "Background color"
+msgstr "Color del fondo"
+
+#: src/Components/BackgroundField.qml:47
+#: src/Components/VideoInfoBackgroundColorField.qml:49
+#: src/Components/VideoInfoTextColorField.qml:49
+msgctxt "@info:tooltip"
+msgid "Select a color"
+msgstr "Seleccione un color"
+
+#: src/Components/BackgroundField.qml:54
+#: src/Components/VideoInfoBackgroundColorField.qml:56
+#: src/Components/VideoInfoTextColorField.qml:56
+msgctxt "@title:window"
+msgid "Select Color"
+msgstr "Seleccionar color"
+
+#: src/Components/ClearFilesField.qml:15
+msgctxt "@action:button"
+msgid "Clear files"
+msgstr "Borrar archivos"
+
+#: src/Components/CloseAppButton.qml:13
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Cerrar"
+
+#: src/Components/ColumnsField.qml:21
+msgctxt "@label"
+msgid "Columns"
+msgstr "Columnas"
+
+#: src/Components/ImageSaveLocationField.qml:25
+msgctxt "@label"
+msgid "Save location"
+msgstr "Ubicación donde guardar"
+
+#: src/Components/ImageSaveLocationField.qml:36
+msgctxt "@label:listbox left mouse button"
+msgid "Same folder as video"
+msgstr "La misma carpeta que el vídeo"
+
+#: src/Components/ImageSaveLocationField.qml:37
+msgctxt "@label:listbox middle mouse button"
+msgid "Folder next to video"
+msgstr "Carpeta junto al vídeo"
+
+#: src/Components/ImageSaveLocationField.qml:38
+msgctxt "@label:listbox right mouse button"
+msgid "Custom folder"
+msgstr "Carpeta personalizada"
+
+#: src/Components/ImageSaveLocationField.qml:67
+msgctxt "@info:tooltip"
+msgid "name of the folder"
+msgstr "nombre de la carpeta"
+
+#: src/Components/ImageSaveLocationField.qml:90
+msgctxt "@info:tooltip"
+msgid "path to the folder"
+msgstr "ruta de la carpeta"
+
+#: src/Components/ImageSaveLocationField.qml:98
+msgctxt "@title:window"
+msgid "Select folder"
+msgstr "Seleccionar carpeta"
+
+#: src/Components/RowsField.qml:21
+msgctxt "@label"
+msgid "Rows"
+msgstr "Filas"
+
+#: src/Components/RunField.qml:15
+msgctxt "@action:button"
+msgid "Run"
+msgstr "Ejecutar"
+
+#: src/Components/ShowVideoInfoField.qml:15
+msgctxt "@option:check"
+msgid "Show video info"
+msgstr "Mostrar información del vídeo"
+
+#: src/Components/SpacingField.qml:21
+msgctxt "@label"
+msgid "Spacing"
+msgstr "Espaciado"
+
+#: src/Components/ThumbWidthField.qml:21
+msgctxt "@label"
+msgid "Thumbnail width"
+msgstr "Anchura de la miniatura"
+
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:15
+msgctxt "@label"
+msgid "Always show hours"
+msgstr "Mostrar siempre las horas"
+
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:25
+msgctxt "@info:tooltip"
+msgid ""
+"Checked: shows hours as “00“ (two zeros) when video length is under an hour\n"
+"\n"
+"Unchecked: only minutes and seconds are shown"
+msgstr ""
+"Marcada: muestra las hora como «00» (dos ceros) cuando la longitud del vídeo "
+"es inferior a una hora.\n"
+"Sin marcar: solo se muestran los minutos y los segundos."
+
+#: src/Components/VideoInfoTextColorField.qml:22
+msgctxt "@label"
+msgid "Text color"
+msgstr "Color del texto"
+
+#: src/FilesView.qml:90
+msgctxt "@action:inmenu"
+msgid "Open video folder"
+msgstr "Abrir carpeta de vídeo"
+
+#: src/FilesView.qml:101
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Eliminar"
+
+#: src/FilesView.qml:120
+msgctxt "@action:inmenu"
+msgid "Open thumbnail"
+msgstr "Abrir miniatura"
+
+#: src/Main.qml:52
+msgctxt "@label"
+msgid "Thumbnail settings"
+msgstr "Preferencias de la miniatura"
+
+#: src/Main.qml:69
+msgctxt "@label"
+msgid "Video info settings"
+msgstr "Preferencias de la información del vídeo"
+
+#~ msgctxt "@label"
+#~ msgid "Backgound color"
+#~ msgstr "Color del fondo"
