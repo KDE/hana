@@ -165,7 +165,6 @@ void FrameDecoder::seek(uint timeInSeconds)
         timestamp = 0;
     }
 
-
     int i = m_videoStream;
     int ret = av_seek_frame(m_formatContext,
             i, timestamp * m_formatContext->streams[i]->time_base.den / AV_TIME_BASE / m_formatContext->streams[i]->time_base.num,
