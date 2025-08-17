@@ -3,7 +3,25 @@
 
 [Desktop Entry]
 Name=Hana
+Name[ca]=Hana
+Name[es]=Hana
+Name[eu]=Hana
+Name[nl]=Hana
+Name[sl]=Hana
+Name[sv]=Hana
+Name[tr]=Hana
+Name[uk]=Hana
+Name[x-test]=xxHanaxx
 GenericName=Video thumbnail generator
+GenericName[ca]=Generador de miniatures de vídeo
+GenericName[es]=Generador de miniaturas de vídeo
+GenericName[eu]=Bideoen koadro-txiki sortzailea
+GenericName[nl]=Generator van videominiatuur
+GenericName[sl]=Generator sličic videoposnetkov
+GenericName[sv]=Generator av videominiatyrbilder
+GenericName[tr]=Video küçük görseli üreteci
+GenericName[uk]=Програма для створення мініатюр відеоданих
+GenericName[x-test]=xxVideo thumbnail generatorxx
 Exec=hana
 Icon=hana
 Type=Application
