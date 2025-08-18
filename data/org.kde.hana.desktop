@@ -4,8 +4,11 @@
 [Desktop Entry]
 Name=Hana
 Name[ca]=Hana
+Name[ca@valencia]=Hana
 Name[es]=Hana
 Name[eu]=Hana
+Name[he]=Hana
+Name[ka]=Hana
 Name[nl]=Hana
 Name[sl]=Hana
 Name[sv]=Hana
@@ -14,8 +17,11 @@ Name[uk]=Hana
 Name[x-test]=xxHanaxx
 GenericName=Video thumbnail generator
 GenericName[ca]=Generador de miniatures de vídeo
+GenericName[ca@valencia]=Generador de miniatures de vídeo
 GenericName[es]=Generador de miniaturas de vídeo
 GenericName[eu]=Bideoen koadro-txiki sortzailea
+GenericName[he]=יצרן תמונות ממוזערות לסרטונים
+GenericName[ka]=ვიდეო მინიატურების გენერატორი
 GenericName[nl]=Generator van videominiatuur
 GenericName[sl]=Generator sličic videoposnetkov
 GenericName[sv]=Generator av videominiatyrbilder
