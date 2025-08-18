@@ -6,6 +6,14 @@
 -->
 <component type="desktop-application">
   <name>Hana</name>
+  <name xml:lang="ca">Hana</name>
+  <name xml:lang="es">Hana</name>
+  <name xml:lang="eu">Hana</name>
+  <name xml:lang="nl">Hana</name>
+  <name xml:lang="sl">Hana</name>
+  <name xml:lang="sv">Hana</name>
+  <name xml:lang="tr">Hana</name>
+  <name xml:lang="uk">Hana</name>
   <name xml:lang="x-test">xxHanaxx</name>
   <id>org.kde.hana</id>
   <launchable type="desktop-id">org.kde.hana.desktop</launchable>
@@ -16,25 +24,89 @@
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnail generator</summary>
+  <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
+  <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
+  <summary xml:lang="eu">Bideoen koadro-txiki sortzailea</summary>
+  <summary xml:lang="nl">Generator van videominiatuur</summary>
+  <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
+  <summary xml:lang="sv">Generator av videominiatyrbilder</summary>
+  <summary xml:lang="tr">Video küçük görseli üreteci</summary>
+  <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
   <summary xml:lang="x-test">xxVideo thumbnail generatorxx</summary>
   <developer id="org.kde">
     <name translate="no">George Florea Bănuș</name>
   </developer>
   <description>
     <p>Application to create thumbnail images from video files and join them in one image.</p>
+    <p xml:lang="ca">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
+    <p xml:lang="es">Aplicación para crear imágenes de miniaturas de archivos de vídeo y unirlas en una única imagen.</p>
+    <p xml:lang="eu">Bideo-fitxategietatik koadro-txikien irudiak sortzeko eta irudi bakarrean elkartzeko aplikazioa.</p>
+    <p xml:lang="nl">Toepassing om miniatuurafbeeldingen uit videobestanden te maken en ze samen te voegen in één afbeelding.</p>
+    <p xml:lang="sl">Aplikacija za ustvarjanje sličic iz video datotek in njihovo združevanje v eno sliko.</p>
+    <p xml:lang="sv">Program för att skapa miniatyrbilder från videofiler och sammanfoga dem till en bild.</p>
+    <p xml:lang="tr">Hana, video dosyalarından küçük görseller oluşturmak ve onları tek bir görselde birleştirmek için bir uygulamadır.</p>
+    <p xml:lang="uk">Програма для створення зображень мініатюр на основі файлів відеоданих та об'єднання їх в одне зображення.</p>
     <p xml:lang="x-test">xxApplication to create thumbnail images from video files and join them in one image.xx</p>
     <p>Features</p>
+    <p xml:lang="ca">Característiques</p>
+    <p xml:lang="es">Funciones</p>
+    <p xml:lang="eu">Ezaugarriak</p>
+    <p xml:lang="nl">Mogelijkheden</p>
+    <p xml:lang="sl">Zmožnosti</p>
+    <p xml:lang="sv">Funktioner</p>
+    <p xml:lang="tr">Özellikler</p>
+    <p xml:lang="uk">Можливості</p>
     <p xml:lang="x-test">xxFeaturesxx</p>
     <ul>
       <li>parallel processing</li>
+      <li xml:lang="ca">processament en paral·lel</li>
+      <li xml:lang="es">procesamiento en paralelo</li>
+      <li xml:lang="eu">prozesatze paraleloa</li>
+      <li xml:lang="nl">parallelle verwerking</li>
+      <li xml:lang="sl">vzporedna obdelava</li>
+      <li xml:lang="sv">parallell bearbetning</li>
+      <li xml:lang="tr">Paralel işleme</li>
+      <li xml:lang="uk">паралельна обробка</li>
       <li xml:lang="x-test">xxparallel processingxx</li>
       <li>set number of rows and columns</li>
+      <li xml:lang="ca">estableix el nombre de files i columnes</li>
+      <li xml:lang="es">ajuste del número de filas y columnas</li>
+      <li xml:lang="eu">errenkada eta zutabe kopurua ezartzea</li>
+      <li xml:lang="nl">aantal rijen en kolommen instellen</li>
+      <li xml:lang="sl">nastavi število vrstic in stolpcev</li>
+      <li xml:lang="sv">ange antal rader och kolumner</li>
+      <li xml:lang="tr">Satır ve sütün sayısını ayarlayabilme olanağı</li>
+      <li xml:lang="uk">встановлення кількості рядків і стовпчиків</li>
       <li xml:lang="x-test">xxset number of rows and columnsxx</li>
       <li>toggle file info</li>
+      <li xml:lang="ca">commuta la informació del fitxer</li>
+      <li xml:lang="es">visibilidad de la información de los archivos</li>
+      <li xml:lang="eu">fitxategi-informazioa txandakatzea</li>
+      <li xml:lang="nl">bestandsinformatie omschakelen</li>
+      <li xml:lang="sl">preklopi informacije o datoteki</li>
+      <li xml:lang="sv">visa eller dölj filinformation</li>
+      <li xml:lang="tr">Dosya bilgisini gösterme olanağı</li>
+      <li xml:lang="uk">вмикання і вимикання відомостей щодо файлів</li>
       <li xml:lang="x-test">xxtoggle file infoxx</li>
       <li>set thumbnail width and spacing</li>
+      <li xml:lang="ca">estableix l'amplada i espaiat de les miniatures</li>
+      <li xml:lang="es">ajuste de la anchura y el espaciado de las miniaturas</li>
+      <li xml:lang="eu">koadro-txikiaren zabalera eta tartea ezartzea</li>
+      <li xml:lang="nl">breedte en spatiëring van miniaturen instellen</li>
+      <li xml:lang="sl">nastavitev širine in razmika med sličicami</li>
+      <li xml:lang="sv">ange miniatyrbildens bredd och mellanrum</li>
+      <li xml:lang="tr">Küçük görsel genişliğini ve boşluklandırmayı ayarla</li>
+      <li xml:lang="uk">встановлення ширини мініатюр та інтервалів між мініатюрами</li>
       <li xml:lang="x-test">xxset thumbnail width and spacingxx</li>
       <li>set background and text colors</li>
+      <li xml:lang="ca">estableix els colors de fons i del text</li>
+      <li xml:lang="es">ajuste de los colores de fondo y del texto</li>
+      <li xml:lang="eu">atzeko planoaren eta testuaren koloreak ezartzea</li>
+      <li xml:lang="nl">achtergrond en tekstkleuren instellen</li>
+      <li xml:lang="sl">nastavi barve ozadja in besedila</li>
+      <li xml:lang="sv">ange bakgrund och textfärger</li>
+      <li xml:lang="tr">Arka plan ve metin renklerini ayarla</li>
+      <li xml:lang="uk">встановлення кольорів тла і тексту</li>
       <li xml:lang="x-test">xxset background and text colorsxx</li>
     </ul>
   </description>
