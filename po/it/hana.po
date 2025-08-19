@@ -1,36 +1,36 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the hana package.
+# SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-17 00:41+0000\n"
-"PO-Revision-Date: 2025-08-17 19:31\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2025-08-17 07:46+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/hana/hana.pot\n"
-"X-Crowdin-File-ID: 58470\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: src/Components/AddFilesField.qml:16
 msgctxt "@action:button"
 msgid "Add files"
-msgstr "添加文件"
+msgstr "Aggiungi file"
 
 #: src/Components/AddFilesField.qml:25
 msgctxt "@title:window"
 msgid "Select files"
-msgstr "选择文件"
+msgstr "Seleziona i file"
 
 #: src/Components/AvoidDarkFramesField.qml:15
 msgctxt "@option:check"
 msgid "Avoid dark frames"
-msgstr "避免截取暗色帧"
+msgstr "Evita i fotogrammi scuri"
 
 #: src/Components/AvoidDarkFramesField.qml:24
 msgctxt "@info:tooltip"
@@ -39,108 +39,106 @@ msgid ""
 "is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
 "regardless of its content"
 msgstr ""
-"勾选：尝试通过调整缩略图的截取时间来避免出现非常暗的帧<br><b>可能会非常慢</"
-"b><br><br>不勾选：无论内容如何均截取缩略图"
 
 #: src/Components/BackgroundField.qml:20
 #: src/Components/VideoInfoBackgroundColorField.qml:22
 msgctxt "@label"
 msgid "Background color"
-msgstr "背景色"
+msgstr "Colore di sfondo"
 
 #: src/Components/BackgroundField.qml:47
 #: src/Components/VideoInfoBackgroundColorField.qml:49
 #: src/Components/VideoInfoTextColorField.qml:49
 msgctxt "@info:tooltip"
 msgid "Select a color"
-msgstr "选择颜色"
+msgstr "Seleziona un colore"
 
 #: src/Components/BackgroundField.qml:54
 #: src/Components/VideoInfoBackgroundColorField.qml:56
 #: src/Components/VideoInfoTextColorField.qml:56
 msgctxt "@title:window"
 msgid "Select Color"
-msgstr "选择颜色"
+msgstr "Seleziona colore"
 
 #: src/Components/ClearFilesField.qml:15
 msgctxt "@action:button"
 msgid "Clear files"
-msgstr "清除文件"
+msgstr "Pulisci i file"
 
 #: src/Components/CloseAppButton.qml:13
 msgctxt "@action:button"
 msgid "Close"
-msgstr "关闭"
+msgstr "Chiudi"
 
 #: src/Components/ColumnsField.qml:21
 msgctxt "@label"
 msgid "Columns"
-msgstr "列数"
+msgstr "Colonne"
 
 #: src/Components/ImageSaveLocationField.qml:25
 msgctxt "@label"
 msgid "Save location"
-msgstr "保存位置"
+msgstr "Posizione di salvataggio"
 
 #: src/Components/ImageSaveLocationField.qml:36
 msgctxt "@label:listbox left mouse button"
 msgid "Same folder as video"
-msgstr "视频所在的文件夹"
+msgstr "Stessa cartella del video"
 
 #: src/Components/ImageSaveLocationField.qml:37
 msgctxt "@label:listbox middle mouse button"
 msgid "Folder next to video"
-msgstr "视频所在的文件夹的子文件夹"
+msgstr "Cartella accanto al video"
 
 #: src/Components/ImageSaveLocationField.qml:38
 msgctxt "@label:listbox right mouse button"
 msgid "Custom folder"
-msgstr "自定义文件夹"
+msgstr "Cartella personalizzata"
 
 #: src/Components/ImageSaveLocationField.qml:67
 msgctxt "@info:tooltip"
 msgid "name of the folder"
-msgstr "文件夹名称"
+msgstr "nome della cartella"
 
 #: src/Components/ImageSaveLocationField.qml:90
 msgctxt "@info:tooltip"
 msgid "path to the folder"
-msgstr "文件夹路径"
+msgstr "percorso della cartella"
 
 #: src/Components/ImageSaveLocationField.qml:98
 msgctxt "@title:window"
 msgid "Select folder"
-msgstr "选择文件夹"
+msgstr "Seleziona la cartella"
 
 #: src/Components/RowsField.qml:21
 msgctxt "@label"
 msgid "Rows"
-msgstr "行数"
+msgstr "Righe"
 
 #: src/Components/RunField.qml:15
 msgctxt "@action:button"
 msgid "Run"
-msgstr "运行"
+msgstr "Esegui"
 
 #: src/Components/ShowVideoInfoField.qml:15
 msgctxt "@option:check"
 msgid "Show video info"
-msgstr "显示视频信息"
+msgstr "Mostra le informazioni del video"
 
 #: src/Components/SpacingField.qml:21
 msgctxt "@label"
 msgid "Spacing"
-msgstr "间距"
+msgstr "Spaziatura"
 
 #: src/Components/ThumbWidthField.qml:21
 msgctxt "@label"
 msgid "Thumbnail width"
-msgstr "缩略图宽度"
+msgstr "Larghezza della miniatura"
 
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:15
 msgctxt "@label"
 msgid "Always show hours"
-msgstr "始终显示小时"
+msgstr "Mostra sempre gli orari"
 
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:25
 msgctxt "@info:tooltip"
@@ -149,36 +147,37 @@ msgid ""
 "\n"
 "Unchecked: only minutes and seconds are shown"
 msgstr ""
-"勾选：如果视频时长不足一小时，小时显示为“00” (两个零)\n"
+"Selezionata: mostra le ore come «00» (due zeri) quando la durata del video è "
+"inferiore a un'ora.\n"
 "\n"
-"不勾选：仅显示分钟和秒"
+"Non selezionata: sono mostrati solo minuti e secondi."
 
 #: src/Components/VideoInfoTextColorField.qml:22
 msgctxt "@label"
 msgid "Text color"
-msgstr "文字颜色"
+msgstr "Colore del testo"
 
 #: src/FilesView.qml:90
 msgctxt "@action:inmenu"
 msgid "Open video folder"
-msgstr "打开视频文件夹"
+msgstr "Apri la cartella del video"
 
 #: src/FilesView.qml:101
 msgctxt "@action:inmenu"
 msgid "Remove"
-msgstr "移除"
+msgstr "Rimuovi"
 
 #: src/FilesView.qml:120
 msgctxt "@action:inmenu"
 msgid "Open thumbnail"
-msgstr "打开缩略图"
+msgstr "Apri la miniatura"
 
 #: src/Main.qml:52
 msgctxt "@label"
 msgid "Thumbnail settings"
-msgstr "缩略图设置"
+msgstr "Impostazioni miniature"
 
 #: src/Main.qml:69
 msgctxt "@label"
 msgid "Video info settings"
-msgstr "视频信息设置"
+msgstr "Impostazioni delle informazioni video"
