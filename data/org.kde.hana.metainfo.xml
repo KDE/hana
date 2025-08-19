@@ -7,8 +7,11 @@
 <component type="desktop-application">
   <name>Hana</name>
   <name xml:lang="ca">Hana</name>
+  <name xml:lang="ca-valencia">Hana</name>
   <name xml:lang="es">Hana</name>
   <name xml:lang="eu">Hana</name>
+  <name xml:lang="he">Hana</name>
+  <name xml:lang="ka">Hana</name>
   <name xml:lang="nl">Hana</name>
   <name xml:lang="sl">Hana</name>
   <name xml:lang="sv">Hana</name>
@@ -25,8 +28,11 @@
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnail generator</summary>
   <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
+  <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
   <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
   <summary xml:lang="eu">Bideoen koadro-txiki sortzailea</summary>
+  <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
+  <summary xml:lang="ka">ვიდეო მინიატურების გენერატორი</summary>
   <summary xml:lang="nl">Generator van videominiatuur</summary>
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
   <summary xml:lang="sv">Generator av videominiatyrbilder</summary>
@@ -39,8 +45,11 @@
   <description>
     <p>Application to create thumbnail images from video files and join them in one image.</p>
     <p xml:lang="ca">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
+    <p xml:lang="ca-valencia">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
     <p xml:lang="es">Aplicación para crear imágenes de miniaturas de archivos de vídeo y unirlas en una única imagen.</p>
     <p xml:lang="eu">Bideo-fitxategietatik koadro-txikien irudiak sortzeko eta irudi bakarrean elkartzeko aplikazioa.</p>
+    <p xml:lang="he">יישום ליצירת תמונות ממוזערות מקובצי וידאו וצירוף שלהן לתמונה אחת.</p>
+    <p xml:lang="ka">აპლიკაცია მინიატურის გამოსახულებების შესაქმნელად ვიდეოფაილებიდან და მათი ერთ გამოსახულებაში გასაერთიანებლად.</p>
     <p xml:lang="nl">Toepassing om miniatuurafbeeldingen uit videobestanden te maken en ze samen te voegen in één afbeelding.</p>
     <p xml:lang="sl">Aplikacija za ustvarjanje sličic iz video datotek in njihovo združevanje v eno sliko.</p>
     <p xml:lang="sv">Program för att skapa miniatyrbilder från videofiler och sammanfoga dem till en bild.</p>
@@ -49,8 +58,11 @@
     <p xml:lang="x-test">xxApplication to create thumbnail images from video files and join them in one image.xx</p>
     <p>Features</p>
     <p xml:lang="ca">Característiques</p>
+    <p xml:lang="ca-valencia">Característiques</p>
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
+    <p xml:lang="he">יכולות</p>
+    <p xml:lang="ka">თვისებები</p>
     <p xml:lang="nl">Mogelijkheden</p>
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
@@ -60,8 +72,11 @@
     <ul>
       <li>parallel processing</li>
       <li xml:lang="ca">processament en paral·lel</li>
+      <li xml:lang="ca-valencia">processament en paral·lel</li>
       <li xml:lang="es">procesamiento en paralelo</li>
       <li xml:lang="eu">prozesatze paraleloa</li>
+      <li xml:lang="he">עיבוד מקבילי</li>
+      <li xml:lang="ka">პარალელური დამუშავება</li>
       <li xml:lang="nl">parallelle verwerking</li>
       <li xml:lang="sl">vzporedna obdelava</li>
       <li xml:lang="sv">parallell bearbetning</li>
@@ -70,8 +85,11 @@
       <li xml:lang="x-test">xxparallel processingxx</li>
       <li>set number of rows and columns</li>
       <li xml:lang="ca">estableix el nombre de files i columnes</li>
+      <li xml:lang="ca-valencia">establix el nombre de files i columnes</li>
       <li xml:lang="es">ajuste del número de filas y columnas</li>
       <li xml:lang="eu">errenkada eta zutabe kopurua ezartzea</li>
+      <li xml:lang="he">הגדרת מספר שורות ועמודות</li>
+      <li xml:lang="ka">მწკრივების და სვეტების რაოდენობის დაყენება</li>
       <li xml:lang="nl">aantal rijen en kolommen instellen</li>
       <li xml:lang="sl">nastavi število vrstic in stolpcev</li>
       <li xml:lang="sv">ange antal rader och kolumner</li>
@@ -80,8 +98,11 @@
       <li xml:lang="x-test">xxset number of rows and columnsxx</li>
       <li>toggle file info</li>
       <li xml:lang="ca">commuta la informació del fitxer</li>
+      <li xml:lang="ca-valencia">canvia la informació del fitxer</li>
       <li xml:lang="es">visibilidad de la información de los archivos</li>
       <li xml:lang="eu">fitxategi-informazioa txandakatzea</li>
+      <li xml:lang="he">החלפת מצב הצגת פרטי קובץ</li>
+      <li xml:lang="ka">ფაილის ინფორმაციის გადართვა</li>
       <li xml:lang="nl">bestandsinformatie omschakelen</li>
       <li xml:lang="sl">preklopi informacije o datoteki</li>
       <li xml:lang="sv">visa eller dölj filinformation</li>
@@ -90,8 +111,11 @@
       <li xml:lang="x-test">xxtoggle file infoxx</li>
       <li>set thumbnail width and spacing</li>
       <li xml:lang="ca">estableix l'amplada i espaiat de les miniatures</li>
+      <li xml:lang="ca-valencia">establix l'amplària i espaiat de les miniatures</li>
       <li xml:lang="es">ajuste de la anchura y el espaciado de las miniaturas</li>
       <li xml:lang="eu">koadro-txikiaren zabalera eta tartea ezartzea</li>
+      <li xml:lang="he">הגדרת רוחב תמונה ממוזערת וריווח</li>
+      <li xml:lang="ka">დააყენეთ მინიატურების სიგანე და ინტერვალი</li>
       <li xml:lang="nl">breedte en spatiëring van miniaturen instellen</li>
       <li xml:lang="sl">nastavitev širine in razmika med sličicami</li>
       <li xml:lang="sv">ange miniatyrbildens bredd och mellanrum</li>
@@ -100,8 +124,11 @@
       <li xml:lang="x-test">xxset thumbnail width and spacingxx</li>
       <li>set background and text colors</li>
       <li xml:lang="ca">estableix els colors de fons i del text</li>
+      <li xml:lang="ca-valencia">establix els colors de fons i del text</li>
       <li xml:lang="es">ajuste de los colores de fondo y del texto</li>
       <li xml:lang="eu">atzeko planoaren eta testuaren koloreak ezartzea</li>
+      <li xml:lang="he">הגדרת צבעי רקע וכתב</li>
+      <li xml:lang="ka">დააყენეთ ფონის და ტექსტის ფერები</li>
       <li xml:lang="nl">achtergrond en tekstkleuren instellen</li>
       <li xml:lang="sl">nastavi barve ozadja in besedila</li>
       <li xml:lang="sv">ange bakgrund och textfärger</li>
