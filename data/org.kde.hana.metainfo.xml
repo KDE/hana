@@ -10,6 +10,7 @@
   <name xml:lang="ca-valencia">Hana</name>
   <name xml:lang="es">Hana</name>
   <name xml:lang="eu">Hana</name>
+  <name xml:lang="fr">Hana</name>
   <name xml:lang="he">Hana</name>
   <name xml:lang="it">Hana</name>
   <name xml:lang="ka">Hana</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
   <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
   <summary xml:lang="eu">Bideoen koadro-txiki sortzailea</summary>
+  <summary xml:lang="fr">Générateur de vignettes vidéo</summary>
   <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
   <summary xml:lang="it">Generatore di miniature video</summary>
   <summary xml:lang="ka">ვიდეო მინიატურების გენერატორი</summary>
@@ -52,6 +54,7 @@
     <p xml:lang="ca-valencia">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
     <p xml:lang="es">Aplicación para crear imágenes de miniaturas de archivos de vídeo y unirlas en una única imagen.</p>
     <p xml:lang="eu">Bideo-fitxategietatik koadro-txikien irudiak sortzeko eta irudi bakarrean elkartzeko aplikazioa.</p>
+    <p xml:lang="fr">Application pour créer des miniatures de vignettes à partir de fichiers vidéo et pour les regrouper en une seule image.</p>
     <p xml:lang="he">יישום ליצירת תמונות ממוזערות מקובצי וידאו וצירוף שלהן לתמונה אחת.</p>
     <p xml:lang="it">Applicazione per creare miniature di file video e unirle in un'unica immagine.</p>
     <p xml:lang="ka">აპლიკაცია მინიატურის გამოსახულებების შესაქმნელად ვიდეოფაილებიდან და მათი ერთ გამოსახულებაში გასაერთიანებლად.</p>
@@ -67,6 +70,7 @@
     <p xml:lang="ca-valencia">Característiques</p>
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
+    <p xml:lang="fr">Fonctionnalités</p>
     <p xml:lang="he">יכולות</p>
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები</p>
@@ -83,6 +87,7 @@
       <li xml:lang="ca-valencia">processament en paral·lel</li>
       <li xml:lang="es">procesamiento en paralelo</li>
       <li xml:lang="eu">prozesatze paraleloa</li>
+      <li xml:lang="fr">traitement parallèle</li>
       <li xml:lang="he">עיבוד מקבילי</li>
       <li xml:lang="it">elaborazione parallela</li>
       <li xml:lang="ka">პარალელური დამუშავება</li>
@@ -98,6 +103,7 @@
       <li xml:lang="ca-valencia">establix el nombre de files i columnes</li>
       <li xml:lang="es">ajuste del número de filas y columnas</li>
       <li xml:lang="eu">errenkada eta zutabe kopurua ezartzea</li>
+      <li xml:lang="fr">définir le nombre de lignes et de colonnes</li>
       <li xml:lang="he">הגדרת מספר שורות ועמודות</li>
       <li xml:lang="it">imposta il numero di righe e colonne</li>
       <li xml:lang="ka">მწკრივების და სვეტების რაოდენობის დაყენება</li>
@@ -113,6 +119,7 @@
       <li xml:lang="ca-valencia">canvia la informació del fitxer</li>
       <li xml:lang="es">visibilidad de la información de los archivos</li>
       <li xml:lang="eu">fitxategi-informazioa txandakatzea</li>
+      <li xml:lang="fr">basculer ou non vers les informations du fichier</li>
       <li xml:lang="he">החלפת מצב הצגת פרטי קובץ</li>
       <li xml:lang="it">attiva/disattiva le informazioni sul file</li>
       <li xml:lang="ka">ფაილის ინფორმაციის გადართვა</li>
@@ -128,6 +135,7 @@
       <li xml:lang="ca-valencia">establix l'amplària i espaiat de les miniatures</li>
       <li xml:lang="es">ajuste de la anchura y el espaciado de las miniaturas</li>
       <li xml:lang="eu">koadro-txikiaren zabalera eta tartea ezartzea</li>
+      <li xml:lang="fr">définir la largeur et l'espacement des vignettes</li>
       <li xml:lang="he">הגדרת רוחב תמונה ממוזערת וריווח</li>
       <li xml:lang="it">imposta la larghezza e la spaziatura delle miniature</li>
       <li xml:lang="ka">დააყენეთ მინიატურების სიგანე და ინტერვალი</li>
@@ -143,6 +151,7 @@
       <li xml:lang="ca-valencia">establix els colors de fons i del text</li>
       <li xml:lang="es">ajuste de los colores de fondo y del texto</li>
       <li xml:lang="eu">atzeko planoaren eta testuaren koloreak ezartzea</li>
+      <li xml:lang="fr">Définir les couleurs d'arrière-plan et de texte</li>
       <li xml:lang="he">הגדרת צבעי רקע וכתב</li>
       <li xml:lang="it">imposta i colori dello sfondo e del testo</li>
       <li xml:lang="ka">დააყენეთ ფონის და ტექსტის ფერები</li>
