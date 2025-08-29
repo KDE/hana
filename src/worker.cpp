@@ -10,6 +10,7 @@
 #include <QTemporaryDir>
 #include <QTextDocument>
 #include <QThreadPool>
+#include <QElapsedTimer>
 
 #include "settings.h"
 
