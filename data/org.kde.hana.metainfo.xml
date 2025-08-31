@@ -26,7 +26,7 @@
   <launchable type="desktop-id">org.kde.hana.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
-  <!--  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=hana</url>-->
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=hana</url>
   <url type="donation">https://github.com/sponsors/g-fb</url>
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
@@ -178,7 +178,13 @@
   </releases>
   <screenshots>
     <screenshot type="default">
-      <image>https://invent.kde.org/georgefb/hana/-/raw/master/data/images/hana.png</image>
+      <image>https://origin.cdn.kde.org/screenshots/hana/hana.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://origin.cdn.kde.org/screenshots/hana/hana-progress.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://origin.cdn.kde.org/screenshots/hana/hana-dark.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.0"/>
