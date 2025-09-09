@@ -22,7 +22,7 @@ ColumnLayout {
         Label {
             Layout.maximumWidth: 250
 
-            text: i18nc("@label", "Save location")
+            text: i18nc("@label where the image is going to be saved", "Save location")
             elide: Text.ElideRight
         }
 
