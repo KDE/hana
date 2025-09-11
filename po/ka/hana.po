@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-08-17 12:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -80,7 +80,10 @@ msgid "Columns"
 msgstr "სვეტები"
 
 #: src/Components/ImageSaveLocationField.qml:25
-msgctxt "@label"
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Save location"
+msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr "მდებარეობის შენახვა"
 

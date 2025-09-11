@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-08-17 10:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -82,7 +82,10 @@ msgid "Columns"
 msgstr "Zutabeak"
 
 #: src/Components/ImageSaveLocationField.qml:25
-msgctxt "@label"
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Save location"
+msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr "Gorde kokapena"
 

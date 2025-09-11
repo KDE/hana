@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-08-17 12:04+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -77,7 +77,7 @@ msgid "Columns"
 msgstr ""
 
 #: src/Components/ImageSaveLocationField.qml:25
-msgctxt "@label"
+msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr ""
 

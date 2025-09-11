@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-08-17 19:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -78,7 +78,10 @@ msgid "Columns"
 msgstr "列数"
 
 #: src/Components/ImageSaveLocationField.qml:25
-msgctxt "@label"
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Save location"
+msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr "保存位置"
 
