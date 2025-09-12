@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:41+0000\n"
-"PO-Revision-Date: 2025-08-17 15:03+0200\n"
+"PO-Revision-Date: 2025-09-11 17:21+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: src/Components/AddFilesField.qml:16
 msgctxt "@action:button"
@@ -79,12 +79,9 @@ msgid "Columns"
 msgstr "Kolommen"
 
 #: src/Components/ImageSaveLocationField.qml:25
-#, fuzzy
-#| msgctxt "@label"
-#| msgid "Save location"
 msgctxt "@label where the image is going to be saved"
 msgid "Save location"
-msgstr "Opslaglocatie"
+msgstr "Locatie opslaan"
 
 #: src/Components/ImageSaveLocationField.qml:36
 msgctxt "@label:listbox left mouse button"
