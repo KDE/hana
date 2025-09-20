@@ -5,6 +5,7 @@
 Name=Hana
 Name[ca]=Hana
 Name[ca@valencia]=Hana
+Name[de]=Hana
 Name[es]=Hana
 Name[eu]=Hana
 Name[fr]=Hana
@@ -21,6 +22,7 @@ Name[zh_CN]=Hana 视频缩略图生成器
 GenericName=Video thumbnail generator
 GenericName[ca]=Generador de miniatures de vídeo
 GenericName[ca@valencia]=Generador de miniatures de vídeo
+GenericName[de]=Ersteller für Video-Vorschaubilder
 GenericName[es]=Generador de miniaturas de vídeo
 GenericName[eu]=Bideoen koadro-txiki sortzailea
 GenericName[fr]=Générateur de vignettes vidéo
