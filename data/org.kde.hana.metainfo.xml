@@ -22,6 +22,7 @@
   <name xml:lang="tr">Hana</name>
   <name xml:lang="uk">Hana</name>
   <name xml:lang="zh-CN">Hana 视频缩略图生成器</name>
+  <name xml:lang="zh-TW">Hana</name>
   <id>org.kde.hana</id>
   <launchable type="desktop-id">org.kde.hana.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
@@ -47,6 +48,7 @@
   <summary xml:lang="tr">Video küçük görseli üreteci</summary>
   <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
   <summary xml:lang="zh-CN">视频缩略图生成器</summary>
+  <summary xml:lang="zh-TW">影片縮圖產生器</summary>
   <developer id="org.kde">
     <name translate="no">George Florea Bănuș</name>
   </developer>
@@ -68,6 +70,7 @@
     <p xml:lang="tr">Hana, video dosyalarından küçük görseller oluşturmak ve onları tek bir görselde birleştirmek için bir uygulamadır.</p>
     <p xml:lang="uk">Програма для створення зображень мініатюр на основі файлів відеоданих та об'єднання їх в одне зображення.</p>
     <p xml:lang="zh-CN">用于从视频文件创建缩略图并将其合并为一张图像的应用程序。</p>
+    <p xml:lang="zh-TW">從影片檔案建立縮圖影像然後合併成單一影像用的應用程式。</p>
     <p>Features</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
@@ -85,6 +88,7 @@
     <p xml:lang="tr">Özellikler</p>
     <p xml:lang="uk">Можливості</p>
     <p xml:lang="zh-CN">程序功能</p>
+    <p xml:lang="zh-TW">功能</p>
     <ul>
       <li>parallel processing</li>
       <li xml:lang="ca">processament en paral·lel</li>
@@ -103,6 +107,7 @@
       <li xml:lang="tr">Paralel işleme</li>
       <li xml:lang="uk">паралельна обробка</li>
       <li xml:lang="zh-CN">并行处理</li>
+      <li xml:lang="zh-TW">平行處理</li>
       <li>set number of rows and columns</li>
       <li xml:lang="ca">estableix el nombre de files i columnes</li>
       <li xml:lang="ca-valencia">establix el nombre de files i columnes</li>
@@ -120,6 +125,7 @@
       <li xml:lang="tr">Satır ve sütün sayısını ayarlayabilme olanağı</li>
       <li xml:lang="uk">встановлення кількості рядків і стовпчиків</li>
       <li xml:lang="zh-CN">设置行数和列数</li>
+      <li xml:lang="zh-TW">設定列數與欄數</li>
       <li>toggle file info</li>
       <li xml:lang="ca">commuta la informació del fitxer</li>
       <li xml:lang="ca-valencia">canvia la informació del fitxer</li>
@@ -137,6 +143,7 @@
       <li xml:lang="tr">Dosya bilgisini gösterme olanağı</li>
       <li xml:lang="uk">вмикання і вимикання відомостей щодо файлів</li>
       <li xml:lang="zh-CN">显示和隐藏文件信息</li>
+      <li xml:lang="zh-TW">切換檔案資訊</li>
       <li>set thumbnail width and spacing</li>
       <li xml:lang="ca">estableix l'amplada i espaiat de les miniatures</li>
       <li xml:lang="ca-valencia">establix l'amplària i espaiat de les miniatures</li>
@@ -154,6 +161,7 @@
       <li xml:lang="tr">Küçük görsel genişliğini ve boşluklandırmayı ayarla</li>
       <li xml:lang="uk">встановлення ширини мініатюр та інтервалів між мініатюрами</li>
       <li xml:lang="zh-CN">设置缩略图宽度和间距</li>
+      <li xml:lang="zh-TW">設定縮圖寬度與間距</li>
       <li>set background and text colors</li>
       <li xml:lang="ca">estableix els colors de fons i del text</li>
       <li xml:lang="ca-valencia">establix els colors de fons i del text</li>
@@ -171,6 +179,7 @@
       <li xml:lang="tr">Arka plan ve metin renklerini ayarla</li>
       <li xml:lang="uk">встановлення кольорів тла і тексту</li>
       <li xml:lang="zh-CN">设置背景和文字颜色</li>
+      <li xml:lang="zh-TW">設定背景與文字顏色</li>
     </ul>
   </description>
   <releases>
