@@ -78,9 +78,6 @@ msgid "Columns"
 msgstr "列数"
 
 #: src/Components/ImageSaveLocationField.qml:25
-#, fuzzy
-#| msgctxt "@label"
-#| msgid "Save location"
 msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr "保存位置"
