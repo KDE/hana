@@ -12,7 +12,7 @@ import org.kde.hana
 ToolButton {
     id: root
 
-    text: i18nc("@action:button", "Clear files")
+    text: i18nc("@action:button; Empty the list of files. The files are not deleted from disk", "Clear files")
 
     onClicked: Bridge.clearFiles()
 }
