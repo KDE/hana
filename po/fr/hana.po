@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
 "PO-Revision-Date: 2025-09-12 12:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -62,7 +62,11 @@ msgid "Select Color"
 msgstr "Sélectionner une couleur"
 
 #: src/Components/ClearFilesField.qml:15
-msgctxt "@action:button"
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "Clear files"
+msgctxt ""
+"@action:button; Empty the list of files. The files are not deleted from disk"
 msgid "Clear files"
 msgstr "Effacer les fichiers"
 
