@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-01 00:44+0000\n"
-"PO-Revision-Date: 2025-09-11 12:18+0100\n"
+"PO-Revision-Date: 2025-10-01 16:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/Components/AddFilesField.qml:16
 msgctxt "@action:button"
@@ -66,13 +66,10 @@ msgid "Select Color"
 msgstr "Seleccionar color"
 
 #: src/Components/ClearFilesField.qml:15
-#, fuzzy
-#| msgctxt "@action:button"
-#| msgid "Clear files"
 msgctxt ""
 "@action:button; Empty the list of files. The files are not deleted from disk"
 msgid "Clear files"
-msgstr "Borrar archivos"
+msgstr "Borrar lista de archivos"
 
 #: src/Components/CloseAppButton.qml:13
 msgctxt "@action:button"
