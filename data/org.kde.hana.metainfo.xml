@@ -6,6 +6,7 @@
 -->
 <component type="desktop-application">
   <name>Hana</name>
+  <name xml:lang="ar">هانا</name>
   <name xml:lang="ca">Hana</name>
   <name xml:lang="ca-valencia">Hana</name>
   <name xml:lang="de">Hana</name>
@@ -32,6 +33,7 @@
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnail generator</summary>
+  <summary xml:lang="ar">مولد مصغرات الفيديو</summary>
   <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
   <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
   <summary xml:lang="de">Ersteller für Video-Vorschaubilder</summary>
@@ -54,6 +56,7 @@
   </developer>
   <description>
     <p>Application to create thumbnail images from video files and join them in one image.</p>
+    <p xml:lang="ar">تطبيق لإنشاء صور مصغرة من ملفات الفيديو وضمها في صورة واحدة.</p>
     <p xml:lang="ca">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
     <p xml:lang="ca-valencia">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
     <p xml:lang="de">Anwendung zum Erstellen von Vorschaubildern aus Videodateien und zum Verschmelzen in ein einziges Bild.</p>
@@ -72,6 +75,7 @@
     <p xml:lang="zh-CN">用于从视频文件创建缩略图并将其合并为一张图像的应用程序。</p>
     <p xml:lang="zh-TW">從影片檔案建立縮圖影像然後合併成單一影像用的應用程式。</p>
     <p>Features</p>
+    <p xml:lang="ar">الميزات</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
     <p xml:lang="de">Funktionen</p>
@@ -91,6 +95,7 @@
     <p xml:lang="zh-TW">功能</p>
     <ul>
       <li>parallel processing</li>
+      <li xml:lang="ar">المعالجة المتوازية</li>
       <li xml:lang="ca">processament en paral·lel</li>
       <li xml:lang="ca-valencia">processament en paral·lel</li>
       <li xml:lang="de">Parallele Verarbeitung</li>
@@ -109,6 +114,7 @@
       <li xml:lang="zh-CN">并行处理</li>
       <li xml:lang="zh-TW">平行處理</li>
       <li>set number of rows and columns</li>
+      <li xml:lang="ar">اضبط عدد الصفوف والأعمدة</li>
       <li xml:lang="ca">estableix el nombre de files i columnes</li>
       <li xml:lang="ca-valencia">establix el nombre de files i columnes</li>
       <li xml:lang="de">Anzahl von Zeilen und Spalten festlegen</li>
@@ -127,6 +133,7 @@
       <li xml:lang="zh-CN">设置行数和列数</li>
       <li xml:lang="zh-TW">設定列數與欄數</li>
       <li>toggle file info</li>
+      <li xml:lang="ar">بدل معلومات الملف</li>
       <li xml:lang="ca">commuta la informació del fitxer</li>
       <li xml:lang="ca-valencia">canvia la informació del fitxer</li>
       <li xml:lang="de">Dateiinformationen umschalten</li>
@@ -145,6 +152,7 @@
       <li xml:lang="zh-CN">显示和隐藏文件信息</li>
       <li xml:lang="zh-TW">切換檔案資訊</li>
       <li>set thumbnail width and spacing</li>
+      <li xml:lang="ar">اضبط عرض المصغر والتباعد</li>
       <li xml:lang="ca">estableix l'amplada i espaiat de les miniatures</li>
       <li xml:lang="ca-valencia">establix l'amplària i espaiat de les miniatures</li>
       <li xml:lang="de">Breite und Abstand der Vorschaubilder festlegen</li>
@@ -163,6 +171,7 @@
       <li xml:lang="zh-CN">设置缩略图宽度和间距</li>
       <li xml:lang="zh-TW">設定縮圖寬度與間距</li>
       <li>set background and text colors</li>
+      <li xml:lang="ar">اضبط ألوان الخلفية والنص</li>
       <li xml:lang="ca">estableix els colors de fons i del text</li>
       <li xml:lang="ca-valencia">establix els colors de fons i del text</li>
       <li xml:lang="de">Hintergrund- und Textfarben festlegen</li>
