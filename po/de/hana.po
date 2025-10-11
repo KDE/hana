@@ -3,7 +3,6 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the hana package.
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
