@@ -16,6 +16,7 @@
   <name xml:lang="he">Hana</name>
   <name xml:lang="it">Hana</name>
   <name xml:lang="ka">Hana</name>
+  <name xml:lang="ko">Hana</name>
   <name xml:lang="nl">Hana</name>
   <name xml:lang="pt-BR">Hana</name>
   <name xml:lang="sl">Hana</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
   <summary xml:lang="it">Generatore di miniature video</summary>
   <summary xml:lang="ka">ვიდეო მინიატურების გენერატორი</summary>
+  <summary xml:lang="ko">동영상 섬네일 생성기</summary>
   <summary xml:lang="nl">Generator van videominiatuur</summary>
   <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
@@ -66,6 +68,7 @@
     <p xml:lang="he">יישום ליצירת תמונות ממוזערות מקובצי וידאו וצירוף שלהן לתמונה אחת.</p>
     <p xml:lang="it">Applicazione per creare miniature di file video e unirle in un'unica immagine.</p>
     <p xml:lang="ka">აპლიკაცია მინიატურის გამოსახულებების შესაქმნელად ვიდეოფაილებიდან და მათი ერთ გამოსახულებაში გასაერთიანებლად.</p>
+    <p xml:lang="ko">동영상에서 섬네일 그림을 생성하여 하나의 그림으로 합쳐서 보여 줍니다.</p>
     <p xml:lang="nl">Toepassing om miniatuurafbeeldingen uit videobestanden te maken en ze samen te voegen in één afbeelding.</p>
     <p xml:lang="pt-BR">Aplicativo para criar imagens em miniatura a partir de arquivos de vídeo e uni-las em uma única imagem.</p>
     <p xml:lang="sl">Aplikacija za ustvarjanje sličic iz video datotek in njihovo združevanje v eno sliko.</p>
@@ -85,6 +88,7 @@
     <p xml:lang="he">יכולות</p>
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები</p>
+    <p xml:lang="ko">기능</p>
     <p xml:lang="nl">Mogelijkheden</p>
     <p xml:lang="pt-BR">Funcionalidades</p>
     <p xml:lang="sl">Zmožnosti</p>
@@ -105,6 +109,7 @@
       <li xml:lang="he">עיבוד מקבילי</li>
       <li xml:lang="it">elaborazione parallela</li>
       <li xml:lang="ka">პარალელური დამუშავება</li>
+      <li xml:lang="ko">병렬 처리</li>
       <li xml:lang="nl">parallelle verwerking</li>
       <li xml:lang="pt-BR">processamento paralelo</li>
       <li xml:lang="sl">vzporedna obdelava</li>
@@ -124,6 +129,7 @@
       <li xml:lang="he">הגדרת מספר שורות ועמודות</li>
       <li xml:lang="it">imposta il numero di righe e colonne</li>
       <li xml:lang="ka">მწკრივების და სვეტების რაოდენობის დაყენება</li>
+      <li xml:lang="ko">행과 열 개수 지정 가능</li>
       <li xml:lang="nl">aantal rijen en kolommen instellen</li>
       <li xml:lang="pt-BR">define o número de linhas e colunas</li>
       <li xml:lang="sl">nastavi število vrstic in stolpcev</li>
@@ -143,6 +149,7 @@
       <li xml:lang="he">החלפת מצב הצגת פרטי קובץ</li>
       <li xml:lang="it">attiva/disattiva le informazioni sul file</li>
       <li xml:lang="ka">ფაილის ინფორმაციის გადართვა</li>
+      <li xml:lang="ko">파일 정보 표시 전환</li>
       <li xml:lang="nl">bestandsinformatie omschakelen</li>
       <li xml:lang="pt-BR">alterna informações do arquivo</li>
       <li xml:lang="sl">preklopi informacije o datoteki</li>
@@ -162,6 +169,7 @@
       <li xml:lang="he">הגדרת רוחב תמונה ממוזערת וריווח</li>
       <li xml:lang="it">imposta la larghezza e la spaziatura delle miniature</li>
       <li xml:lang="ka">დააყენეთ მინიატურების სიგანე და ინტერვალი</li>
+      <li xml:lang="ko">섬네일 폭과 간격 정의</li>
       <li xml:lang="nl">breedte en spatiëring van miniaturen instellen</li>
       <li xml:lang="pt-BR">define a largura e espaçamento da miniatura</li>
       <li xml:lang="sl">nastavitev širine in razmika med sličicami</li>
@@ -181,6 +189,7 @@
       <li xml:lang="he">הגדרת צבעי רקע וכתב</li>
       <li xml:lang="it">imposta i colori dello sfondo e del testo</li>
       <li xml:lang="ka">დააყენეთ ფონის და ტექსტის ფერები</li>
+      <li xml:lang="ko">배경색과 글자색 정의</li>
       <li xml:lang="nl">achtergrond en tekstkleuren instellen</li>
       <li xml:lang="pt-BR">define o plano de fundo e as cores do texto</li>
       <li xml:lang="sl">nastavi barve ozadja in besedila</li>
