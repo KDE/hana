@@ -54,6 +54,10 @@ find_package(KF6Config ${KF6_MIN_VERSION})
 set_package_properties(KF6Config PROPERTIES
     TYPE REQUIRED URL "https://api.kde.org/kconfig-index.html")
 
+find_package(KF6CoreAddons ${KF6_MIN_VERSION})
+set_package_properties(KF6CoreAddons PROPERTIES TYPE REQUIRED
+    URL "https://api.kde.org/kcoreaddons-index.html")
+
 find_package(KF6I18n ${KF6_MIN_VERSION})
 set_package_properties(KF6I18n PROPERTIES TYPE REQUIRED
     URL "https://api.kde.org/ki18n-index.html")
