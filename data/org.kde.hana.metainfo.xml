@@ -224,4 +224,8 @@
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.0"/>
+  <branding>
+    <color type="primary" scheme_preference="light">#faf0e9</color>
+    <color type="primary" scheme_preference="dark">#807873</color>
+  </branding>
 </component>
