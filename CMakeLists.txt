@@ -82,6 +82,12 @@ include(ECMInstallIcons)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
+include(ECMSetupVersion)
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX HANA
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/hana-version.h"
+)
+
 ki18n_install(po)
 
 add_subdirectory(data)
