@@ -52,19 +52,19 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 find_package(KF6Config ${KF6_MIN_VERSION})
 set_package_properties(KF6Config PROPERTIES
-    TYPE REQUIRED URL "https://api.kde.org/frameworks/kconfig/html/index.html")
+    TYPE REQUIRED URL "https://api.kde.org/kconfig-index.html")
 
 find_package(KF6I18n ${KF6_MIN_VERSION})
 set_package_properties(KF6I18n PROPERTIES TYPE REQUIRED
-    URL "https://api.kde.org/frameworks/ki18n/html/index.html")
+    URL "https://api.kde.org/ki18n-index.html")
 
 find_package(KF6KIO ${KF6_MIN_VERSION})
 set_package_properties(KF6KIO PROPERTIES TYPE REQUIRED
-    URL "https://api.kde.org/frameworks/kio/html/index.html")
+    URL "https://api.kde.org/kio-index.html")
 
 find_package(KF6Kirigami ${KF6_MIN_VERSION})
 set_package_properties(KF6Kirigami PROPERTIES TYPE REQUIRED
-    URL "https://api.kde.org/frameworks/kirigami/html/index.html")
+    URL "https://api.kde.org/kirigami-index.html")
 
 find_package(FFmpeg)
 set_package_properties(FFmpeg PROPERTIES TYPE REQUIRED
