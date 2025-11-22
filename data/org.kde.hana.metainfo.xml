@@ -210,17 +210,24 @@
     </ul>
   </description>
   <releases>
-    <release version="0.1.0" date="2099-01-01"/>
+    <release version="1.0.0" date="2025-11-23">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
   </releases>
   <screenshots>
     <screenshot type="default">
       <image>https://origin.cdn.kde.org/screenshots/hana/hana.png</image>
+      <caption>Main window with a single file (light theme)</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-progress.png</image>
+      <caption>Main window with multiple files (light theme)</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-dark.png</image>
+      <caption>Main window with multiple files (dark theme)</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.0"/>
