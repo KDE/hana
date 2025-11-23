@@ -35,26 +35,6 @@
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnails generator</summary>
-  <summary xml:lang="ar">مولد مصغرات الفيديو</summary>
-  <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
-  <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
-  <summary xml:lang="de">Ersteller für Video-Vorschaubilder</summary>
-  <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
-  <summary xml:lang="eu">Bideoen koadro-txiki sortzailea</summary>
-  <summary xml:lang="fi">Videopienoiskuvien luonti</summary>
-  <summary xml:lang="fr">Générateur de vignettes vidéo</summary>
-  <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
-  <summary xml:lang="it">Generatore di miniature video</summary>
-  <summary xml:lang="ka">ვიდეო მინიატურების გენერატორი</summary>
-  <summary xml:lang="ko">동영상 섬네일 생성기</summary>
-  <summary xml:lang="nl">Generator van videominiatuur</summary>
-  <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
-  <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
-  <summary xml:lang="sv">Generator av videominiatyrbilder</summary>
-  <summary xml:lang="tr">Video küçük görseli üreteci</summary>
-  <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
-  <summary xml:lang="zh-CN">视频缩略图生成器</summary>
-  <summary xml:lang="zh-TW">影片縮圖產生器</summary>
   <developer id="org.kde">
     <name translate="no">George Florea Bănuș</name>
   </developer>
