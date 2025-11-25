@@ -35,6 +35,18 @@
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnails generator</summary>
+  <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
+  <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
+  <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
+  <summary xml:lang="fr">Générateur de vignettes vidéo</summary>
+  <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
+  <summary xml:lang="ka">ვიდეოს მინიატურების გენერატორი</summary>
+  <summary xml:lang="nl">Generator van videominiaturen</summary>
+  <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
+  <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
+  <summary xml:lang="tr">Video küçük görseli üreteci</summary>
+  <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
+  <summary xml:lang="zh-TW">影片縮圖產生器</summary>
   <developer id="org.kde">
     <name translate="no">George Florea Bănuș</name>
   </developer>
@@ -200,14 +212,50 @@
     <screenshot type="default">
       <image>https://origin.cdn.kde.org/screenshots/hana/hana.png</image>
       <caption>Main window with a single file (light theme)</caption>
+      <caption xml:lang="ca">Finestra principal amb un únic fitxer (tema clar)</caption>
+      <caption xml:lang="ca-valencia">Finestra principal amb un únic fitxer (tema clar)</caption>
+      <caption xml:lang="es">Ventana principal con un único archivo (tema claro)</caption>
+      <caption xml:lang="fr">Fenêtre principale avec un unique fichier (Thème clair)</caption>
+      <caption xml:lang="he">חלון ראשי עם קובץ בודד (ערכת עיצוב בהירה)</caption>
+      <caption xml:lang="ka">მთავარი ფანჯარა ერთი ფაილით (ღია თემა)</caption>
+      <caption xml:lang="nl">Hoofdvenster met een enkel bestand (licht thema)</caption>
+      <caption xml:lang="pt-BR">Janela principal com um único arquivo (tema claro)</caption>
+      <caption xml:lang="sl">Glavno okno z eno samo datoteko (svetla tema)</caption>
+      <caption xml:lang="tr">Tek bir dosyayı gösteren ana pencere (açık tema)</caption>
+      <caption xml:lang="uk">Головне вікно з одним файлом (світла тема)</caption>
+      <caption xml:lang="zh-TW">主視窗，顯示一個檔案（亮色主題）</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-progress.png</image>
       <caption>Main window with multiple files (light theme)</caption>
+      <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema clar)</caption>
+      <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema clar)</caption>
+      <caption xml:lang="es">Ventana principal con varios archivos (tema claro)</caption>
+      <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème clair)</caption>
+      <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב בהירה)</caption>
+      <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (ღია თემა)</caption>
+      <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (licht thema)</caption>
+      <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema claro)</caption>
+      <caption xml:lang="sl">Glavno okno z več datotekami (svetla tema)</caption>
+      <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (açık tema)</caption>
+      <caption xml:lang="uk">Головне вікно з декількома файлами (світла тема)</caption>
+      <caption xml:lang="zh-TW">主視窗，顯示多個檔案（亮色主題）</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-dark.png</image>
       <caption>Main window with multiple files (dark theme)</caption>
+      <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema fosc)</caption>
+      <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema fosc)</caption>
+      <caption xml:lang="es">Ventana principal con varios archivos (tema oscuro)</caption>
+      <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème sombre)</caption>
+      <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב כהה)</caption>
+      <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (მუქი თემა)</caption>
+      <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (donker thema)</caption>
+      <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema escuro)</caption>
+      <caption xml:lang="sl">Glavno okno z več datotekami (temna tema)</caption>
+      <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (koyu tema)</caption>
+      <caption xml:lang="uk">Головне вікно з одним файлом (темна тема)</caption>
+      <caption xml:lang="zh-TW">主視窗，顯示多個檔案（暗色主題）</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.0"/>
