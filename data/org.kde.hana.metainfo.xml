@@ -35,6 +35,7 @@
   <url type="vcs-browser">https://invent.kde.org/georgefb/hana</url>
   <url type="homepage">https://invent.kde.org/georgefb/hana</url>
   <summary>Video thumbnails generator</summary>
+  <summary xml:lang="ar">مولد مصغرات الفيديو</summary>
   <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
   <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
   <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
@@ -46,6 +47,7 @@
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
   <summary xml:lang="tr">Video küçük görseli üreteci</summary>
   <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
+  <summary xml:lang="zh-CN">视频缩略图生成器</summary>
   <summary xml:lang="zh-TW">影片縮圖產生器</summary>
   <developer id="org.kde">
     <name translate="no">George Florea Bănuș</name>
@@ -212,6 +214,7 @@
     <screenshot type="default">
       <image>https://origin.cdn.kde.org/screenshots/hana/hana.png</image>
       <caption>Main window with a single file (light theme)</caption>
+      <caption xml:lang="ar">النافذة الرئيسة مع ملف (مظهر الفاتح)</caption>
       <caption xml:lang="ca">Finestra principal amb un únic fitxer (tema clar)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb un únic fitxer (tema clar)</caption>
       <caption xml:lang="es">Ventana principal con un único archivo (tema claro)</caption>
@@ -223,11 +226,13 @@
       <caption xml:lang="sl">Glavno okno z eno samo datoteko (svetla tema)</caption>
       <caption xml:lang="tr">Tek bir dosyayı gösteren ana pencere (açık tema)</caption>
       <caption xml:lang="uk">Головне вікно з одним файлом (світла тема)</caption>
+      <caption xml:lang="zh-CN">显示单个文件的主窗口 (浅色主题)</caption>
       <caption xml:lang="zh-TW">主視窗，顯示一個檔案（亮色主題）</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-progress.png</image>
       <caption>Main window with multiple files (light theme)</caption>
+      <caption xml:lang="ar">النافذة الرئيسة مع ملفات متعددة (مظهر الفاتح)</caption>
       <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema clar)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema clar)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema claro)</caption>
@@ -239,11 +244,13 @@
       <caption xml:lang="sl">Glavno okno z več datotekami (svetla tema)</caption>
       <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (açık tema)</caption>
       <caption xml:lang="uk">Головне вікно з декількома файлами (світла тема)</caption>
+      <caption xml:lang="zh-CN">显示多个文件的主窗口 (浅色主题)</caption>
       <caption xml:lang="zh-TW">主視窗，顯示多個檔案（亮色主題）</caption>
     </screenshot>
     <screenshot>
       <image>https://origin.cdn.kde.org/screenshots/hana/hana-dark.png</image>
       <caption>Main window with multiple files (dark theme)</caption>
+      <caption xml:lang="ar">النافذة الرئيسة مع ملفات متعددة (مظهر داكن)</caption>
       <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema fosc)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema fosc)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema oscuro)</caption>
@@ -255,6 +262,7 @@
       <caption xml:lang="sl">Glavno okno z več datotekami (temna tema)</caption>
       <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (koyu tema)</caption>
       <caption xml:lang="uk">Головне вікно з одним файлом (темна тема)</caption>
+      <caption xml:lang="zh-CN">显示多个文件的主窗口 (深色主题)</caption>
       <caption xml:lang="zh-TW">主視窗，顯示多個檔案（暗色主題）</caption>
     </screenshot>
   </screenshots>
