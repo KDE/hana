@@ -15,6 +15,7 @@
   <name xml:lang="fi">Hana</name>
   <name xml:lang="fr">Hana</name>
   <name xml:lang="he">Hana</name>
+  <name xml:lang="ia">Hana</name>
   <name xml:lang="it">Hana</name>
   <name xml:lang="ka">Hana</name>
   <name xml:lang="ko">Hana</name>
@@ -86,6 +87,7 @@
     <p xml:lang="fi">Ominaisuuksia</p>
     <p xml:lang="fr">Fonctionnalités</p>
     <p xml:lang="he">יכולות</p>
+    <p xml:lang="ia">Characteristicas</p>
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები</p>
     <p xml:lang="ko">기능</p>
