@@ -41,6 +41,7 @@
   <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
   <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
   <summary xml:lang="eu">Bideoen koadro-txikien sortzailea</summary>
+  <summary xml:lang="fi">Videopienoiskuvien luonti</summary>
   <summary xml:lang="fr">Générateur de vignettes vidéo</summary>
   <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
   <summary xml:lang="it">Generatore di miniature video</summary>
@@ -223,6 +224,7 @@
       <caption xml:lang="ca-valencia">Finestra principal amb un únic fitxer (tema clar)</caption>
       <caption xml:lang="es">Ventana principal con un único archivo (tema claro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi bakarrarekin (gai argia)</caption>
+      <caption xml:lang="fi">Pääikkuna yksittäisellä tiedostolla (vaalea teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec un unique fichier (Thème clair)</caption>
       <caption xml:lang="he">חלון ראשי עם קובץ בודד (ערכת עיצוב בהירה)</caption>
       <caption xml:lang="it">Finestra principale con un singolo file (tema chiaro)</caption>
@@ -243,6 +245,7 @@
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema clar)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema claro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi anitzekin (gai argia)</caption>
+      <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (vaalea teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème clair)</caption>
       <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב בהירה)</caption>
       <caption xml:lang="it">Finestra principale con più file (tema chiaro)</caption>
@@ -263,6 +266,7 @@
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema fosc)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema oscuro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi anitzekin (gai iluna)</caption>
+      <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (tumma teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème sombre)</caption>
       <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב כהה)</caption>
       <caption xml:lang="it">Finestra principale con più file (tema scuro)</caption>
