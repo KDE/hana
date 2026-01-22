@@ -49,6 +49,7 @@
   <summary xml:lang="nl">Generator van videominiaturen</summary>
   <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
+  <summary xml:lang="sv">Generator av videominiatyrbilder</summary>
   <summary xml:lang="tr">Video küçük görseli üreteci</summary>
   <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
   <summary xml:lang="zh-CN">视频缩略图生成器</summary>
@@ -232,6 +233,7 @@
       <caption xml:lang="nl">Hoofdvenster met een enkel bestand (licht thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com um único arquivo (tema claro)</caption>
       <caption xml:lang="sl">Glavno okno z eno samo datoteko (svetla tema)</caption>
+      <caption xml:lang="sv">Huvudfönster med en enda fil (ljust tema)</caption>
       <caption xml:lang="tr">Tek bir dosyayı gösteren ana pencere (açık tema)</caption>
       <caption xml:lang="uk">Головне вікно з одним файлом (світла тема)</caption>
       <caption xml:lang="zh-CN">显示单个文件的主窗口 (浅色主题)</caption>
@@ -253,6 +255,7 @@
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (licht thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema claro)</caption>
       <caption xml:lang="sl">Glavno okno z več datotekami (svetla tema)</caption>
+      <caption xml:lang="sv">Huvudfönster med flera filer (ljust tema)</caption>
       <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (açık tema)</caption>
       <caption xml:lang="uk">Головне вікно з декількома файлами (світла тема)</caption>
       <caption xml:lang="zh-CN">显示多个文件的主窗口 (浅色主题)</caption>
@@ -274,6 +277,7 @@
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (donker thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema escuro)</caption>
       <caption xml:lang="sl">Glavno okno z več datotekami (temna tema)</caption>
+      <caption xml:lang="sv">Huvudfönster med flera filer (mörkt tema)</caption>
       <caption xml:lang="tr">Birden çok dosyayı gösteren ana pencere (koyu tema)</caption>
       <caption xml:lang="uk">Головне вікно з одним файлом (темна тема)</caption>
       <caption xml:lang="zh-CN">显示多个文件的主窗口 (深色主题)</caption>
