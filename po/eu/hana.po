@@ -1,7 +1,7 @@
 # Translation for hana.po to Euskara/Basque (eu).
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the hana package.
-# SPDX-FileCopyrightText: 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-10-02 21:14+0200\n"
+"PO-Revision-Date: 2026-01-25 14:08+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: src/Components/AddFilesField.qml:16
 msgctxt "@action:button"
@@ -154,7 +154,7 @@ msgid ""
 "\n"
 "Unchecked: only minutes and seconds are shown"
 msgstr ""
-"Markatuta: ordua \"00\" (bi zerorekin) erakusten du bideoaren iraupena "
+"Markatuta: ordua “00“ (bi zerorekin) erakusten du bideoaren iraupena "
 "ordubete baino laburragoa denean\n"
 "\n"
 "Markatu gabe: minutuak eta segundoak bakarrik erakusten dira"
