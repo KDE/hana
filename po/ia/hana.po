@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-01-14 11:02+0100\n"
+"PO-Revision-Date: 2026-02-10 10:03+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -30,7 +30,7 @@ msgstr "Selectiona Files "
 #: src/Components/AvoidDarkFramesField.qml:15
 msgctxt "@option:check"
 msgid "Avoid dark frames"
-msgstr ""
+msgstr "Evita quadros obscur"
 
 #: src/Components/AvoidDarkFramesField.qml:24
 msgctxt "@info:tooltip"
@@ -39,6 +39,9 @@ msgid ""
 "is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
 "regardless of its content"
 msgstr ""
+"Marcate: essaya evitar quadros multe obscur per cambiar le tempore que le "
+"miniatura es prendite<br><b>Pote esser multo lente</b><br><br>Non marcate: "
+"miniatura es prendite indifferentemente de su conento"
 
 #: src/Components/BackgroundField.qml:20
 #: src/Components/VideoInfoBackgroundColorField.qml:22
@@ -64,7 +67,7 @@ msgstr "Selectiona Color"
 msgctxt ""
 "@action:button; Empty the list of files. The files are not deleted from disk"
 msgid "Clear files"
-msgstr ""
+msgstr "Netta files"
 
 #: src/Components/CloseAppButton.qml:13
 msgctxt "@action:button"
@@ -84,27 +87,27 @@ msgstr "Salveguarda Location"
 #: src/Components/ImageSaveLocationField.qml:36
 msgctxt "@label:listbox left mouse button"
 msgid "Same folder as video"
-msgstr ""
+msgstr "Mesme dossier  de video"
 
 #: src/Components/ImageSaveLocationField.qml:37
 msgctxt "@label:listbox middle mouse button"
 msgid "Folder next to video"
-msgstr ""
+msgstr "Dossier proxime avideo"
 
 #: src/Components/ImageSaveLocationField.qml:38
 msgctxt "@label:listbox right mouse button"
 msgid "Custom folder"
-msgstr ""
+msgstr "Dossier personalisate"
 
 #: src/Components/ImageSaveLocationField.qml:67
 msgctxt "@info:tooltip"
 msgid "name of the folder"
-msgstr ""
+msgstr "nomine del dossier"
 
 #: src/Components/ImageSaveLocationField.qml:90
 msgctxt "@info:tooltip"
 msgid "path to the folder"
-msgstr ""
+msgstr "percurso al dossier"
 
 #: src/Components/ImageSaveLocationField.qml:98
 msgctxt "@title:window"
@@ -124,7 +127,7 @@ msgstr "Exeque"
 #: src/Components/ShowVideoInfoField.qml:15
 msgctxt "@option:check"
 msgid "Show video info"
-msgstr ""
+msgstr "Monstra info de video"
 
 #: src/Components/SpacingField.qml:21
 msgctxt "@label"
@@ -139,7 +142,7 @@ msgstr "Largessa de miniatura"
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:15
 msgctxt "@label"
 msgid "Always show hours"
-msgstr ""
+msgstr "Monstra sempre horas"
 
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:25
 msgctxt "@info:tooltip"
@@ -148,6 +151,10 @@ msgid ""
 "\n"
 "Unchecked: only minutes and seconds are shown"
 msgstr ""
+"Marcate monstra horas como “00“ (duo zeros) quando longitude de video es "
+"infra un hora\n"
+"\n"
+"non marcate: solmente minutas e secundas es monstrate"
 
 #: src/Components/VideoInfoTextColorField.qml:22
 msgctxt "@label"
@@ -157,7 +164,7 @@ msgstr "Color de texto"
 #: src/FilesView.qml:90
 msgctxt "@action:inmenu"
 msgid "Open video folder"
-msgstr ""
+msgstr "Aperi dossier de video"
 
 #: src/FilesView.qml:101
 msgctxt "@action:inmenu"
@@ -167,14 +174,14 @@ msgstr "Remove"
 #: src/FilesView.qml:120
 msgctxt "@action:inmenu"
 msgid "Open thumbnail"
-msgstr ""
+msgstr "Aperi miniatura"
 
 #: src/Main.qml:52
 msgctxt "@label"
 msgid "Thumbnail settings"
-msgstr ""
+msgstr "Preferentias e miniatura"
 
 #: src/Main.qml:69
 msgctxt "@label"
 msgid "Video info settings"
-msgstr ""
+msgstr "Preferentias de info de video"
