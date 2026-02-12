@@ -44,6 +44,7 @@
   <summary xml:lang="fi">Videopienoiskuvien luonti</summary>
   <summary xml:lang="fr">Générateur de vignettes vidéo</summary>
   <summary xml:lang="he">יצרן תמונות ממוזערות לסרטונים</summary>
+  <summary xml:lang="ia">Generator  de miniaturas video</summary>
   <summary xml:lang="it">Generatore di miniature video</summary>
   <summary xml:lang="ka">ვიდეოს მინიატურების გენერატორი</summary>
   <summary xml:lang="nl">Generator van videominiaturen</summary>
@@ -68,6 +69,7 @@
     <p xml:lang="fi">Sovellus, joka luo pienoiskuvia videotiedostoista ja yhdistää ne yhdeksi kuvaksi.</p>
     <p xml:lang="fr">Application pour créer des miniatures de vignettes à partir de fichiers vidéo et pour les regrouper en une seule image.</p>
     <p xml:lang="he">יישום ליצירת תמונות ממוזערות מקובצי וידאו וצירוף שלהן לתמונה אחת.</p>
+    <p xml:lang="ia">Application per crear imagines de miniatura ex files vide e uni los in un imagine.</p>
     <p xml:lang="it">Applicazione per creare miniature di file video e unirle in un'unica immagine.</p>
     <p xml:lang="ka">აპლიკაცია მინიატურის გამოსახულებების შესაქმნელად ვიდეოფაილებიდან და მათი ერთ გამოსახულებაში გასაერთიანებლად.</p>
     <p xml:lang="ko">동영상에서 섬네일 그림을 생성하여 하나의 그림으로 합쳐서 보여 줍니다.</p>
@@ -112,6 +114,7 @@
       <li xml:lang="fi">rinnakkaisprosessointi</li>
       <li xml:lang="fr">traitement parallèle</li>
       <li xml:lang="he">עיבוד מקבילי</li>
+      <li xml:lang="ia">Processante parallelemente</li>
       <li xml:lang="it">elaborazione parallela</li>
       <li xml:lang="ka">პარალელური დამუშავება</li>
       <li xml:lang="ko">병렬 처리</li>
@@ -133,6 +136,7 @@
       <li xml:lang="fi">rivien ja sarakkeiden määrän asettaminen</li>
       <li xml:lang="fr">définir le nombre de lignes et de colonnes</li>
       <li xml:lang="he">הגדרת מספר שורות ועמודות</li>
+      <li xml:lang="ia">assigna numero de rangos e columnas</li>
       <li xml:lang="it">imposta il numero di righe e colonne</li>
       <li xml:lang="ka">მწკრივების და სვეტების რაოდენობის დაყენება</li>
       <li xml:lang="ko">행과 열 개수 지정 가능</li>
@@ -154,6 +158,7 @@
       <li xml:lang="fi">valinnainen tiedostotietojen näyttö</li>
       <li xml:lang="fr">basculer ou non vers les informations du fichier</li>
       <li xml:lang="he">החלפת מצב הצגת פרטי קובץ</li>
+      <li xml:lang="ia">Commuta info de file</li>
       <li xml:lang="it">attiva/disattiva le informazioni sul file</li>
       <li xml:lang="ka">ფაილის ინფორმაციის გადართვა</li>
       <li xml:lang="ko">파일 정보 표시 전환</li>
@@ -175,6 +180,7 @@
       <li xml:lang="fi">pienoiskuvan leveyden ja välistyksen asettaminen</li>
       <li xml:lang="fr">définir la largeur et l'espacement des vignettes</li>
       <li xml:lang="he">הגדרת רוחב תמונה ממוזערת וריווח</li>
+      <li xml:lang="ia">assigna largessa de miniatuta e spatiar</li>
       <li xml:lang="it">imposta la larghezza e la spaziatura delle miniature</li>
       <li xml:lang="ka">დააყენეთ მინიატურების სიგანე და ინტერვალი</li>
       <li xml:lang="ko">섬네일 폭과 간격 정의</li>
@@ -196,6 +202,7 @@
       <li xml:lang="fi">tausta- ja tekstivärien asettaminen</li>
       <li xml:lang="fr">Définir les couleurs d'arrière-plan et de texte</li>
       <li xml:lang="he">הגדרת צבעי רקע וכתב</li>
+      <li xml:lang="ia">assigna colores de fundo e de texto</li>
       <li xml:lang="it">imposta i colori dello sfondo e del testo</li>
       <li xml:lang="ka">დააყენეთ ფონის და ტექსტის ფერები</li>
       <li xml:lang="ko">배경색과 글자색 정의</li>
@@ -228,6 +235,7 @@
       <caption xml:lang="fi">Pääikkuna yksittäisellä tiedostolla (vaalea teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec un unique fichier (Thème clair)</caption>
       <caption xml:lang="he">חלון ראשי עם קובץ בודד (ערכת עיצוב בהירה)</caption>
+      <caption xml:lang="ia">Fenestra principal con un singule file (thema clar)</caption>
       <caption xml:lang="it">Finestra principale con un singolo file (tema chiaro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთი ფაილით (ღია თემა)</caption>
       <caption xml:lang="nl">Hoofdvenster met een enkel bestand (licht thema)</caption>
@@ -250,6 +258,7 @@
       <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (vaalea teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème clair)</caption>
       <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב בהירה)</caption>
+      <caption xml:lang="ia">Fenestra principal con un file multiple (thema clar)</caption>
       <caption xml:lang="it">Finestra principale con più file (tema chiaro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (ღია თემა)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (licht thema)</caption>
@@ -272,6 +281,7 @@
       <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (tumma teema)</caption>
       <caption xml:lang="fr">Fenêtre principale avec plusieurs fichiers (Thème sombre)</caption>
       <caption xml:lang="he">חלון ראשי עם מגוון קבצים (ערכת עיצוב כהה)</caption>
+      <caption xml:lang="ia">Fenestra principal con un file multiple (thema obscur</caption>
       <caption xml:lang="it">Finestra principale con più file (tema scuro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (მუქი თემა)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (donker thema)</caption>
