@@ -220,6 +220,12 @@
     <release version="1.0.0" date="2025-11-23">
       <description>
         <p>First release.</p>
+        <p xml:lang="ca">Primer llançament.</p>
+        <p xml:lang="he">מהדורה ראשונית.</p>
+        <p xml:lang="ka">პირველი რელიზი.</p>
+        <p xml:lang="pt-BR">Primeiro lançamento.</p>
+        <p xml:lang="sl">Prva izdaja.</p>
+        <p xml:lang="uk">Перший випуск.</p>
       </description>
     </release>
   </releases>
