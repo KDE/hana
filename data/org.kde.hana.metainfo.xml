@@ -220,12 +220,18 @@
     <release version="1.0.0" date="2025-11-23">
       <description>
         <p>First release.</p>
+        <p xml:lang="ar">الإصدار الأول.</p>
         <p xml:lang="ca">Primer llançament.</p>
+        <p xml:lang="ca-valencia">Primer llançament.</p>
+        <p xml:lang="es">Primer lanzamiento.</p>
         <p xml:lang="he">מהדורה ראשונית.</p>
+        <p xml:lang="ia">Prime version</p>
         <p xml:lang="ka">პირველი რელიზი.</p>
+        <p xml:lang="nl">Eerste uitgave.</p>
         <p xml:lang="pt-BR">Primeiro lançamento.</p>
         <p xml:lang="sl">Prva izdaja.</p>
         <p xml:lang="uk">Перший випуск.</p>
+        <p xml:lang="zh-CN">首个正式版本。</p>
       </description>
     </release>
   </releases>
