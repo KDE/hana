@@ -236,6 +236,7 @@
         <p xml:lang="tr">İlk yayım</p>
         <p xml:lang="uk">Перший випуск.</p>
         <p xml:lang="zh-CN">首个正式版本。</p>
+        <p xml:lang="zh-TW">首次釋出。</p>
       </description>
     </release>
   </releases>
