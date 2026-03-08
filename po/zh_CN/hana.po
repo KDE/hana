@@ -157,7 +157,7 @@ msgstr ""
 #: src/Components/VideoInfoTextColorField.qml:22
 msgctxt "@label"
 msgid "Text color"
-msgstr "文字颜色"
+msgstr "文本颜色"
 
 #: src/FilesView.qml:90
 msgctxt "@action:inmenu"
