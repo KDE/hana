@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-08-17 00:41+0000\n"
+"PO-Revision-Date: 2026-03-11 22:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,21 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.8\n"
 
 #: src/Components/AddFilesField.qml:16
 msgctxt "@action:button"
 msgid "Add files"
-msgstr ""
+msgstr "Pridėti failų"
 
 #: src/Components/AddFilesField.qml:25
 msgctxt "@title:window"
 msgid "Select files"
-msgstr ""
+msgstr "Pasirinkite failus"
 
 #: src/Components/AvoidDarkFramesField.qml:15
 msgctxt "@option:check"
 msgid "Avoid dark frames"
-msgstr ""
+msgstr "Vengti tamsių kadrų"
 
 #: src/Components/AvoidDarkFramesField.qml:24
 msgctxt "@info:tooltip"
@@ -40,107 +41,111 @@ msgid ""
 "is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
 "regardless of its content"
 msgstr ""
+"Pažymėta: bus stengiamasi išvengti labai tamsių kadrų, keičiant laiką, iš "
+"kurio yra paimama miniatiūra<br><b>Tai gali labai ilgai užtrukti</"
+"b><br><br>Nepažymėta: miniatiūra bus paimama nepaisant joje atvaizduojamo "
+"turinio"
 
 #: src/Components/BackgroundField.qml:20
 #: src/Components/VideoInfoBackgroundColorField.qml:22
 msgctxt "@label"
 msgid "Background color"
-msgstr ""
+msgstr "Fono spalva"
 
 #: src/Components/BackgroundField.qml:47
 #: src/Components/VideoInfoBackgroundColorField.qml:49
 #: src/Components/VideoInfoTextColorField.qml:49
 msgctxt "@info:tooltip"
 msgid "Select a color"
-msgstr ""
+msgstr "Pasirinkti spalvą"
 
 #: src/Components/BackgroundField.qml:54
 #: src/Components/VideoInfoBackgroundColorField.qml:56
 #: src/Components/VideoInfoTextColorField.qml:56
 msgctxt "@title:window"
 msgid "Select Color"
-msgstr ""
+msgstr "Pasirinkite spalvą"
 
 #: src/Components/ClearFilesField.qml:15
 msgctxt ""
 "@action:button; Empty the list of files. The files are not deleted from disk"
 msgid "Clear files"
-msgstr ""
+msgstr "Išvalyti failus"
 
 #: src/Components/CloseAppButton.qml:13
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: src/Components/ColumnsField.qml:21
 msgctxt "@label"
 msgid "Columns"
-msgstr ""
+msgstr "Stulpeliai"
 
 #: src/Components/ImageSaveLocationField.qml:25
 msgctxt "@label where the image is going to be saved"
 msgid "Save location"
-msgstr ""
+msgstr "Kur įrašyti"
 
 #: src/Components/ImageSaveLocationField.qml:36
 msgctxt "@label:listbox left mouse button"
 msgid "Same folder as video"
-msgstr ""
+msgstr "Tame pačiame aplanke kaip ir vaizdo įrašas"
 
 #: src/Components/ImageSaveLocationField.qml:37
 msgctxt "@label:listbox middle mouse button"
 msgid "Folder next to video"
-msgstr ""
+msgstr "Naujame aplanke šalia vaizdo įrašo"
 
 #: src/Components/ImageSaveLocationField.qml:38
 msgctxt "@label:listbox right mouse button"
 msgid "Custom folder"
-msgstr ""
+msgstr "Tinkintas aplankas"
 
 #: src/Components/ImageSaveLocationField.qml:67
 msgctxt "@info:tooltip"
 msgid "name of the folder"
-msgstr ""
+msgstr "aplanko pavadinimas"
 
 #: src/Components/ImageSaveLocationField.qml:90
 msgctxt "@info:tooltip"
 msgid "path to the folder"
-msgstr ""
+msgstr "kelias į aplanką"
 
 #: src/Components/ImageSaveLocationField.qml:98
 msgctxt "@title:window"
 msgid "Select folder"
-msgstr ""
+msgstr "Pasirinkite aplanką"
 
 #: src/Components/RowsField.qml:21
 msgctxt "@label"
 msgid "Rows"
-msgstr ""
+msgstr "Eilutės"
 
 #: src/Components/RunField.qml:15
 msgctxt "@action:button"
 msgid "Run"
-msgstr ""
+msgstr "Paleisti"
 
 #: src/Components/ShowVideoInfoField.qml:15
 msgctxt "@option:check"
 msgid "Show video info"
-msgstr ""
+msgstr "Rodyti informaciją apie vaizdo įrašą"
 
 #: src/Components/SpacingField.qml:21
 msgctxt "@label"
 msgid "Spacing"
-msgstr ""
+msgstr "Tarpai"
 
 #: src/Components/ThumbWidthField.qml:21
 msgctxt "@label"
 msgid "Thumbnail width"
-msgstr ""
+msgstr "Miniatiūrų plotis"
 
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:15
 msgctxt "@label"
 msgid "Always show hours"
-msgstr ""
+msgstr "Visada rodyti valandas"
 
 #: src/Components/VideoInfoAlwaysShowHoursField.qml:25
 msgctxt "@info:tooltip"
@@ -149,33 +154,37 @@ msgid ""
 "\n"
 "Unchecked: only minutes and seconds are shown"
 msgstr ""
+"Pažymėta: kai vaizdo įrašo trukmė yra mažesnė nei valanda, valandos bus "
+"rodomos kaip „00“ (du nuliai)\n"
+"\n"
+"Nepažymėta: bus rodomos tik minutės ir sekundės"
 
 #: src/Components/VideoInfoTextColorField.qml:22
 msgctxt "@label"
 msgid "Text color"
-msgstr ""
+msgstr "Teksto spalva"
 
 #: src/FilesView.qml:90
 msgctxt "@action:inmenu"
 msgid "Open video folder"
-msgstr ""
+msgstr "Atverti vaizdo įrašo aplanką"
 
 #: src/FilesView.qml:101
 msgctxt "@action:inmenu"
 msgid "Remove"
-msgstr ""
+msgstr "Šalinti"
 
 #: src/FilesView.qml:120
 msgctxt "@action:inmenu"
 msgid "Open thumbnail"
-msgstr ""
+msgstr "Atverti miniatiūrą"
 
 #: src/Main.qml:52
 msgctxt "@label"
 msgid "Thumbnail settings"
-msgstr ""
+msgstr "Miniatiūros nuostatos"
 
 #: src/Main.qml:69
 msgctxt "@label"
 msgid "Video info settings"
-msgstr ""
+msgstr "Informacijos apie vaizdo įrašą nuostatos"
