@@ -9,6 +9,7 @@
   <name xml:lang="ar">هانا</name>
   <name xml:lang="ca">Hana</name>
   <name xml:lang="ca-valencia">Hana</name>
+  <name xml:lang="cs">Hana</name>
   <name xml:lang="de">Hana</name>
   <name xml:lang="es">Hana</name>
   <name xml:lang="eu">Hana</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="ar">مولد مصغرات الفيديو</summary>
   <summary xml:lang="ca">Generador de miniatures de vídeo</summary>
   <summary xml:lang="ca-valencia">Generador de miniatures de vídeo</summary>
+  <summary xml:lang="cs">Generátor náhledů videí</summary>
   <summary xml:lang="es">Generador de miniaturas de vídeo</summary>
   <summary xml:lang="eu">Bideoen koadro-txikien sortzailea</summary>
   <summary xml:lang="fi">Videopienoiskuvien luonti</summary>
@@ -88,6 +90,7 @@
     <p xml:lang="ar">الميزات</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
+    <p xml:lang="cs">Vlastnosti</p>
     <p xml:lang="de">Funktionen</p>
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
@@ -112,6 +115,7 @@
       <li xml:lang="ar">المعالجة المتوازية</li>
       <li xml:lang="ca">processament en paral·lel</li>
       <li xml:lang="ca-valencia">processament en paral·lel</li>
+      <li xml:lang="cs">paralelní zpracování</li>
       <li xml:lang="de">Parallele Verarbeitung</li>
       <li xml:lang="es">procesamiento en paralelo</li>
       <li xml:lang="eu">prozesatze paraleloa</li>
