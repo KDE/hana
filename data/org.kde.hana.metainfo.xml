@@ -51,6 +51,7 @@
   <summary xml:lang="ia">Generator  de miniaturas video</summary>
   <summary xml:lang="it">Generatore di miniature video</summary>
   <summary xml:lang="ka">ვიდეოს მინიატურების გენერატორი</summary>
+  <summary xml:lang="ko">동영상 섬네일 생성기</summary>
   <summary xml:lang="lt">Vaizdo įrašo miniatiūrų generatorius</summary>
   <summary xml:lang="nl">Generator van videominiaturen</summary>
   <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
@@ -252,6 +253,7 @@
         <p xml:lang="ia">Prime version</p>
         <p xml:lang="it">Primo rilascio.</p>
         <p xml:lang="ka">პირველი რელიზი.</p>
+        <p xml:lang="ko">첫 릴리스.</p>
         <p xml:lang="lt">Pirmoji laida.</p>
         <p xml:lang="nl">Eerste uitgave.</p>
         <p xml:lang="pt-BR">Primeiro lançamento.</p>
@@ -279,6 +281,7 @@
       <caption xml:lang="ia">Fenestra principal con un singule file (thema clar)</caption>
       <caption xml:lang="it">Finestra principale con un singolo file (tema chiaro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთი ფაილით (ღია თემა)</caption>
+      <caption xml:lang="ko">단일 파일을 연 주 창(밝은 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su vienu failu (šviesus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een enkel bestand (licht thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com um único arquivo (tema claro)</caption>
@@ -304,6 +307,7 @@
       <caption xml:lang="ia">Fenestra principal con un file multiple (thema clar)</caption>
       <caption xml:lang="it">Finestra principale con più file (tema chiaro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (ღია თემა)</caption>
+      <caption xml:lang="ko">여러 파일을 연 주 창(밝은 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su keliais failais (šviesus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (licht thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema claro)</caption>
@@ -329,6 +333,7 @@
       <caption xml:lang="ia">Fenestra principal con un file multiple (thema obscur</caption>
       <caption xml:lang="it">Finestra principale con più file (tema scuro)</caption>
       <caption xml:lang="ka">მთავარი ფანჯარა ერთზე მეტი ფაილით (მუქი თემა)</caption>
+      <caption xml:lang="ko">여러 파일을 연 주 창(어두운 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su keliais failais (tamsus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (donker thema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema escuro)</caption>
