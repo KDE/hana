@@ -59,6 +59,7 @@
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
   <summary xml:lang="sv">Generator av videominiatyrbilder</summary>
   <summary xml:lang="tr">Video küçük görseli üreteci</summary>
+  <summary xml:lang="ug">سىن كىچىك سۈرىتى ھاسىللىغۇچ</summary>
   <summary xml:lang="uk">Програма для створення мініатюр відеоданих</summary>
   <summary xml:lang="zh-CN">视频缩略图生成器</summary>
   <summary xml:lang="zh-TW">影片縮圖產生器</summary>
@@ -112,6 +113,7 @@
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
+    <p xml:lang="ug">ئىقتىدار</p>
     <p xml:lang="uk">Можливості</p>
     <p xml:lang="zh-CN">程序功能</p>
     <p xml:lang="zh-TW">功能</p>
