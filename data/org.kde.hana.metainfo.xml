@@ -71,6 +71,7 @@
     <p xml:lang="ar">تطبيق لإنشاء صور مصغرة من ملفات الفيديو وضمها في صورة واحدة.</p>
     <p xml:lang="ca">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
     <p xml:lang="ca-valencia">Aplicació per a crear imatges en miniatura a partir de fitxers de vídeo i unir-les en una imatge.</p>
+    <p xml:lang="cs">Aplikace pro vytváření náhledových obrázků z video souborů a jejich spojování do jednoho obrázku.</p>
     <p xml:lang="de">Anwendung zum Erstellen von Vorschaubildern aus Videodateien und zum Verschmelzen in ein einziges Bild.</p>
     <p xml:lang="es">Aplicación para crear imágenes de miniaturas de archivos de vídeo y unirlas en una única imagen.</p>
     <p xml:lang="eu">Bideo-fitxategietatik koadro-txikien irudiak sortzeko eta irudi bakarrean elkartzeko aplikazioa.</p>
@@ -147,6 +148,7 @@
       <li xml:lang="ar">اضبط عدد الصفوف والأعمدة</li>
       <li xml:lang="ca">estableix el nombre de files i columnes</li>
       <li xml:lang="ca-valencia">establix el nombre de files i columnes</li>
+      <li xml:lang="cs">nastavit počet řádků a sloupců</li>
       <li xml:lang="de">Anzahl von Zeilen und Spalten festlegen</li>
       <li xml:lang="es">ajuste del número de filas y columnas</li>
       <li xml:lang="eu">errenkada eta zutabe kopurua ezartzea</li>
@@ -171,6 +173,7 @@
       <li xml:lang="ar">بدل معلومات الملف</li>
       <li xml:lang="ca">commuta la informació del fitxer</li>
       <li xml:lang="ca-valencia">canvia la informació del fitxer</li>
+      <li xml:lang="cs">zobrazit/skrýt informace o souboru</li>
       <li xml:lang="de">Dateiinformationen umschalten</li>
       <li xml:lang="es">visibilidad de la información de los archivos</li>
       <li xml:lang="eu">fitxategi-informazioa txandakatzea</li>
@@ -195,6 +198,7 @@
       <li xml:lang="ar">اضبط عرض المصغر والتباعد</li>
       <li xml:lang="ca">estableix l'amplada i espaiat de les miniatures</li>
       <li xml:lang="ca-valencia">establix l'amplària i espaiat de les miniatures</li>
+      <li xml:lang="cs">nastavit šířku náhledů a mezery mezi nimi</li>
       <li xml:lang="de">Breite und Abstand der Vorschaubilder festlegen</li>
       <li xml:lang="es">ajuste de la anchura y el espaciado de las miniaturas</li>
       <li xml:lang="eu">koadro-txikiaren zabalera eta tartea ezartzea</li>
@@ -219,6 +223,7 @@
       <li xml:lang="ar">اضبط ألوان الخلفية والنص</li>
       <li xml:lang="ca">estableix els colors de fons i del text</li>
       <li xml:lang="ca-valencia">establix els colors de fons i del text</li>
+      <li xml:lang="cs">nastavit barvy pozadí a textu</li>
       <li xml:lang="de">Hintergrund- und Textfarben festlegen</li>
       <li xml:lang="es">ajuste de los colores de fondo y del texto</li>
       <li xml:lang="eu">atzeko planoaren eta testuaren koloreak ezartzea</li>
@@ -248,6 +253,7 @@
         <p xml:lang="ar">الإصدار الأول.</p>
         <p xml:lang="ca">Primer llançament.</p>
         <p xml:lang="ca-valencia">Primer llançament.</p>
+        <p xml:lang="cs">První vydání.</p>
         <p xml:lang="es">Primer lanzamiento.</p>
         <p xml:lang="eu">Lehenengo kaleratzea.</p>
         <p xml:lang="fr">Première publication</p>
@@ -275,6 +281,7 @@
       <caption xml:lang="ar">النافذة الرئيسة مع ملف (مظهر الفاتح)</caption>
       <caption xml:lang="ca">Finestra principal amb un únic fitxer (tema clar)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb un únic fitxer (tema clar)</caption>
+      <caption xml:lang="cs">Hlavní okno s jedním souborem (světlý motiv)</caption>
       <caption xml:lang="es">Ventana principal con un único archivo (tema claro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi bakarrarekin (gai argia)</caption>
       <caption xml:lang="fi">Pääikkuna yksittäisellä tiedostolla (vaalea teema)</caption>
@@ -301,6 +308,7 @@
       <caption xml:lang="ar">النافذة الرئيسة مع ملفات متعددة (مظهر الفاتح)</caption>
       <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema clar)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema clar)</caption>
+      <caption xml:lang="cs">Hlavní okno s více soubory (světlý motiv)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema claro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi anitzekin (gai argia)</caption>
       <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (vaalea teema)</caption>
@@ -327,6 +335,7 @@
       <caption xml:lang="ar">النافذة الرئيسة مع ملفات متعددة (مظهر داكن)</caption>
       <caption xml:lang="ca">Finestra principal amb diversos fitxers (tema fosc)</caption>
       <caption xml:lang="ca-valencia">Finestra principal amb múltiples fitxers (tema fosc)</caption>
+      <caption xml:lang="cs">Hlavní okno s více soubory (tmavý motiv)</caption>
       <caption xml:lang="es">Ventana principal con varios archivos (tema oscuro)</caption>
       <caption xml:lang="eu">Leiho nagusia fitxategi anitzekin (gai iluna)</caption>
       <caption xml:lang="fi">Pääikkuna useammalla tiedostolla (tumma teema)</caption>
