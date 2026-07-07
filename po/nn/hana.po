@@ -1,0 +1,183 @@
+# Translation of hana to Norwegian Nynorsk
+#
+# SPDX-FileCopyrightText: 2026 Karl Ove Hufthammer <karl@huftis.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hana\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"PO-Revision-Date: 2026-07-06 21:01+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.11.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/Components/AddFilesField.qml:16
+msgctxt "@action:button"
+msgid "Add files"
+msgstr "Legg til filer"
+
+#: src/Components/AddFilesField.qml:25
+msgctxt "@title:window"
+msgid "Select files"
+msgstr "Vel filer"
+
+#: src/Components/AvoidDarkFramesField.qml:15
+msgctxt "@option:check"
+msgid "Avoid dark frames"
+msgstr ""
+
+#: src/Components/AvoidDarkFramesField.qml:24
+msgctxt "@info:tooltip"
+msgid ""
+"Checked: tries to avoid very dark frames by changing the time the thumbnail "
+"is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
+"regardless of its content"
+msgstr ""
+
+#: src/Components/BackgroundField.qml:20
+#: src/Components/VideoInfoBackgroundColorField.qml:22
+msgctxt "@label"
+msgid "Background color"
+msgstr "Bakgrunnsfarge"
+
+#: src/Components/BackgroundField.qml:47
+#: src/Components/VideoInfoBackgroundColorField.qml:49
+#: src/Components/VideoInfoTextColorField.qml:49
+msgctxt "@info:tooltip"
+msgid "Select a color"
+msgstr "Vel farge"
+
+#: src/Components/BackgroundField.qml:54
+#: src/Components/VideoInfoBackgroundColorField.qml:56
+#: src/Components/VideoInfoTextColorField.qml:56
+msgctxt "@title:window"
+msgid "Select Color"
+msgstr "Vel farge"
+
+#: src/Components/ClearFilesField.qml:15
+msgctxt ""
+"@action:button; Empty the list of files. The files are not deleted from disk"
+msgid "Clear files"
+msgstr "Tøm filer"
+
+#: src/Components/CloseAppButton.qml:13
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Lukk"
+
+#: src/Components/ColumnsField.qml:21
+msgctxt "@label"
+msgid "Columns"
+msgstr "Kolonnar"
+
+#: src/Components/ImageSaveLocationField.qml:25
+msgctxt "@label where the image is going to be saved"
+msgid "Save location"
+msgstr "Lagringsmappe"
+
+#: src/Components/ImageSaveLocationField.qml:36
+msgctxt "@label:listbox left mouse button"
+msgid "Same folder as video"
+msgstr "Same mappe som video"
+
+#: src/Components/ImageSaveLocationField.qml:37
+msgctxt "@label:listbox middle mouse button"
+msgid "Folder next to video"
+msgstr "Mappe ved sida av video"
+
+#: src/Components/ImageSaveLocationField.qml:38
+msgctxt "@label:listbox right mouse button"
+msgid "Custom folder"
+msgstr "Tilpassa mappe"
+
+#: src/Components/ImageSaveLocationField.qml:67
+msgctxt "@info:tooltip"
+msgid "name of the folder"
+msgstr "namnet på mappa"
+
+#: src/Components/ImageSaveLocationField.qml:90
+msgctxt "@info:tooltip"
+msgid "path to the folder"
+msgstr "adresse til mappa"
+
+#: src/Components/ImageSaveLocationField.qml:98
+msgctxt "@title:window"
+msgid "Select folder"
+msgstr "Vel mappe"
+
+#: src/Components/RowsField.qml:21
+msgctxt "@label"
+msgid "Rows"
+msgstr "Rader"
+
+#: src/Components/RunField.qml:15
+msgctxt "@action:button"
+msgid "Run"
+msgstr "Køyr"
+
+#: src/Components/ShowVideoInfoField.qml:15
+msgctxt "@option:check"
+msgid "Show video info"
+msgstr "Vis videoinfo"
+
+#: src/Components/SpacingField.qml:21
+msgctxt "@label"
+msgid "Spacing"
+msgstr "Mellomrom"
+
+#: src/Components/ThumbWidthField.qml:21
+msgctxt "@label"
+msgid "Thumbnail width"
+msgstr "Breidd på miniatyrbilete"
+
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:15
+msgctxt "@label"
+msgid "Always show hours"
+msgstr "Vis alltid timar"
+
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:25
+msgctxt "@info:tooltip"
+msgid ""
+"Checked: shows hours as “00“ (two zeros) when video length is under an hour\n"
+"\n"
+"Unchecked: only minutes and seconds are shown"
+msgstr ""
+
+#: src/Components/VideoInfoTextColorField.qml:22
+msgctxt "@label"
+msgid "Text color"
+msgstr "Tekstfarge"
+
+#: src/FilesView.qml:90
+msgctxt "@action:inmenu"
+msgid "Open video folder"
+msgstr "Opna videomappe"
+
+#: src/FilesView.qml:101
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Fjern"
+
+#: src/FilesView.qml:120
+msgctxt "@action:inmenu"
+msgid "Open thumbnail"
+msgstr "Opna miniatyrbilete"
+
+#: src/Main.qml:52
+msgctxt "@label"
+msgid "Thumbnail settings"
+msgstr "Innstillingar for miniatyrbilete"
+
+#: src/Main.qml:69
+msgctxt "@label"
+msgid "Video info settings"
+msgstr ""
