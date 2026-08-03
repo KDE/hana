@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-07-06 21:01+0200\n"
+"PO-Revision-Date: 2026-08-02 10:39+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -32,7 +32,7 @@ msgstr "Vel filer"
 #: src/Components/AvoidDarkFramesField.qml:15
 msgctxt "@option:check"
 msgid "Avoid dark frames"
-msgstr ""
+msgstr "Unngå mørke bilete"
 
 #: src/Components/AvoidDarkFramesField.qml:24
 msgctxt "@info:tooltip"
@@ -41,6 +41,10 @@ msgid ""
 "is taken<br><b>Can be very slow</b><br><br>Unchecked: thumbnail is taken "
 "regardless of its content"
 msgstr ""
+"Viss det er kryssa av her, vert det prøvd å unngå mørke bilete ved å endra "
+"tidspunktet miniatyr­biletet vert henta frå.<br><b>Dette kan vera veldig "
+"tregt</b><br><br>Viss det ikkje er kryssa av, vert miniatyr­biletet brukt "
+"uansett korleis det ser ut."
 
 #: src/Components/BackgroundField.qml:20
 #: src/Components/VideoInfoBackgroundColorField.qml:22
@@ -150,6 +154,10 @@ msgid ""
 "\n"
 "Unchecked: only minutes and seconds are shown"
 msgstr ""
+"Viss det er kryssa av her, vert timar viste som «00» (to nullar) når videoen "
+"varer under ein time.\n"
+"\n"
+"Viss det ikkje er kryssa av, vert berre minutta og sekunda viste."
 
 #: src/Components/VideoInfoTextColorField.qml:22
 msgctxt "@label"
@@ -179,4 +187,4 @@ msgstr "Innstillingar for miniatyrbilete"
 #: src/Main.qml:69
 msgctxt "@label"
 msgid "Video info settings"
-msgstr ""
+msgstr "Innstillingar for videoinformasjon"
