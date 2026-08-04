@@ -22,6 +22,7 @@
   <name xml:lang="ko">Hana</name>
   <name xml:lang="lt">Hana</name>
   <name xml:lang="nl">Hana</name>
+  <name xml:lang="nn">Hana</name>
   <name xml:lang="pt-BR">Hana</name>
   <name xml:lang="sk">Hana</name>
   <name xml:lang="sl">Hana</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="ko">동영상 섬네일 생성기</summary>
   <summary xml:lang="lt">Vaizdo įrašo miniatiūrų generatorius</summary>
   <summary xml:lang="nl">Generator van videominiaturen</summary>
+  <summary xml:lang="nn">Miniatyrbiletgenerator for videoar</summary>
   <summary xml:lang="pt-BR">Gerador de miniaturas de vídeo</summary>
   <summary xml:lang="sk">Generátor miniatúr videí</summary>
   <summary xml:lang="sl">Generator sličic videoposnetkov</summary>
@@ -84,6 +86,7 @@
     <p xml:lang="ko">동영상에서 섬네일 그림을 생성하여 하나의 그림으로 합쳐서 보여 줍니다.</p>
     <p xml:lang="lt">Programa, skirta iš vaizdo įrašo failo sukurti miniatiūrų paveikslus ir sujungti juos į vieną bendrą paveikslą.</p>
     <p xml:lang="nl">Toepassing om miniatuurafbeeldingen uit videobestanden te maken en ze samen te voegen in één afbeelding.</p>
+    <p xml:lang="nn">Program for å laga miniatyr­bilete frå video­filer og setja dei saman til eitt bilete.</p>
     <p xml:lang="pt-BR">Aplicativo para criar imagens em miniatura a partir de arquivos de vídeo e uni-las em uma única imagem.</p>
     <p xml:lang="sk">Aplikácia na vytváranie miniatúr obrázkov zo súborov videí a ich spojenie do jedného obrázka.</p>
     <p xml:lang="sl">Aplikacija za ustvarjanje sličic iz video datotek in njihovo združevanje v eno sliko.</p>
@@ -109,6 +112,7 @@
     <p xml:lang="ko">기능</p>
     <p xml:lang="lt">Ypatybės</p>
     <p xml:lang="nl">Mogelijkheden</p>
+    <p xml:lang="nn">Funksjonar</p>
     <p xml:lang="pt-BR">Funcionalidades</p>
     <p xml:lang="sk">Funkcie</p>
     <p xml:lang="sl">Zmožnosti</p>
@@ -136,6 +140,7 @@
       <li xml:lang="ko">병렬 처리</li>
       <li xml:lang="lt">lygiagretus apdorojimas</li>
       <li xml:lang="nl">parallelle verwerking</li>
+      <li xml:lang="nn">Parallell prosessering</li>
       <li xml:lang="pt-BR">processamento paralelo</li>
       <li xml:lang="sk">paralelné spracovanie</li>
       <li xml:lang="sl">vzporedna obdelava</li>
@@ -161,6 +166,7 @@
       <li xml:lang="ko">행과 열 개수 지정 가능</li>
       <li xml:lang="lt">galimybė nustatyti eilučių ir stulpelių skaičių</li>
       <li xml:lang="nl">aantal rijen en kolommen instellen</li>
+      <li xml:lang="nn">Vel talet på rader og kolonnar</li>
       <li xml:lang="pt-BR">define o número de linhas e colunas</li>
       <li xml:lang="sk">nastaviť počet riadkov a stĺpcov</li>
       <li xml:lang="sl">nastavi število vrstic in stolpcev</li>
@@ -186,6 +192,7 @@
       <li xml:lang="ko">파일 정보 표시 전환</li>
       <li xml:lang="lt">informacijos apie failą perjungimas</li>
       <li xml:lang="nl">bestandsinformatie omschakelen</li>
+      <li xml:lang="nn">Slå på/av filinformasjon</li>
       <li xml:lang="pt-BR">alterna informações do arquivo</li>
       <li xml:lang="sk">prepnúť informácie o súbore</li>
       <li xml:lang="sl">preklopi informacije o datoteki</li>
@@ -211,6 +218,7 @@
       <li xml:lang="ko">섬네일 폭과 간격 정의</li>
       <li xml:lang="lt">galimybė nustatyti miniatiūrų plotį ir tarpus tarp jų</li>
       <li xml:lang="nl">breedte en spatiëring van miniaturen instellen</li>
+      <li xml:lang="nn">Vel breidd på og avstand mellom miniatyrbilete</li>
       <li xml:lang="pt-BR">define a largura e espaçamento da miniatura</li>
       <li xml:lang="sk">nastaviť šírku miniatúry a rozstup</li>
       <li xml:lang="sl">nastavitev širine in razmika med sličicami</li>
@@ -236,6 +244,7 @@
       <li xml:lang="ko">배경색과 글자색 정의</li>
       <li xml:lang="lt">galimybė nustatyti fono ir teksto spalvas</li>
       <li xml:lang="nl">achtergrond en tekstkleuren instellen</li>
+      <li xml:lang="nn">Vel farge på tekst og bakgrunn</li>
       <li xml:lang="pt-BR">define o plano de fundo e as cores do texto</li>
       <li xml:lang="sk">nastaviť farbu pozadia a textu</li>
       <li xml:lang="sl">nastavi barve ozadja in besedila</li>
@@ -264,6 +273,7 @@
         <p xml:lang="ko">첫 릴리스.</p>
         <p xml:lang="lt">Pirmoji laida.</p>
         <p xml:lang="nl">Eerste uitgave.</p>
+        <p xml:lang="nn">Første utgåve.</p>
         <p xml:lang="pt-BR">Primeiro lançamento.</p>
         <p xml:lang="sk">Prvé vydanie.</p>
         <p xml:lang="sl">Prva izdaja.</p>
@@ -294,6 +304,7 @@
       <caption xml:lang="ko">단일 파일을 연 주 창(밝은 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su vienu failu (šviesus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een enkel bestand (licht thema)</caption>
+      <caption xml:lang="nn">Hovudvindauget med éi fil (lyst tema)</caption>
       <caption xml:lang="pt-BR">Janela principal com um único arquivo (tema claro)</caption>
       <caption xml:lang="sk">Hlavné okno s jedným súborom (svetlá téma)</caption>
       <caption xml:lang="sl">Glavno okno z eno samo datoteko (svetla tema)</caption>
@@ -321,6 +332,7 @@
       <caption xml:lang="ko">여러 파일을 연 주 창(밝은 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su keliais failais (šviesus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (licht thema)</caption>
+      <caption xml:lang="nn">Hovudvindauget med fleire filer (lyst tema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema claro)</caption>
       <caption xml:lang="sk">Hlavné okno s viacerými súbormi (svetlá téma)</caption>
       <caption xml:lang="sl">Glavno okno z več datotekami (svetla tema)</caption>
@@ -348,6 +360,7 @@
       <caption xml:lang="ko">여러 파일을 연 주 창(어두운 테마)</caption>
       <caption xml:lang="lt">Pagrindinis langas su keliais failais (tamsus apipavidalinimas)</caption>
       <caption xml:lang="nl">Hoofdvenster met een meerdere bestanden (donker thema)</caption>
+      <caption xml:lang="nn">Hovudvindauget med fleire filer (mørkt tema)</caption>
       <caption xml:lang="pt-BR">Janela principal com múltiplos arquivos (tema escuro)</caption>
       <caption xml:lang="sk">Hlavné okno s viacerými súbormi (tmavá téma)</caption>
       <caption xml:lang="sl">Glavno okno z več datotekami (temna tema)</caption>
