@@ -15,8 +15,6 @@ import org.kde.hana
 ColumnLayout {
     id: root
 
-    property alias spacing: control.value
-
     Label {
         Layout.maximumWidth: 250
 
