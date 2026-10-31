@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "Hana"
+SPDX-PackageSupplier = "George Florea Bănuș <georgefb899@gmail.com>"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/multimedia/hana"
+
+[[annotations]]
+path = "po/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "KDE Translators"
+SPDX-License-Identifier = "GPL-3.0-or-later"
