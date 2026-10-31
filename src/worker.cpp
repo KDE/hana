@@ -165,10 +165,19 @@ void ThumbnailerRunnable::run()
                 ++newSeekPosition;
             }
             if (brightness < 30) {
+                seekPosition = brightestPosition;
                 m_frameDecoder.seek(brightestPosition);
                 m_frameDecoder.getScaledVideoFrame(thumbWidth, true, image);
             }
         }
+
+        const auto timeImage = thumbnailTimeImage(formatDuration(seekPosition));
+        const auto timeImageX = image.width() - timeImage.width() - 4;
+        const auto timeImageY = image.height() - timeImage.height() - 4;
+
+        QPainter painter(&image);
+        painter.setOpacity(0.7);
+        painter.drawImage(QRect{timeImageX, timeImageY, timeImage.width(), timeImage.height()}, timeImage);
 
         auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);
@@ -189,8 +198,7 @@ void ThumbnailerRunnable::run()
             uint top {(i * thumbHeight) + ((i + 1) * spacing)};
             thumbImg.load(files.at(x));
 
-            p.drawImage(QRect{static_cast<int>(left), static_cast<int>(top), thumbImg.width(), thumbImg.height()},
-                        thumbImg);
+            p.drawImage(QRect{static_cast<int>(left), static_cast<int>(top), thumbImg.width(), thumbImg.height()}, thumbImg);
 
             QFile::moveToTrash(files.at(x));
 
@@ -243,6 +251,28 @@ QImage ThumbnailerRunnable::videoFileInfoImage(uint width)
     td.setDocumentMargin(docPadding);
 
     QImage textImage(QSize{static_cast<int>(width), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
+    textImage.fill(HanaSettings::videoInfoBackgroundColor());
+    QPainter textPainter(&textImage);
+    td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});
+
+    return textImage;
+}
+
+QImage ThumbnailerRunnable::thumbnailTimeImage(const QString &time)
+{
+    QFont font;
+    font.setPointSize(14);
+
+    QString html;
+    html.append(u"<div style='color: %1'>%1</div>"_s.arg(time));
+
+    uint docPadding{4};
+    QTextDocument td;
+    td.setDefaultFont(font);
+    td.setHtml(html);
+    td.setDocumentMargin(docPadding);
+
+    QImage textImage(QSize{static_cast<int>(td.size().width()), static_cast<int>(td.size().height())}, QImage::Format_RGB32);
     textImage.fill(HanaSettings::videoInfoBackgroundColor());
     QPainter textPainter(&textImage);
     td.drawContents(&textPainter, QRectF{0, 0, td.textWidth(), td.size().height()});

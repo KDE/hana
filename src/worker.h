@@ -49,6 +49,7 @@ Q_SIGNALS:
 private:
     QString thumbnailsImageSaveLocation();
     QImage videoFileInfoImage(uint width);
+    QImage thumbnailTimeImage(const QString &time);
     uint m_index;
     QUrl m_url;
     FrameDecoder m_frameDecoder;
