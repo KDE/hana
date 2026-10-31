@@ -24,4 +24,5 @@ qt_add_qml_module(components
         VideoInfoAlwaysShowHoursField.qml
         AvoidDarkFramesField.qml
         ImageSaveLocationField.qml
+        ShowThumbTimeField.qml
 )

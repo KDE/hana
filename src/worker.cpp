@@ -171,13 +171,15 @@ void ThumbnailerRunnable::run()
             }
         }
 
-        const auto timeImage = thumbnailTimeImage(formatDuration(seekPosition));
-        const auto timeImageX = image.width() - timeImage.width() - 4;
-        const auto timeImageY = image.height() - timeImage.height() - 4;
+        if (HanaSettings::showThumbnailTime()) {
+            const auto timeImage = thumbnailTimeImage(formatDuration(seekPosition));
+            const auto timeImageX = image.width() - timeImage.width() - 4;
+            const auto timeImageY = image.height() - timeImage.height() - 4;
 
-        QPainter painter(&image);
-        painter.setOpacity(0.7);
-        painter.drawImage(QRect{timeImageX, timeImageY, timeImage.width(), timeImage.height()}, timeImage);
+            QPainter painter(&image);
+            painter.setOpacity(0.7);
+            painter.drawImage(QRect{timeImageX, timeImageY, timeImage.width(), timeImage.height()}, timeImage);
+        }
 
         auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
         files.append(thumbPath);

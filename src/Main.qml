@@ -64,6 +64,9 @@ ApplicationWindow {
                 AvoidDarkFramesField {
                     Layout.columnSpan: 2
                 }
+                ShowThumbTimeField {
+                    Layout.columnSpan: 2
+                }
 
                 Label {
                     text: i18nc("@label", "Video info settings")
