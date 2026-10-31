@@ -9,6 +9,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQmlExtensionPlugin>
+#include <QQuickStyle>
 
 #include <KAboutData>
 #include <KLocalizedQmlContext>
@@ -18,10 +19,18 @@
 
 using namespace Qt::StringLiterals;
 
+static const auto INITIAL_STYLE = QQuickStyle::name();
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     QApplication::setWindowIcon(QIcon::fromTheme(u"hana"_s));
+
+    bool handledByQPT = INITIAL_STYLE != QQuickStyle::name();
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE") && !handledByQPT) {
+        QQuickStyle::setStyle(u"org.kde.desktop"_s);
+        QQuickStyle::setFallbackStyle(u"Fusion"_s);
+    }
 
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain("hana");
