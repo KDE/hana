@@ -123,21 +123,35 @@ void ThumbnailerRunnable::run()
     thumbWidth = size.width();
     int thumbHeight {size.height()};
 
-    uint w {(columns * thumbWidth) + (spacing * columns + spacing)};
-    uint h {(rows * thumbHeight) + (spacing * rows + spacing)};
+    uint width {(columns * thumbWidth) + (spacing * columns + spacing)};
+    uint height {(rows * thumbHeight) + (spacing * rows + spacing)};
     uint totalThumbs {rows * columns};
     float startTime {static_cast<float>(fileDuration)/totalThumbs};
 
-    QStringList files;
-    QImage image;
-    uint seekPosition {0};
+    const auto savePath = thumbnailsImageSaveLocation();
+    QDir dir;
+    dir.mkpath(savePath);
+    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath, m_url.fileName())};
 
-    QTemporaryDir tmpDir;
-    if (!tmpDir.isValid()) {
-        return;
+    QImage textImage;
+    if (HanaSettings::showVideoInfo()) {
+        textImage = videoFileInfoImage(width);
+        height += textImage.height();
+    }
+
+    QImage thumbsImage ({static_cast<int>(width), static_cast<int>(height)}, QImage::Format_RGB32);
+    if (!textImage.isNull()) {
+        QPainter painter(&thumbsImage);
+        painter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
     }
 
     uint prevSeekPosition {0};
+    uint currentRow = 0;
+    uint currentColumn = 0;
+    uint textImageOffset = textImage.isNull() ? 0 : textImage.height();
+
+    QImage image;
+    uint seekPosition {0};
     for (uint i {0}; i < totalThumbs; ++i) {
         seekPosition = static_cast<uint>(startTime * i);
         if (i == 0) {
@@ -181,49 +195,22 @@ void ThumbnailerRunnable::run()
             painter.drawImage(QRect{timeImageX, timeImageY, timeImage.width(), timeImage.height()}, timeImage);
         }
 
-        auto thumbPath {u"%1/img-%2.png"_s.arg(tmpDir.path()).arg(i)};
-        files.append(thumbPath);
-        image.save(thumbPath);
+        uint x {(currentColumn * thumbWidth) + ((currentColumn + 1) * spacing)};
+        uint y {textImageOffset + (currentRow * thumbHeight) + ((currentRow + 1) * spacing)};
+
+        QPainter painter(&thumbsImage);
+        painter.drawImage(QRect{static_cast<int>(x), static_cast<int>(y), image.width(), image.height()}, image);
 
         prevSeekPosition = seekPosition;
         Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, i * 100 / (totalThumbs + 1));
-    }
 
-    uint x {0};
-    QImage thumbsImage ({static_cast<int>(w), static_cast<int>(h)}, QImage::Format_RGB32);
-    QPainter p(&thumbsImage);
-    QImage thumbImg;
-    thumbsImage.fill(QColor::fromString(HanaSettings::self()->backgroundColor()));
-    for (uint i {0}; i < rows; ++i) {
-        for (uint j {0}; j < columns; ++j) {
-            uint left {(j * thumbWidth) + ((j + 1) * spacing)};
-            uint top {(i * thumbHeight) + ((i + 1) * spacing)};
-            thumbImg.load(files.at(x));
-
-            p.drawImage(QRect{static_cast<int>(left), static_cast<int>(top), thumbImg.width(), thumbImg.height()}, thumbImg);
-
-            QFile::moveToTrash(files.at(x));
-
-            x++;
+        currentRow++;
+        if (currentRow == rows) {
+            currentRow = 0;
+            currentColumn++;
         }
     }
-
-    const auto savePath = thumbnailsImageSaveLocation();
-    QDir dir;
-    dir.mkpath(savePath);
-
-    auto thumbsImagePath {u"%1/%2.thumbs.png"_s.arg(savePath, m_url.fileName())};
-    if (HanaSettings::showVideoInfo()) {
-        QImage textImage {videoFileInfoImage(w)};
-        QImage thumbsImageWithText(thumbsImage.width(), thumbsImage.height() + textImage.height(), QImage::Format_RGB32);
-        thumbsImageWithText.fill(QColor::fromString(HanaSettings::self()->backgroundColor()));
-        QPainter thumbsImageWithTextPainter(&thumbsImageWithText);
-        thumbsImageWithTextPainter.drawImage(QRect{0, 0, textImage.width(), textImage.height()}, textImage);
-        thumbsImageWithTextPainter.drawImage(QRect{0, textImage.height(), thumbsImage.width(), thumbsImage.height()}, thumbsImage);
-        thumbsImageWithText.save(thumbsImagePath);
-    } else {
-        thumbsImage.save(thumbsImagePath);
-    }
+    thumbsImage.save(thumbsImagePath);
 
     Q_EMIT done(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, thumbsImagePath);
     Q_EMIT thumbnailProgress(m_index, m_url.isLocalFile() ? m_url.toLocalFile() : QString{}, 100);
