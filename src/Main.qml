@@ -8,6 +8,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.ki18n
+
 import org.kde.hana.components
 
 ApplicationWindow {
@@ -49,7 +51,7 @@ ApplicationWindow {
                 }
 
                 Label {
-                    text: i18nc("@label", "Thumbnail settings")
+                    text: KI18n.i18nc("@label", "Thumbnail settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
                     Layout.topMargin: 20
@@ -69,7 +71,7 @@ ApplicationWindow {
                 }
 
                 Label {
-                    text: i18nc("@label", "Video info settings")
+                    text: KI18n.i18nc("@label", "Video info settings")
                     font.pointSize: 14
                     Layout.columnSpan: 2
                     Layout.topMargin: 20

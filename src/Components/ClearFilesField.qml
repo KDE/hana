@@ -7,12 +7,14 @@
 import QtQuick
 import QtQuick.Controls
 
+import org.kde.ki18n
+
 import org.kde.hana
 
 ToolButton {
     id: root
 
-    text: i18nc("@action:button; Empty the list of files. The files are not deleted from disk", "Clear files")
+    text: KI18n.i18nc("@action:button; Empty the list of files. The files are not deleted from disk", "Clear files")
 
     onClicked: Bridge.clearFiles()
 }

@@ -9,6 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.hana
@@ -19,7 +20,7 @@ RowLayout {
     enabled: HanaSettings.showVideoInfo
 
     Label {
-        text: i18nc("@label", "Text color")
+        text: KI18n.i18nc("@label", "Text color")
     }
 
     Rectangle {
@@ -46,14 +47,14 @@ RowLayout {
         }
 
         ToolTip {
-            text: i18nc("@info:tooltip", "Select a color")
+            text: KI18n.i18nc("@info:tooltip", "Select a color")
             visible: ma.containsMouse
         }
 
         ColorDialog {
             id: colorPicker
 
-            title: i18nc("@title:window", "Select Color")
+            title: KI18n.i18nc("@title:window", "Select Color")
             onAccepted: {
                 HanaSettings.videoInfoTextColor = colorPicker.selectedColor
                 HanaSettings.save()

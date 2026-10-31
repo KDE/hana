@@ -7,12 +7,14 @@
 import QtQuick
 import QtQuick.Controls
 
+import org.kde.ki18n
+
 import org.kde.hana
 
 ToolButton {
     id: root
 
-    text: i18nc("@action:button", "Run")
+    text: KI18n.i18nc("@action:button", "Run")
 
     onClicked: Bridge.run()
 }

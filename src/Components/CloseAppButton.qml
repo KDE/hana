@@ -7,10 +7,12 @@
 import QtQuick
 import QtQuick.Controls
 
+import org.kde.ki18n
+
 ToolButton {
     id: root
 
-    text: i18nc("@action:button", "Close")
+    text: KI18n.i18nc("@action:button", "Close")
 
     onClicked: Qt.quit()
 }

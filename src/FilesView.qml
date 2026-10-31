@@ -10,6 +10,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.hana
@@ -87,7 +88,7 @@ Rectangle {
                                 closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
                                 MenuItem {
-                                    text: i18nc("@action:inmenu", "Open video folder")
+                                    text: KI18n.i18nc("@action:inmenu", "Open video folder")
                                     onClicked: openVideoFolder()
 
                                     function openVideoFolder() {
@@ -98,7 +99,7 @@ Rectangle {
                                 }
 
                                 MenuItem {
-                                    text: i18nc("@action:inmenu", "Remove")
+                                    text: KI18n.i18nc("@action:inmenu", "Remove")
                                     onClicked: filesModel.remove(delegate.index)
                                 }
                             }
@@ -117,7 +118,7 @@ Rectangle {
                         }
 
                         ToolButton {
-                            text: i18nc("@action:inmenu", "Open thumbnail")
+                            text: KI18n.i18nc("@action:inmenu", "Open thumbnail")
                             enabled: delegate.thumbPath !== ""
                             onClicked: openThumbnail()
 

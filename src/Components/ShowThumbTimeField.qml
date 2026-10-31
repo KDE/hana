@@ -7,12 +7,14 @@
 import QtQuick
 import QtQuick.Controls
 
+import org.kde.ki18n
+
 import org.kde.hana
 
 CheckBox {
     id: root
 
-    text: i18nc("@option:check", "Show thumbnails time")
+    text: KI18n.i18nc("@option:check", "Show thumbnails time")
     checked: HanaSettings.showThumbnailTime
 
     onClicked: {

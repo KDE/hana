@@ -9,6 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 import org.kde.hana
@@ -22,7 +23,7 @@ ColumnLayout {
         Label {
             Layout.maximumWidth: 250
 
-            text: i18nc("@label where the image is going to be saved", "Save location")
+            text: KI18n.i18nc("@label where the image is going to be saved", "Save location")
             elide: Text.ElideRight
         }
 
@@ -33,9 +34,9 @@ ColumnLayout {
             property list<string> modelValues: ["SameAsVideo", "NextToVideo", "Custom"]
 
             model: [
-                i18nc("@label:listbox left mouse button", "Same folder as video"),
-                i18nc("@label:listbox middle mouse button", "Folder next to video"),
-                i18nc("@label:listbox right mouse button", "Custom folder"),
+                KI18n.i18nc("@label:listbox left mouse button", "Same folder as video"),
+                KI18n.i18nc("@label:listbox middle mouse button", "Folder next to video"),
+                KI18n.i18nc("@label:listbox right mouse button", "Custom folder"),
             ]
 
             Component.onCompleted: {
@@ -64,7 +65,7 @@ ColumnLayout {
         }
 
         ToolTip {
-            text: i18nc("@info:tooltip", "name of the folder")
+            text: KI18n.i18nc("@info:tooltip", "name of the folder")
         }
     }
 
@@ -87,7 +88,7 @@ ColumnLayout {
             HanaSettings.save()
         }
         ToolTip {
-            text: i18nc("@info:tooltip", "path to the folder")
+            text: KI18n.i18nc("@info:tooltip", "path to the folder")
         }
     }
 
@@ -95,7 +96,7 @@ ColumnLayout {
         id: folderDialog
 
         currentFolder: HanaSettings.saveLocationFolderUrl
-        title: i18nc("@title:window", "Select folder")
+        title: KI18n.i18nc("@title:window", "Select folder")
 
         onAccepted: {
             Bridge.filesSelected(selectedFolder)

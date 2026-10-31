@@ -8,6 +8,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.ki18n
+
 import org.kde.hana
 
 ColumnLayout {
@@ -18,7 +20,7 @@ ColumnLayout {
     Label {
         Layout.maximumWidth: 250
 
-        text: i18nc("@label", "Thumbnail width")
+        text: KI18n.i18nc("@label", "Thumbnail width")
         elide: Text.ElideRight
     }
 
