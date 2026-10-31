@@ -9,6 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.ki18n
+import org.kde.kirigami as Kirigami
 
 import org.kde.hana.components
 
@@ -28,7 +29,7 @@ ApplicationWindow {
         ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.margins: 20
+            Layout.margins: Kirigami.Units.largeSpacing
 
             FilesView {
                 Layout.fillWidth: true
@@ -39,7 +40,7 @@ ApplicationWindow {
         ScrollView {
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignTop
-            Layout.margins: 20
+            Layout.margins: Kirigami.Units.largeSpacing
 
             GridLayout {
                 id: scrollLayout
@@ -50,11 +51,11 @@ ApplicationWindow {
                     Layout.columnSpan: 2
                 }
 
-                Label {
+                Kirigami.Heading {
                     text: KI18n.i18nc("@label", "Thumbnail settings")
-                    font.pointSize: 14
+                    level: 2
                     Layout.columnSpan: 2
-                    Layout.topMargin: 20
+                    Layout.topMargin: Kirigami.Units.largeSpacing
                 }
                 ColumnsField {}
                 RowsField {}
@@ -70,11 +71,11 @@ ApplicationWindow {
                     Layout.columnSpan: 2
                 }
 
-                Label {
+                Kirigami.Heading {
                     text: KI18n.i18nc("@label", "Video info settings")
-                    font.pointSize: 14
+                    level: 2
                     Layout.columnSpan: 2
-                    Layout.topMargin: 20
+                    Layout.topMargin: Kirigami.Units.largeSpacing
                 }
                 ShowVideoInfoField {
                     Layout.columnSpan: 2
