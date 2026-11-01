@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-11-01 00:54+0000\n"
 "PO-Revision-Date: 2025-10-01 21:55+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.11.70\n"
 
-#: src/Components/AddFilesField.qml:16
+#: src/Components/AddFilesField.qml:18
 msgctxt "@action:button"
 msgid "Add files"
 msgstr "新增檔案"
 
-#: src/Components/AddFilesField.qml:25
+#: src/Components/AddFilesField.qml:27
 msgctxt "@title:window"
 msgid "Select files"
 msgstr "選擇檔案"
 
-#: src/Components/AvoidDarkFramesField.qml:15
+#: src/Components/AvoidDarkFramesField.qml:17
 msgctxt "@option:check"
 msgid "Avoid dark frames"
 msgstr "避免深色影格"
 
-#: src/Components/AvoidDarkFramesField.qml:24
+#: src/Components/AvoidDarkFramesField.qml:26
 msgctxt "@info:tooltip"
 msgid ""
 "Checked: tries to avoid very dark frames by changing the time the thumbnail "
@@ -42,88 +42,93 @@ msgstr ""
 "勾選時：藉由變更取得縮圖的時間來迴避非常暗的影格<br><b>可能需要很多時間</"
 "b><br><br>未勾選時：取得縮圖時不顧內容"
 
-#: src/Components/BackgroundField.qml:20
-#: src/Components/VideoInfoBackgroundColorField.qml:22
+#: src/Components/BackgroundField.qml:21
+#: src/Components/VideoInfoBackgroundColorField.qml:23
 msgctxt "@label"
 msgid "Background color"
 msgstr "背景顏色"
 
-#: src/Components/BackgroundField.qml:47
-#: src/Components/VideoInfoBackgroundColorField.qml:49
-#: src/Components/VideoInfoTextColorField.qml:49
+#: src/Components/BackgroundField.qml:48
+#: src/Components/VideoInfoBackgroundColorField.qml:50
+#: src/Components/VideoInfoTextColorField.qml:50
 msgctxt "@info:tooltip"
 msgid "Select a color"
 msgstr "選擇顏色"
 
-#: src/Components/BackgroundField.qml:54
-#: src/Components/VideoInfoBackgroundColorField.qml:56
-#: src/Components/VideoInfoTextColorField.qml:56
+#: src/Components/BackgroundField.qml:55
+#: src/Components/VideoInfoBackgroundColorField.qml:57
+#: src/Components/VideoInfoTextColorField.qml:57
 msgctxt "@title:window"
 msgid "Select Color"
 msgstr "選擇顏色"
 
-#: src/Components/ClearFilesField.qml:15
+#: src/Components/ClearFilesField.qml:17
 msgctxt ""
 "@action:button; Empty the list of files. The files are not deleted from disk"
 msgid "Clear files"
 msgstr "清除檔案"
 
-#: src/Components/CloseAppButton.qml:13
+#: src/Components/CloseAppButton.qml:15
 msgctxt "@action:button"
 msgid "Close"
 msgstr "關閉"
 
-#: src/Components/ColumnsField.qml:21
+#: src/Components/ColumnsField.qml:23
 msgctxt "@label"
 msgid "Columns"
 msgstr "欄"
 
-#: src/Components/ImageSaveLocationField.qml:25
+#: src/Components/ImageSaveLocationField.qml:26
 msgctxt "@label where the image is going to be saved"
 msgid "Save location"
 msgstr "儲存位置"
 
-#: src/Components/ImageSaveLocationField.qml:36
+#: src/Components/ImageSaveLocationField.qml:37
 msgctxt "@label:listbox left mouse button"
 msgid "Same folder as video"
 msgstr "與影片相同資料夾"
 
-#: src/Components/ImageSaveLocationField.qml:37
+#: src/Components/ImageSaveLocationField.qml:38
 msgctxt "@label:listbox middle mouse button"
 msgid "Folder next to video"
 msgstr "影片旁的資料夾內"
 
-#: src/Components/ImageSaveLocationField.qml:38
+#: src/Components/ImageSaveLocationField.qml:39
 msgctxt "@label:listbox right mouse button"
 msgid "Custom folder"
 msgstr "自訂資料夾"
 
-#: src/Components/ImageSaveLocationField.qml:67
+#: src/Components/ImageSaveLocationField.qml:68
 msgctxt "@info:tooltip"
 msgid "name of the folder"
 msgstr "資料夾名稱"
 
-#: src/Components/ImageSaveLocationField.qml:90
+#: src/Components/ImageSaveLocationField.qml:91
 msgctxt "@info:tooltip"
 msgid "path to the folder"
 msgstr "資料夾路徑"
 
-#: src/Components/ImageSaveLocationField.qml:98
+#: src/Components/ImageSaveLocationField.qml:99
 msgctxt "@title:window"
 msgid "Select folder"
 msgstr "選擇資料夾"
 
-#: src/Components/RowsField.qml:21
+#: src/Components/RowsField.qml:23
 msgctxt "@label"
 msgid "Rows"
 msgstr "列"
 
-#: src/Components/RunField.qml:15
+#: src/Components/RunField.qml:17
 msgctxt "@action:button"
 msgid "Run"
 msgstr "執行"
 
-#: src/Components/ShowVideoInfoField.qml:15
+#: src/Components/ShowThumbTimeField.qml:17
+msgctxt "@option:check"
+msgid "Show thumbnails time"
+msgstr ""
+
+#: src/Components/ShowVideoInfoField.qml:17
 msgctxt "@option:check"
 msgid "Show video info"
 msgstr "顯示影片資訊"
@@ -133,17 +138,17 @@ msgctxt "@label"
 msgid "Spacing"
 msgstr "間距"
 
-#: src/Components/ThumbWidthField.qml:21
+#: src/Components/ThumbWidthField.qml:23
 msgctxt "@label"
 msgid "Thumbnail width"
 msgstr "縮圖寬度"
 
-#: src/Components/VideoInfoAlwaysShowHoursField.qml:15
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:17
 msgctxt "@label"
 msgid "Always show hours"
 msgstr "總是顯示小時"
 
-#: src/Components/VideoInfoAlwaysShowHoursField.qml:25
+#: src/Components/VideoInfoAlwaysShowHoursField.qml:27
 msgctxt "@info:tooltip"
 msgid ""
 "Checked: shows hours as “00“ (two zeros) when video length is under an hour\n"
@@ -154,32 +159,32 @@ msgstr ""
 "\n"
 "未勾選時：同樣情況只顯示分鐘與秒"
 
-#: src/Components/VideoInfoTextColorField.qml:22
+#: src/Components/VideoInfoTextColorField.qml:23
 msgctxt "@label"
 msgid "Text color"
 msgstr "文字顏色"
 
-#: src/FilesView.qml:90
+#: src/FilesView.qml:91
 msgctxt "@action:inmenu"
 msgid "Open video folder"
 msgstr "開啟影片資料夾"
 
-#: src/FilesView.qml:101
+#: src/FilesView.qml:102
 msgctxt "@action:inmenu"
 msgid "Remove"
 msgstr "移除"
 
-#: src/FilesView.qml:120
+#: src/FilesView.qml:121
 msgctxt "@action:inmenu"
 msgid "Open thumbnail"
 msgstr "開啟縮圖"
 
-#: src/Main.qml:52
+#: src/Main.qml:55
 msgctxt "@label"
 msgid "Thumbnail settings"
 msgstr "縮圖設定"
 
-#: src/Main.qml:69
+#: src/Main.qml:75
 msgctxt "@label"
 msgid "Video info settings"
 msgstr "影片資訊設定"
