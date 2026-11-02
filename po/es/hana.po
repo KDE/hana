@@ -1,15 +1,15 @@
 # Spanish translations for hana.po package.
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the hana package.
 # Automatically generated, 2025.
 #
-# SPDX-FileCopyrightText: 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2025-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-01 00:54+0000\n"
-"PO-Revision-Date: 2025-10-01 16:32+0100\n"
+"PO-Revision-Date: 2026-11-01 03:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: src/Components/AddFilesField.qml:18
 msgctxt "@action:button"
@@ -129,7 +129,7 @@ msgstr "Ejecutar"
 #: src/Components/ShowThumbTimeField.qml:17
 msgctxt "@option:check"
 msgid "Show thumbnails time"
-msgstr ""
+msgstr "Mostrar hora de las miniaturas"
 
 #: src/Components/ShowVideoInfoField.qml:17
 msgctxt "@option:check"
