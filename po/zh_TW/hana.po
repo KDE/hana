@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the hana package.
 #
-# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2025-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: hana\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-01 00:54+0000\n"
-"PO-Revision-Date: 2025-10-01 21:55+0900\n"
+"PO-Revision-Date: 2026-11-03 19:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: src/Components/AddFilesField.qml:18
 msgctxt "@action:button"
@@ -126,7 +126,7 @@ msgstr "執行"
 #: src/Components/ShowThumbTimeField.qml:17
 msgctxt "@option:check"
 msgid "Show thumbnails time"
-msgstr ""
+msgstr "顯示縮圖時間"
 
 #: src/Components/ShowVideoInfoField.qml:17
 msgctxt "@option:check"
