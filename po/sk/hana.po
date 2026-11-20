@@ -127,7 +127,7 @@ msgstr "Spustiť"
 #: src/Components/ShowThumbTimeField.qml:17
 msgctxt "@option:check"
 msgid "Show thumbnails time"
-msgstr ""
+msgstr "Zobraziť čas miniatúr"
 
 #: src/Components/ShowVideoInfoField.qml:17
 msgctxt "@option:check"
